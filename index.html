@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-6925115608826156">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791" type="image/png">
+    <title>Erik App Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="/script.js" defer></script>
+ 
+    <style>
+        /* Contenedor principal alineado a la derecha */
+        .2 body {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        /* Estilo del botón inicial */
+        .iniciar-sesion {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilo del contenedor que mostrará el nombre e icono */
+        .perfil {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Estilo del ícono de usuario */
+        .perfil img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilo del menú desplegable */
+        .menu-opciones {
+            display: none;
+            position: absolute;
+            top: 50x;
+            right: 0;
+            background-color: blue;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 10px;
+            margin-top: 10px;
+            z-index: 1;
+        }
+
+        .menu-opciones li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .menu-opciones li:hover {
+            background-color: #ADD8E6;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+          
+        }
+        header {
+            background-color: #007aff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+           .container2 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            padding: 3px;
+        }
+        .app-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 15px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.2s; /* Animación al escalar */
+        }
+        .app-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .download-btn {
+            background-color: #007aff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.2s; /* Transición suave */
+        }
+        .download-btn:hover {
+            background-color: #005bb5; /* Color al pasar el mouse */
+            transform: scale(1.05); /* Escala al pasar el mouse */
+        }
+        .app-card:hover {
+            transform: scale(1.05); /* Escala la tarjeta al pasar el mouse */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007aff;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+     .search-container {
+  
+            display: flex;
+            justify-content: center; /* Centra el contenido */
+            align-items: center; /* Centra el contenido verticalmente */
+            border-radius: 25px;
+       
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ .search-container {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  display: flex; /* Usamos flexbox para alinear los elementos */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+.search-container input {
+  width: 50%; /* El campo de búsqueda ocupará el 50% del ancho */
+  max-width: 600px; /* Limita el ancho máximo de la barra de búsqueda */
+  padding: 10px; /* Espaciado interno para que se vea más amplia */
+  margin-right: 10px; /* Espacio entre el input y el botón */
+}
+
+.search-container button {
+  padding: 10px 20px; /* Añade un poco de espacio alrededor del texto del botón */
+  cursor: pointer; /* Cambia el cursor a pointer cuando pases sobre el botón */
+}
+
+
+              input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+
+        input[type="text"]:focus {
+            box-shadow: 0 0 5px #007bff;
+        }
+             button {
+            padding: 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 25px 25px 0;
+            transition: background-color 0.3s;
+        }
+       /* Contenedor principal alineado a la derecha */
+        body {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        /* Estilo del botón inicial */
+        .iniciar-sesion {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilo del contenedor que mostrará el nombre e icono */
+        .perfil {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative; /* Para posicionar el menú desplegable */
+        }
+
+        /* Estilo del ícono de usuario */
+        .perfil img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilo del menú desplegable */
+        .menu-opciones {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 10px;
+            margin-top: 10px;
+            z-index: 1;
+        }
+
+        .menu-opciones li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .menu-opciones li:hover {
+            background-color: #f0f0f0;
+        }
+      
+    </style>
+  <script>
+        window.onload = function() {
+            let userAgent = navigator.userAgent.toLowerCase();
+
+            if (userAgent.includes("windows")) {
+                window.location.href = "windows.html";
+            } else if (!userAgent.includes("android")) {
+                window.location.href = "404.html";
+            }
+        };
+    </script>
+</head>
+        <script>
+        window.onload = function() {
+            // Comprobamos si el usuario está baneado en el localStorage
+            let banned = localStorage.getItem("banned");
+
+            // Si el usuario está baneado, redirigimos a banned.html
+            if (banned === "true") {
+                window.location.href = "banned.html";
+            }
+        }
+    </script>
+<body>
+
+<header>
+    <h1>Erik App Store</h1>
+<button class="iniciar-sesion" id="iniciarSesionBtn">Iniciar sesión</button>
+
+<!-- Contenedor que mostrará el nombre e icono del usuario -->
+<div class="perfil" id="perfilUsuario" style="display:none;">
+    <img src="https://cdn.glitch.global/d81feb0e-5571-4186-a9a0-76af988749be/Finder.png?v=1718642111168" alt="Icono de usuario">
+    <span id="nombreUsuario"></span>
+<head>
+      
+  </head>
+  
+    <!-- Menú desplegable -->
+    <ul class="menu-opciones" id="menuOpciones">
+        <li id="cerrarSesion">Cerrar sesión</li>
+        <li id="descargas">Descargas</li>
+    </ul>
+</div>
+</header>
+  <p>
+      
+  </p>
+   <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar aplicaciones..." aria-label="Buscar aplicaciones">
+    <button onclick="searchApp()">Buscar</button>
+</div> 
+
+<div class="container">
+  
+  
+
+ <h1>Como instalar una xapk</h1>
+  <div class="container">
+   
+    <video width="640" height="360" controls>
+        <source src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Como%20Instalar%20XAPK%20Android%20%E2%9C%85.mp4?v=1738959984818" type="video/mp4">
+        Tu navegador no soporta la reproducción de videos.
+    </video>
+      <div class="app-card">
+        <img src="https://cdn.glitch.global/647fd858-f0a6-4652-b1c7-40ab5ea1e6bc/erik-ia-animation-more-visual-unscreen.gif?v=1744748575452" alt="App 2">
+        <div class="app-title">Erik AI</div>
+        <a href="https://www.dropbox.com/scl/fi/g25ggmy8yhjuy84mqsuy2/Erik_AI.apk?rlkey=1wddzcruso8ul0t5tryw1xt00&st=ky6egvxt&dl=1" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://coimobile.io/uploads/2024/8/nulls-brawl-icon.jpg" alt="App 2">
+        <div class="app-title">Null's Brawl</div>
+        <a href="https://www.dropbox.com/scl/fi/pnel34vkcf0foesh8tvt5/nb_59.197_fp.apk?rlkey=rwog5ighq2qlksxds2p3ciz3z&st=xj5v3tym&dl=1" class="download-btn">Descargar</a>
+    </div>
+
+      <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/capcut%20icono.png?v=1727981874841" alt="App 1">
+        <div class="app-title">Capcut</div>
+        <a href="https://www.dropbox.com/scl/fi/l3dj4cva01ktzvv3ptp71/com-mod-download-capcut-video-editor-13-7-0-13700100.apk?rlkey=rolwn9i2f53enhv6xprig478c&st=guue9dh7&dl=1" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+       
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Minecraft.png?v=1727295741216" alt="App 2">
+        <div class="app-title">Minecraft</div>
+        <a href="https://erikappstore.glitch.me/payments/minecraft.html" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnpoaWxpYW9hcHAubXVzaWNhbGx5X2ljb25fMTY4OTkyNjIwM18wMDg/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">TikTok</div>
+        <a href="https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/0/e/e/0eeeb19633422b1241f4306419a0f15f39d58de9.png" alt="App 2">
+        <div class="app-title">Roblox</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.roblox.client?versionCode=1750" class="download-btn">Descargar</a>
+    </div>
+  <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmRhbW9ucGxheS5kYW1vbnBzMi5mcmVlX2ljb25fMTU1NTU2MDE5OF8wNTA/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Emulador de PS2 DamonPS2</div>
+        <a href="https://d.apkpure.com/b/APK/com.damonplay.damonps2.free?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/cXJjb2RlZ2VuZXJhdG9yLnFyY3JlYXRvci5xcm1ha2VyLmNyZWF0ZXFyY29kZV9pY29uXzE3MjI5NjA2NTFfMDQ1/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Generador de QR, Codigo QR</div>
+        <a href="https://d.apkpure.com/b/APK/qrcodegenerator.qrcreator.qrmaker.createqrcode?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnNwb3RpZnkubXVzaWNfaWNvbl8xNzE2NDYwMTQ4XzA0Nw/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Spotify música y podcasts </div>
+        <a href="https://d.apkpure.com/b/APK/com.spotify.music?version=latest" class="download-btn">Descargar</a>
+    </div>
+       <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnN1cGVyY2VsbC5icmF3bHN0YXJzX2ljb25fMTczMzgxNTE5Nl8wMzg/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Brawl Stars</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.supercell.brawlstars?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnNuYXBjaGF0LmFuZHJvaWRfaWNvbl8xNTY2ODQ0NzEzXzA4Nw/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Snapchat</div>
+        <a href="https://d.apkpure.com/b/APK/com.snapchat.android?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid" alt="App 2">
+        <div class="app-title">Instagram</div>
+        <a href="https://d.apkpure.com/b/APK/com.instagram.android?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/dHYudHdpdGNoLmFuZHJvaWQuYXBwX2ljb25fMTczNzQ4Mzk2Ml8wMjE/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Twitch</div>
+        <a href="https://d.apkpure.com/b/APK/tv.twitch.android.app?version=latest" class="download-btn">Descargar</a>
+    </div>
+   <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmZjLm51dC5zY3Jldy5ib2x0Lndhc2hlci5mYXN0ZW5lci5wdXp6bGVfaWNvbl8xNzA5MTQ3Njk3XzA1Mg/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Rompecabezas: Tuerca y perno</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.fc.nut.screw.bolt.washer.fastener.puzzle?version=latest" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmtpbG9vLnN1YndheXN1cmZfaWNvbl8xNzM3OTYzNzMyXzA5Mg/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Subway Surfers</div>
+        <a href="https://d.apkpure.com/b/APK/com.kiloo.subwaysurf?version=latest" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/aW8udm9vZG9vLnBhcGVyMl9pY29uXzE3MjU2MzUxODJfMDc3/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Paper.io 2</div>
+        <a href="https://d.apkpure.com/b/XAPK/io.voodoo.paper2?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLm1pbmljbGlwLmVpZ2h0YmFsbHBvb2xfaWNvbl8xNTYxMzk3MjU5XzAyOQ/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">8 Ball Pool</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.miniclip.eightballpool?version=latest" class="download-btn">Descargar</a>
+    </div>
+   <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnlvZG8xLmNyb3NzeXJvYWRfaWNvbl8xNzE5ODg4MDE3XzA4Mw/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Crossy Road</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.yodo1.crossyroad?version=latest" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLkppbmRvQmx1LlR3b1BsYXllckdhbWVzQ2hhbGxlbmdlX2ljb25fMTYzNTg1MTY4NF8wOTM/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">2 Player games : the Challenge</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.JindoBlu.TwoPlayerGamesChallenge?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmRpc2NvcmRfaWNvbl8xNjI2ODI3OTExXzA0Nw/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Discord</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.discord?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmR0cy5mcmVlZmlyZW1heF9pY29uXzE3MzMyODU0NzdfMDAx/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Free Fire MAX</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.dts.freefiremax?version=latest" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/aW8uc3VwZXJjZW50LnBpenphaWRsZV9pY29uXzE3MzUwMTg2NjZfMDQy/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Pizza Ready!</div>
+        <a href="https://d.apkpure.com/b/APK/io.supercent.pizzaidle?version=latest" class="download-btn">Descargar</a>
+    </div>
+        <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnR3aXR0ZXIuYW5kcm9pZF9pY29uXzE2OTA0NTMzNTBfMDAw/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">X</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.twitter.android?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmNydW5jaHlyb2xsLmNydW5jaHlyb2lkX2ljb25fMTcyMzA0ODYyMF8wMzQ/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Crunchyroll</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.crunchyroll.crunchyroid?version=latest" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLm9wZXJhLmJyb3dzZXJfaWNvbl8xNzM4Njg1MzkzXzA5Mg/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Opera</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.opera.browser?version=latest" class="download-btn">Descargar</a>
+    </div>
+         <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnRhcGJsYXplLnBpenphYnVzaW5lc3NfaWNvbl8xNzA5OTQ0MDAwXzA2Ng/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Good Pizza, Great Pizza</div>
+        <a href="https://d.apkpure.com/b/APK/com.tapblaze.pizzabusiness?version=latest" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmJlcmVhbC5mdF9pY29uXzE2MDgxOTI3ODVfMDA1/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Be Real.</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.bereal.ft?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnNlZ2Euc29uaWNkYXNoX2ljb25fMTYwNjgyMTcxNV8wMTE/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Sonic Dash Endless Runner Game</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.sega.sonicdash?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmluc3RhZ3JhbS5iYXJjZWxvbmFfaWNvbl8xNjg4MjYzMjE4XzAyMg/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Threads</div>
+        <a href="https://d.apkpure.com/b/APK/com.instagram.barcelona?version=latest" class="download-btn">Descargar</a>
+    </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/b3JnLm1vemlsbGEuZmlyZWZveF9pY29uXzE1OTE3MjIwNDdfMDA1/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Firefox: navegador web privado </div>
+        <a href="https://d.apkpure.com/b/APK/org.mozilla.firefox?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmRpc25leS5kaXNuZXlwbHVzX2ljb25fMTcxNjk1MjU2OF8wMTc/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Disney+ </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.disney.disneyplus?version=latest" class="download-btn">Descargar</a>
+    </div>
+   <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLm9wZW5haS5jaGF0Z3B0X2ljb25fMTczODY5NDY0NV8wMjM/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">ChatGPT</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.openai.chatgpt?version=latest" class="download-btn">Descargar</a>
+    </div>
+       <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmdsb3ZvX2ljb25fMTU1OTU1Nzk0M18wMzE/icon.png?w=280&fakeurl=1" alt="App 3">
+        <div class="app-title">Glovo</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.glovo?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLm5ldGZsaXguTkdQLlByb2plY3RLcmFrZW5faWNvbl8xNzM0NDU2MTA3XzA4NA/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">El juego del calamar: Frenesí</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.netflix.NGP.ProjectKraken?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLndoYXRzYXBwX2ljb25fMTU1OTg1MDA2NF8wNjI/icon.png?w=212&fakeurl=1" alt="App 3">
+        <div class="app-title">WhatsApp</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.whatsapp?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/happymod.png?v=1727963785191" alt="App 2">
+        <div class="app-title">HappyMod</div>
+        <a href="https://www.dropbox.com/scl/fi/25f4cf188vl04ghjrxg05/HappyMod-2-9-3.apk?rlkey=r1oxkb9ahsuw769x9tc612w74&st=qhec19k0&dl=1" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/b3JnLnZpZGVvbGFuLnZsY19pY29uXzE1NTc1MDk0MTJfMDk1/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">VLC</div>
+        <a href="https://d.apkpure.com/b/APK/org.videolan.vlc?version=latest" class="download-btn">Descargar</a>
+    </div>
+   <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnNreXBlLnJhaWRlcl9pY29uXzE1NjYyOTg4ODRfMDI5/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Skype</div>
+        <a href="https://d.apkpure.com/b/APK/com.skype.raider?version=latest" class="download-btn">Descargar</a>
+    </div>
+     <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLnJvYnRvcHguZ2VvbWV0cnlqdW1wbGl0ZV9pY29uXzE1NjA5ODcxNThfMDE1/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Geometry Dash Lite</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.robtopx.geometryjumplite?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmFsaWJhYmEuYWxpZXhwcmVzc2hkX2ljb25fMTcyMTI5NzQ1N18wMTA/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">AliExpress</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.alibaba.aliexpresshd?version=latest" class="download-btn">Descargar</a>
+    </div>
+  <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/among-us.png?v=1738852422608" alt="App 2">
+        <div class="app-title">Among Us</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.innersloth.spacemafia?version=latest" class="download-btn">Descargar</a>
+    </div>
+<div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmZhY2Vib29rLm9yY2FfaWNvbl8xNjAyNjkxODU1XzA2NQ/icon.png?w=280&fakeurl=1" alt="App 2">
+        <div class="app-title">Messenger</div>
+        <a href="https://d.apkpure.com/b/APK/com.facebook.orca?version=latest" class="download-btn">Descargar</a>
+    </div>
+    <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/engadget.png?v=1727295366119" alt="App 1">
+        <div class="app-title">Erik OS App</div>
+        <a href="https://www.dropbox.com/scl/fo/dznvctuv8wu4xevo0g83n/AImYXXWXLVee4FO2lM6QCgQ?rlkey=46tyqleoeamxdpdbmjn03yr56&st=v2alumf9&dl=1" class="download-btn">Descargar</a>
+    </div>
+
+      <div class="app-card">
+
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Time%20Machine.png?v=1731580886504" alt="App 1">
+        <div class="app-title">Erik BackUP</div>
+        <a onclick="ErikBacknoApp()" class="download-btn">No disponible</a>
+    </div>
+      <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/SocialGram%20perfet%20icon.png?v=1733654515342" alt="App 1">
+        <div class="app-title">Social Gram</div>
+        <a href="https://www.dropbox.com/scl/fi/zazperd8w2bzlyzlwdq11/SocialGram_Installer.apk?rlkey=arxiegpz9bpk0z0bo2a0k2pwi&st=zgzhj3wt&dl=1" class="download-btn">Descargar</a>
+    </div>
+
+     <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/button%20png.png?v=1727964041691" alt="App 2">
+        <div class="app-title">Mando de Sonidos</div>
+        <a href="https://www.dropbox.com/scl/fi/w91sn2fyoo8iosmnjv3dw/Mando_ierik.apk?rlkey=1a2uf63kiuilsg2fz6kgrsoh7&st=445hlvnm&dl=1" class="download-btn">Descargar</a>
+    </div>
+    
+   
+          <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/button%20png.png?v=1727964041691" alt="App 2">
+        <div class="app-title">Buttons Game</div>
+        <a href="https://www.dropbox.com/scl/fi/6g0ciyukhlctkjz4ns8zi/ControlPanel-1.apk?rlkey=5ygwazwzf582l3xwa5dce5coc&st=tzpsc2mm&dl=1" class="download-btn">Descargar</a>
+    </div>
+ 
+    <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/ICONO%20GOOGLE%20PAY.png?v=1727963547564" alt="App 3">
+        <div class="app-title">Fake Google Pay</div>
+        <a onclick="copyApp()" class="download-btn">No disponible</a>
+    </div>
+       <div class="app-card">
+              <img src="https://img.icons8.com/ios_filled/512/FA5252/microsoft.png" alt="App 1">
+        <div class="app-title">Windows App Store</div>
+        <a href="search/windows.html" class="download-btn">Encuentra mas apps</a>
+    </div>
+    <div class="app-card">
+              <img src="https://cdn-icons-png.flaticon.com/512/33/33308.png" alt="App 1">
+        <div class="app-title">Fan made (comunidad)</div>
+        <a href="com.html" class="download-btn">Encuentra mas apps</a>
+    </div>
+
+    <!-- Agrega más tarjetas de aplicaciones según sea necesario -->
+</div>
+  
+
+
+  <script>  
+    function ErikBacknoApp() {
+    alert('La app a esperimentado una serie de bugs i se a marcado como no estable, por eso no la podras probar hasta que sea estable con todas sus funciones funcionando');
+    }
+</script>
+    <script>  
+    function FallerosnoApp() {
+    alert('La app a sido removida por el usuario');
+    }
+</script>
+    <script>
+        function searchApp() {
+            const query = document.getElementById('searchInput').value;
+            if (query) {
+                window.location.href = 'search/' + query + '.html';
+            } else {
+                alert('Por favor, ingresa el nombre de la aplicación.');
+            }
+        }
+    </script>
+<script>
+    // Obtener el parámetro 'name' de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombreUsuarioURL = urlParams.get('name');
+
+    // Elementos del DOM
+    const iniciarSesionBtn = document.getElementById('iniciarSesionBtn');
+    const perfilUsuario = document.getElementById('perfilUsuario');
+    const nombreUsuario = document.getElementById('nombreUsuario');
+    const menuOpciones = document.getElementById('menuOpciones');
+    const cerrarSesion = document.getElementById('cerrarSesion');
+    const descargas = document.getElementById('descargas');
+
+    // Verificar si ya hay un nombre de usuario en la URL
+    if (nombreUsuarioURL) {
+        // Si hay un nombre en la URL, mostrar la interfaz de usuario
+        mostrarPerfil(nombreUsuarioURL);
+    }
+
+    // Función que muestra la alerta de inicio de sesión
+    iniciarSesionBtn.addEventListener('click', function() {
+        // Redirigir a la página de inicio de sesión
+        window.location.href = 'https://erikaccount.glitch.me/logins/erikappstore.html';
+    });
+
+    // Función que muestra el perfil del usuario y oculta el botón de inicio de sesión
+    function mostrarPerfil(nombre) {
+        iniciarSesionBtn.style.display = 'none'; // Ocultar el botón
+        perfilUsuario.style.display = 'flex'; // Mostrar el perfil
+        nombreUsuario.textContent = nombre; // Mostrar el nombre
+    }
+
+    // Función para mostrar/ocultar el menú de opciones cuando se toca el perfil
+    perfilUsuario.addEventListener('click', function() {
+        menuOpciones.style.display = menuOpciones.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Cerrar sesión: eliminar el nombre guardado y reiniciar la página
+    cerrarSesion.addEventListener('click', function() {
+        // Redirigir a index.html sin parámetros
+        window.location.href = 'index.html';
+    });
+
+    // Redirigir a la página de descargas
+    descargas.addEventListener('click', function() {
+        // Verificar si el parámetro 'name' está presente en la URL
+        if (nombreUsuarioURL) {
+            window.location.href = 'descargas.html' + window.location.search; // Mantener el parámetro 'name'
+        } else {
+            window.location.href = 'index.html'; // Si no hay nombre, redirigir a index
+        }
+    });
+
+</script>
+   
+<script>
+function noApp() {
+    alert('App no disponible');
+}
+  
+  </script>
+  <script>
+function noApp1() {
+    alert('La app ha sido perdida entre nuestros servidores, eso ha sido culpa de que se movio a media fire, i los de media fire la eliminaron.');
+}
+  
+  </script>
+  <script>
+function copyApp() {
+    alert('Esta app infringe los terminos i condiciones de los creador, infringe copyright, una de las normas mas importantes en internet.');
+}
+  
+  </script>
+  <script>
+        // Función para mostrar el mensaje de bienvenida
+        window.onload = function() {
+            // Verifica si la clave 'visitado' ya está en localStorage
+            if (!localStorage.getItem('visitado')) {
+                // Si no existe, es la primera vez que visitan la página
+                alert('Bienvenido a la Erik App Store, la fuente de apps para android mas fiable, tambien hay una parte para instalar apps fiables, recolecta las apps originales para que no tengais que arriesgar en sitios no confiables, que aproveche👌.');
+                // Guardamos en localStorage que ya ha sido visitado
+                localStorage.setItem('visitado', 'true');
+            } else {
+                // Si la clave 'visitado' ya existe, no mostramos el mensaje
+                console.log('Ya has visitado esta página antes.');
+            }
+        };
+  </script>
+
+</body>
+</html>
