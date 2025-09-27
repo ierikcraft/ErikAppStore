@@ -1,1 +1,310 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791" type="image/png">
+    <title>Erik App Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <style>
+        /* Contenedor principal alineado a la derecha */
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #ff6961;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .app-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin: 15px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.2s; /* Animación al escalar */
+        }
+        .app-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .app-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .download-btn {
+            background-color: #ff6961;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.2s, transform 0.2s; /* Transición suave */
+        }
+        .download-btn:hover {
+            background-color: #ff6975; /* Color al pasar el mouse */
+            transform: scale(1.05); /* Escala al pasar el mouse */
+        }
+        .app-card:hover {
+            transform: scale(1.05); /* Escala la tarjeta al pasar el mouse */
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007aff;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+     .search-container {
+  
+            display: flex;
+            justify-content: center; /* Centra el contenido */
+            align-items: center; /* Centra el contenido verticalmente */
+            border-radius: 25px;
+       
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+ .search-container {
+  width: 100%; /* Ocupa todo el ancho disponible */
+  display: flex; /* Usamos flexbox para alinear los elementos */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+.search-container input {
+  width: 50%; /* El campo de búsqueda ocupará el 50% del ancho */
+  max-width: 600px; /* Limita el ancho máximo de la barra de búsqueda */
+  padding: 10px; /* Espaciado interno para que se vea más amplia */
+  margin-right: 10px; /* Espacio entre el input y el botón */
+}
+
+.search-container button {
+  padding: 10px 20px; /* Añade un poco de espacio alrededor del texto del botón */
+  cursor: pointer; /* Cambia el cursor a pointer cuando pases sobre el botón */
+}
+
+
+              input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            outline: none;
+            border-radius: 25px 0 0 25px;
+            font-size: 16px;
+            background-color: #fff;
+            transition: all 0.3s;
+        }
+
+        input[type="text"]:focus {
+            box-shadow: 0 0 5px #ff6975;
+        }
+             button {
+            padding: 15px;
+            border: none;
+            background-color: #ff6961;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 25px 25px 0;
+            transition: background-color 0.3s;
+        }
+       /* Contenedor principal alineado a la derecha */
+        body {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        /* Estilo del botón inicial */
+        .iniciar-sesion {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilo del contenedor que mostrará el nombre e icono */
+        .perfil {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative; /* Para posicionar el menú desplegable */
+        }
+
+        /* Estilo del ícono de usuario */
+        .perfil img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Estilo del menú desplegable */
+        .menu-opciones {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            list-style: none;
+            padding: 10px;
+            margin-top: 10px;
+            z-index: 1;
+        }
+
+        .menu-opciones li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .menu-opciones li:hover {
+            background-color: #f0f0f0;
+        }
+      
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Erik App Store for windows</h1>
+
+
+<!-- Contenedor que mostrará el nombre e icono del usuario -->
+<div class="perfil" id="perfilUsuario" style="display:none;">
+    <img src="https://cdn.glitch.global/d81feb0e-5571-4186-a9a0-76af988749be/Finder.png?v=1718642111168" alt="Icono de usuario">
+    <span id="nombreUsuario"></span>
+<head>
+      
+  </head>
+  
+    <!-- Menú desplegable -->
+    <ul class="menu-opciones" id="menuOpciones">
+        <li id="cerrarSesion">Cerrar sesión</li>
+        <li id="descargas">Descargas</li>
+    </ul>
+</div>
+</header>
+  <p>
+      
+  </p>
+   <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Buscar aplicaciones..." aria-label="Buscar aplicaciones">
+    <button onclick="searchApp()">Buscar</button>
+</div> 
+
+
+    
+<div class="container">
+  <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Icono%20cuadrado.png?v=1740505973552" alt="App 1">
+        <div class="app-title">Touch IT - Be fast!</div>
+        <a href="https://download1507.mediafire.com/3kxzdb77ersgofaD1lMAHIaNK3z-xJR4mTGY3vTdZHIM_fa6a6t98ftwLZZJfD_2BRAU3Qiag8BElkI1aOXNFRE56fCsThymxRH1bS0YoJxmP3RAWksTjR6qk4qMiOsJUh5GNc0aCfL4JVYf1lkXpm_CTw9NtjSOW_R17L6m754/l3nxjwaq92f6vke/Touch-IT+-+BETA.zip" class="download-btn">Descargar</a>
+    </div>  
+   
+ 
+
+    <!-- Agrega más tarjetas de aplicaciones según sea necesario -->
+</div>
+  
+ 
+
+  <script>  
+    function ErikBacknoApp() {
+    alert('La app a esperimentado una serie de bugs i se a marcado como no estable, por eso no la podras probar hasta que sea estable con todas sus funciones funcionando');
+    }
+</script>
+    <script>  
+    function FallerosnoApp() {
+    alert('La app a sido removida por el usuario');
+    }
+</script>
+    <script>
+        function searchApp() {
+            const query = document.getElementById('searchInput').value;
+            if (query) {
+                window.location.href = 'search/' + query + '.html';
+            } else {
+                alert('Por favor, ingresa el nombre de la aplicación.');
+            }
+        }
+    </script>
+<script>
+    // Obtener el parámetro 'name' de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombreUsuarioURL = urlParams.get('name');
+
+    // Elementos del DOM
+    const iniciarSesionBtn = document.getElementById('iniciarSesionBtn');
+    const perfilUsuario = document.getElementById('perfilUsuario');
+    const nombreUsuario = document.getElementById('nombreUsuario');
+    const menuOpciones = document.getElementById('menuOpciones');
+    const cerrarSesion = document.getElementById('cerrarSesion');
+    const descargas = document.getElementById('descargas');
+
+    // Verificar si ya hay un nombre de usuario en la URL
+    if (nombreUsuarioURL) {
+        // Si hay un nombre en la URL, mostrar la interfaz de usuario
+        mostrarPerfil(nombreUsuarioURL);
+    }
+
+    // Función que muestra la alerta de inicio de sesión
+    iniciarSesionBtn.addEventListener('click', function() {
+        // Redirigir a la página de inicio de sesión
+        window.location.href = 'https://erikaccount.glitch.me/logins/erikappstore.html';
+    });
+
+    // Función que muestra el perfil del usuario y oculta el botón de inicio de sesión
+    function mostrarPerfil(nombre) {
+        iniciarSesionBtn.style.display = 'none'; // Ocultar el botón
+        perfilUsuario.style.display = 'flex'; // Mostrar el perfil
+        nombreUsuario.textContent = nombre; // Mostrar el nombre
+    }
+
+    // Función para mostrar/ocultar el menú de opciones cuando se toca el perfil
+    perfilUsuario.addEventListener('click', function() {
+        menuOpciones.style.display = menuOpciones.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Cerrar sesión: eliminar el nombre guardado y reiniciar la página
+    cerrarSesion.addEventListener('click', function() {
+        // Redirigir a index.html sin parámetros
+        window.location.href = 'index.html';
+    });
+
+    // Redirigir a la página de descargas
+    descargas.addEventListener('click', function() {
+        // Verificar si el parámetro 'name' está presente en la URL
+        if (nombreUsuarioURL) {
+            window.location.href = 'descargas.html' + window.location.search; // Mantener el parámetro 'name'
+        } else {
+            window.location.href = 'index.html'; // Si no hay nombre, redirigir a index
+        }
+    });
+
+</script>
+<script>
+function noApp() {
+    alert('App no disponible');
+}
+  
+  </script>
+
+
+</body>
+</html>
