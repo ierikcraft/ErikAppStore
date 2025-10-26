@@ -8,6 +8,18 @@
 <link rel="icon" href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791" type="image/png" />
 <!-- Font Awesome para iconos -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- pon esto dentro del <head> de inicio.html -->
+<script>
+(function () {
+  // Comprueba el parámetro "enter" y redirige si no es "1"
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('enter') !== '1') {
+    // usa la URL absoluta para asegurar la redirección correcta
+    window.location.replace('https://erikappstore.vercel.app/banned.html');
+  }
+})();
+</script>
+
 <style>
   /* Reset y base */
   * {
