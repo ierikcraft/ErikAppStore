@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="google-adsense-account" content="ca-pub-6925115608826156">
+<title>Erik App Store</title>
+<link rel="icon" href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791" type="image/png" />
+<!-- Font Awesome para iconos -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- pon esto dentro del <head> de inicio.html -->
+
+
+<style>
+  /* Reset y base */
+  * {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: #f2f2f7;
+    color: #1c1c1e;
+    min-height: 100vh;
+    padding-bottom: 70px; /* espacio para barra inferior */
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  /* Header */
+  header {
+    background-color: #007aff;
+    color: white;
+    padding: 14px 20px;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  }
+  /* Search bar */
+  .search-bar {
+    margin: 12px 20px;
+    position: relative;
+  }
+  .search-bar input[type="search"] {
+    width: 100%;
+    padding: 12px 40px 12px 14px;
+    border-radius: 12px;
+    border: none;
+    background-color: #e5e5ea;
+    font-size: 17px;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+  .search-bar input[type="search"]:focus {
+    background-color: #d1d1d6;
+  }
+  .search-bar .fa-magnifying-glass {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8e8e93;
+    font-size: 18px;
+  }
+  /* Container apps */
+  .apps-container {
+    max-width: 960px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+  }
+  /* Mini blog style */
+  .mini-blog {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  }
+  .mini-blog h2 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 22px;
+    color: #007aff;
+  }
+  .mini-blog p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #3c3c4399;
+  }
+  /* App card inside mini blog */
+  .app-card {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e5e5ea;
+  }
+  .app-card:last-child {
+    border-bottom: none;
+  }
+  .app-card img {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    object-fit: cover;
+    margin-right: 14px;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  }
+  .app-info {
+    flex: 1;
+  }
+  .app-title {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 4px 0;
+  }
+  .app-desc {
+    font-size: 14px;
+    color: #6e6e73;
+  }
+  .download-btn {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 6px rgb(0 122 255 / 0.4);
+  }
+  .download-btn:hover {
+    background-color: #005bb5;
+  }
+  /* Barra inferior estilo iOS 18 */
+  nav.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #fff;
+    border-top: 1px solid #d1d1d6;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -1px 5px rgb(0 0 0 / 0.1);
+    z-index: 200;
+  }
+  nav.bottom-nav button {
+    background: none;
+    border: none;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 11px;
+    color: #8e8e93;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 6px 0;
+    width: 60px;
+  }
+  nav.bottom-nav button.active,
+  nav.bottom-nav button:hover {
+    color: #007aff;
+  }
+  nav.bottom-nav button i {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  /* Responsive */
+  @media (min-width: 600px) {
+    .app-card {
+      max-width: 600px;
+    }
+  }
+</style>
+<head>
+<body>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
+     crossorigin="anonymous"></script>
+<header>Erik App Store</header>
+
+<div class="search-bar">
+  <input type="search" id="searchInput" placeholder="Buscar aplicaciones..." aria-label="Buscar aplicaciones" />
+  <i class="fa fa-magnifying-glass"></i>
+</div>
+
+<div class="apps-container" id="appsContainer">
+  <!-- Mini blogs con apps -->
+  <section class="mini-blog" data-category="destacadas">
+    <h2>Apps Destacadas</h2>
+       <div class="app-card" data-name="Erik AI">
+      <img src="https://erikai.vercel.app/source/New%20logo%20in%20ErikAi.gif" alt="Erik AI" />
+      <div class="app-info">
+        <p class="app-title">ErikAI (COMPATIBLE CON IOS)</p>
+        <p class="app-desc">App de inteligencia artificial para ayudarte en tus tareas diarias.</p>
+         <a href="https://erikappstore.vercel.app/apptwo/api/erikai/erikai.html" class="download-btn" target="_blank" rel="noopener">Descargar</a>
+      </div>
+       </div>   
+  
+  </section>
+</div>
+
+<!-- Barra inferior estilo iOS -->
+<nav class="bottom-nav" role="navigation" aria-label="Barra de navegación principal">
+  <button id="navInicio" class="active" aria-current="page" aria-label="Inicio">
+    <i class="fa fa-house"></i>
+    <span>Inicio</span>
+  </button>
+  <button id="navBuscar" aria-label="Buscar">
+    <i class="fa fa-magnifying-glass"></i>
+    <span>Buscar</span>
+  </button>
+  <form action="library.html" method="get" style="margin:0; padding:0;">
+      <button id="navBiblioteca" aria-label="Biblioteca">
+    <i class="fa fa-box-archive"></i>
+    <span>Biblioteca</span>
+  </button>
+  </form>
+</nav>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
+     crossorigin="anonymous"></script>
+</head>
+
+<script>
+  // Filtrar apps en tiempo real según búsqueda
+  const searchInput = document.getElementById('searchInput');
+  const appsContainer = document.getElementById('appsContainer');
+  const miniBlogs = appsContainer.querySelectorAll('.mini-blog');
+
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+
+    miniBlogs.forEach(blog => {
+      let anyVisible = false;
+      const appCards = blog.querySelectorAll('.app-card');
+      appCards.forEach(card => {
+        const name = card.getAttribute('data-name').toLowerCase();
+        if (name.includes(query)) {
+          card.style.display = 'flex';
+          anyVisible = true;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      // Mostrar mini blog solo si tiene apps visibles
+      blog.style.display = anyVisible ? 'block' : 'none';
+    });
+  });
+
+  // Navegación barra inferior (solo efecto visual)
+  const navButtons = document.querySelectorAll('nav.bottom-nav button');
+  navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      navButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // Aquí puedes agregar lógica para cambiar vistas si quieres
+      if (btn.id === 'navBuscar') {
+        searchInput.focus();
+      }
+    });
+  });
+</script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
+     crossorigin="anonymous"></script>
+</body>
+</html>
