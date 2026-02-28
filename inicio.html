@@ -1,373 +1,1132 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<meta name="google-adsense-account" content="ca-pub-6925115608826156">
-<title>Erik App Store</title>
-<link rel="icon" href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791" type="image/png" />
-<!-- Font Awesome para iconos -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <!-- pon esto dentro del <head> de inicio.html -->
-
-
-<style>
-  /* Reset y base */
-  * {
-    box-sizing: border-box;
-  }
-  body, html {
-    margin: 0; padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    background-color: #f2f2f7;
-    color: #1c1c1e;
-    min-height: 100vh;
-    padding-bottom: 70px; /* espacio para barra inferior */
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  /* Header */
-  header {
-    background-color: #007aff;
-    color: white;
-    padding: 14px 20px;
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
-  }
-  /* Search bar */
-  .search-bar {
-    margin: 12px 20px;
-    position: relative;
-  }
-  .search-bar input[type="search"] {
-    width: 100%;
-    padding: 12px 40px 12px 14px;
-    border-radius: 12px;
-    border: none;
-    background-color: #e5e5ea;
-    font-size: 17px;
-    outline: none;
-    transition: background-color 0.3s;
-  }
-  .search-bar input[type="search"]:focus {
-    background-color: #d1d1d6;
-  }
-  .search-bar .fa-magnifying-glass {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #8e8e93;
-    font-size: 18px;
-  }
-  /* Container apps */
-  .apps-container {
-    max-width: 960px;
-    margin: 0 auto 80px auto;
-    padding: 0 20px;
-  }
-  /* Mini blog style */
-  .mini-blog {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-  }
-  .mini-blog h2 {
-    margin-top: 0;
-    font-weight: 700;
-    font-size: 22px;
-    color: #007aff;
-  }
-  .mini-blog p {
-    font-size: 16px;
-    line-height: 1.4;
-    color: #3c3c4399;
-  }
-  /* App card inside mini blog */
-  .app-card {
-    display: flex;
-    align-items: center;
-    margin-top: 14px;
-    padding: 10px 0;
-    border-bottom: 1px solid #e5e5ea;
-  }
-  .app-card:last-child {
-    border-bottom: none;
-  }
-  .app-card img {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    object-fit: cover;
-    margin-right: 14px;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-  }
-  .app-info {
-    flex: 1;
-  }
-  .app-title {
-    font-weight: 600;
-    font-size: 18px;
-    margin: 0 0 4px 0;
-  }
-  .app-desc {
-    font-size: 14px;
-    color: #6e6e73;
-  }
-  .download-btn {
-    background-color: #007aff;
-    color: white;
-    border: none;
-    border-radius: 14px;
-    padding: 8px 16px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 6px rgb(0 122 255 / 0.4);
-  }
-  .download-btn:hover {
-    background-color: #005bb5;
-  }
-  /* Barra inferior estilo iOS 18 */
-  nav.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: #fff;
-    border-top: 1px solid #d1d1d6;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 -1px 5px rgb(0 0 0 / 0.1);
-    z-index: 200;
-  }
-  nav.bottom-nav button {
-    background: none;
-    border: none;
-    outline: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 11px;
-    color: #8e8e93;
-    cursor: pointer;
-    transition: color 0.3s;
-    padding: 6px 0;
-    width: 60px;
-  }
-  nav.bottom-nav button.active,
-  nav.bottom-nav button:hover {
-    color: #007aff;
-  }
-  nav.bottom-nav button i {
-    font-size: 24px;
-    margin-bottom: 4px;
-  }
-  /* Responsive */
-  @media (min-width: 600px) {
-    .app-card {
-      max-width: 600px;
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <meta name="google-adsense-account" content="ca-pub-6925115608826156">
+  <title>Erik App Store</title>
+  <link rel="icon"
+    href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791"
+    type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="/script.js" defer></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
+    crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --bg-color: #000000;
+      --card-bg: rgba(28, 28, 30, 0.6);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #ffffff;
+      --text-muted: #8e8e93;
+      --accent: #0a84ff;
+      --accent-hover: #0070e0;
+      --nav-bg: rgba(0, 0, 0, 0.85);
     }
-  }
-</style>
-<head>
-<body>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
-     crossorigin="anonymous"></script>
-<header>Erik App Store</header>
 
-<div class="search-bar">
-  <input type="search" id="searchInput" placeholder="Buscar aplicaciones..." aria-label="Buscar aplicaciones" />
-  <i class="fa fa-magnifying-glass"></i>
-</div>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-<div class="apps-container" id="appsContainer">
-  <!-- Mini blogs con apps -->
-  <section class="mini-blog" data-category="destacadas">
-    <h2>Apps Destacadas</h2>
-        <div class="app-card" data-name="ErikMail">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAH2AfYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1eiiiuw4wooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigApaltolkfBOK0l0+Ij1pOaW5Si3sZFJW1/Z0XpR/Z0XpUe0iPkZi0Vs/2bF6Uv9nRe9HtEPkkYtFbB0yL3pP7Mj9TR7RBySMiitf+zI/U0f2ZH6mj2iFySMiitf8AsyP1NH9mR+po9og5JGRRWv8A2ZH6mj+zI/U0e0QckjIorX/syP1NH9mR+po9oh8kjIorVOlp2Yik/sxf7xp+0iLkkZdFan9mL/eNH9mL/eNHtIhySMuitT+zF/vGj+zF/vGj2kQ5JGXRWp/Zi/3jR/Zi/wB40e0iHJIy6K1P7MX+8aP7LHZqPaRDkkZdFaf9lf7dH9lf7dHtIhyyMyitI6Ww6MKqT2jwDJII9qamnsLlaIKKKMVQgooooEFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVPbQGZyPSoK0NKGXf2FTKVkVFXditLC8EnoO1XbO75COauzQJMpBrGlia3kYc4B4NZX5jS3Lsb/AFFGKzrO8DAI/wCBrQByKzasaJ3Cig0UiwooooAKKKKACiiigAooooAKKKKACjFFFMAxRiiigAxRiiigAxRiiigAxRRQKACilxTJJFRck4oEDuEUk8Csa7ut8hUHg067vGlJVTxRaWbSEOw49K0iktzKTvoisYHEe/bxTM1tzoFt2AA4FYh61pGVzNxa3EoooqyAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACtLSRzIazTWnpP/LSs6mxpT+I06guLdZlwRzU9FYJ2NmrmDLE9u/p6Ves7zcAjmrM9usyYI5rIkjeCQjGMdKu6ZFmmbwORkUVQtLwNhGPSr+QelQ1Y0TuFFFFIoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoHWimuyou4nAFAnoLJII1yaxbu5aRyoPFPurppmIBwBTrS0L4dhWsVZXZm5X0Qy0si5Dv0rXRAqgDpSIgQYAp2aiTuVGJDdD9w9YJ61v3I/0dvpWAetXTIqCUUUVuYBRRRQAppKU0lABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABWlpQ+dz221m1p6V95/pWdTY0p/EadFAornOhBUE9usynPWp6KadgaTMCVHglIPHPBrQs7sMoRjzVi4t1mQ5HNY7o9vLg8elaKzRk7o3wciiqFpdhwFJ5q8DkZFZtWNE7i0UUUigooooAKKKKACiiigAooooAKKKKACiiigAoopkkixrknFMTdgklWNSx6Vj3V200m0ZA9KLm6MzlRwKls7MsQ8g+lWkkrszcm9EFpZs5Dyfd7CtVECjAGBQiBRgdKdjFS5XKjGwUmKU0lSWR3P8Ax7t9K54/eNb90cW7/SufPWtaZjVCiiitzAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArU0zqay61NM6ms6mxpT+I0hRQKK5zoQUUUUDFqvc26zIeOasA0daadiWrnPSI9vJ3ArRs7sMoRjVi5tlmU8DNY7o8EhHTFaXTRmk07m/wBsiiqFleBwFY81frNqxoncKKKKRQUUUUAFFFFABRRRQAUUUCgAopcVFJKsakk0JXFewSyLEhYnFY89y07HBwvakurlp5NoJxngVPaWZYh37dBWiVkZNtuyCzsySJHH0FaoUKMAcUKuABTs1Ddy4xsJTh0ptOHSkUIaSlNJQMgvP+PV/pWCetb95/x6v9KwD1ralsY1RKKKK2MAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACtTTOprLrU0zqazqbGlP4jSFFAornOhBRRRQMKKKKAAVXurdZkPHNWKDgDmmnYmSuc86PBJg8elalpeCUBW4YVBqMiFQoA3Vno5Ugg8itLcyM72Z0lFU7K7EiBWPNXO2RWbVjVO4UUUUhhRRRQAUUUUAFLSVHLKsS7mOKEriYTTLEhJI4rFuLh532jpTrm4M8m0H5abbbBON1aqNlcycr6FqzssfO45NaaKFFImCox0p2ahyuXFAaKKUVJYlOopM0CA0lGaKBkF3/x6v8ASsE9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UAFFFFABRRRRYAooooAKKKKBhRRRQAZozRRRZAFFFFFkIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="Erik Search" />
-      <div class="app-info">
-        <p class="app-title">Erik Mail (COMPATIBLE CON IOS)</p>
-        <p class="app-desc">App de mails de Erik.</p>
-      </div>
-            <div class="app-card" data-name="ErikMail">
-      <img src="https://developer.apple.com/assets/elements/icons/shareplay/shareplay-128x128_2x.png" alt="SharePlay" />
-      <div class="app-info">
-        <p class="app-title">SharePlay </p>
-        <p class="app-desc">Recibe contenido con SharePlay (Android i TV).</p>
-      </div>
-      <a href="SharePlayInstaller.apk" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-       </div>
-        <div class="app-card" data-name="ErikSearch">
-      <img src="data:image/jpeg;base64,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" alt="Erik Search" />
-      <div class="app-info">
-        <p class="app-title">ErikChat (COMPATIBLE CON IOS)</p>
-        <p class="app-desc">App de mensajes perfecta para ti.</p>
-      </div>
-      <a href="https://erikappstore.vercel.app/apptwo/api/erikchat/erikchat.html" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-       </div>
-    <div class="app-card" data-name="ErikSearch">
-      <img src="https://cdn.glitch.global/1978d8e0-5613-45c1-8413-2938417819a9/ErikSearch_logo-removebg-preview.png?v=1733161461974" alt="Erik Search" />
-      <div class="app-info">
-        <p class="app-title">Erik Search (COMPATIBLE CON IOS)</p>
-        <p class="app-desc">App de busquedas perfecta para ti.</p>
-      </div>
-      <a href="https://erikappstore.vercel.app/apptwo/api/eriksearch/install.html" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-       </div>
-       <div class="app-card" data-name="Erik AI">
-      <img src="https://erikai.vercel.app/source/New%20logo%20in%20ErikAi.gif" />
-      <div class="app-info">
-        <p class="app-title">ErikAI (COMPATIBLE CON IOS)</p>
-        <p class="app-desc">App de inteligencia artificial para ayudarte en tus tareas diarias.</p>
-         <a href="https://erikappstore.vercel.app/apptwo/api/erikai/erikai.html" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-      </div>
-       </div>   
-    
-    <div class="app-card" data-name="Null's Brawl">
-      <img src="https://coimobile.io/uploads/2024/8/nulls-brawl-icon.jpg" alt="Null's Brawl" />
-      <div class="app-info">
-        <p class="app-title">Null's Brawl</p>
-        <p class="app-desc">Versión modificada del popular juego Brawl Stars.</p>
-      </div>
-      <a href="https://www.dropbox.com/scl/fi/pnel34vkcf0foesh8tvt5/nb_59.197_fp.apk?rlkey=rwog5ighq2qlksxds2p3ciz3z&st=xj5v3tym&dl=1" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-    </div>
+    body,
+    html {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 90px;
+    }
 
-    <div class="app-card" data-name="Capcut">
-      <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/capcut%20icono.png?v=1727981874841" alt="Capcut" />
-      <div class="app-info">
-        <p class="app-title">Capcut</p>
-        <p class="app-desc">Editor de video fácil y potente para crear contenido.</p>
-      </div>
-      <a href="https://www.dropbox.com/scl/fi/l3dj4cva01ktzvv3ptp71/com-mod-download-capcut-video-editor-13-7-0-13700100.apk?rlkey=rolwn9i2f53enhv6xprig478c&st=guue9dh7&dl=1" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-    </div>
-  </section>
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  <section class="mini-blog" data-category="juegos">
-    <h2>Juegos Populares</h2>
-    <div class="app-card" data-name="Minecraft">
-      <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Minecraft.png?v=1727295741216" alt="Minecraft" />
-      <div class="app-info">
-        <p class="app-title">Minecraft</p>
-        <p class="app-desc">Construye y explora mundos infinitos.</p>
-      </div>
-      <a href="https://erikappstore.vercel.app/payments/minecraft.html" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-    </div>
-    <div class="app-card" data-name="TikTok">
-      <img src="https://image.winudf.com/v2/image1/Y29tLnpoaWxpYW9hcHAubXVzaWNhbGx5X2ljb25fMTY4OTkyNjIwM18wMDg/icon.png?w=280&fakeurl=1" alt="TikTok" />
-      <div class="app-info">
-        <p class="app-title">TikTok</p>
-        <p class="app-desc">Videos cortos y virales para entretenerte.</p>
-      </div>
-      <a href="https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-    </div>
-    <div class="app-card" data-name="Roblox">
-      <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/0/e/e/0eeeb19633422b1241f4306419a0f15f39d58de9.png" alt="Roblox" />
-      <div class="app-info">
-        <p class="app-title">Roblox</p>
-        <p class="app-desc">Crea y juega en mundos virtuales.</p>
-      </div>
-      <a href="https://d.apkpure.com/b/XAPK/com.roblox.client?versionCode=1750" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-    </div>
-  </section>
+    /* Background Blurs / Glassmorphism */
+    .blur-blob-1 {
+      position: fixed;
+      top: -100px;
+      left: -100px;
+      width: 300px;
+      height: 300px;
+      background: rgba(10, 132, 255, 0.3);
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      pointer-events: none;
+    }
 
-  <section class="mini-blog" data-category="utilidades">
-    <h2>Apps de Utilidad</h2>
-    <div class="app-card" data-name="Discord">
-      <img src="https://image.winudf.com/v2/image1/Y29tLmRpc2NvcmRfaWNvbl8xNjI2ODI3OTExXzA0Nw/icon.png?w=280&fakeurl=1" alt="Discord" />
-      <div class="app-info">
-        <p class="app-title">Discord</p>
-        <p class="app-desc">Chat y voz para comunidades y gamers.</p>
-      </div>
-      <a href="https://d.apkpure.com/b/XAPK/com.discord?version=latest" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-    </div>
+    .blur-blob-2 {
+      position: fixed;
+      bottom: 100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: rgba(142, 142, 147, 0.2);
+      border-radius: 50%;
+      filter: blur(100px);
+      z-index: -1;
+      pointer-events: none;
+    }
 
-    <div class="app-card" data-name="Spotify">
-      <img src="https://image.winudf.com/v2/image1/Y29tLnNwb3RpZnkubXVzaWNfaWNvbl8xNzE2NDYwMTQ4XzA0Nw/icon.png?w=280&fakeurl=1" alt="Spotify" />
-      <div class="app-info">
-        <p class="app-title">Spotify música y podcasts</p>
-        <p class="app-desc">Escucha tu música favorita y podcasts.</p>
-      </div>
-      <a href="https://d.apkpure.com/b/APK/com.spotify.music?version=latest" class="download-btn" target="_blank" rel="noopener">Descargar</a>
-    </div>
-  </section>
-</div>
+    /* Header */
+    header {
+      padding: 24px 20px 10px;
+      font-size: 28px;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--card-border);
+    }
 
-<!-- Barra inferior estilo iOS -->
-<nav class="bottom-nav" role="navigation" aria-label="Barra de navegación principal">
-  <button id="navInicio" class="active" aria-current="page" aria-label="Inicio">
-    <i class="fa fa-house"></i>
-    <span>Inicio</span>
-  </button>
-  <button id="navBuscar" aria-label="Buscar">
-    <i class="fa fa-magnifying-glass"></i>
-    <span>Buscar</span>
-  </button>
-  <form action="library.html" method="get" style="margin:0; padding:0;">
-      <button id="navBiblioteca" aria-label="Biblioteca">
-    <i class="fa fa-box-archive"></i>
-    <span>Biblioteca</span>
-  </button>
-  </form>
-</nav>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
-     crossorigin="anonymous"></script>
+    header span {
+      color: var(--accent);
+    }
+
+    /* Search */
+    .search-bar {
+      margin: 16px 20px;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 14px 44px 14px 18px;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .search-bar input:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.3);
+    }
+
+    .search-bar input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-bar i {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 18px;
+      pointer-events: none;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 24px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Featured Carousel */
+    .featured-container {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .featured-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .featured-card {
+      min-width: 280px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      background: linear-gradient(145deg, rgba(30, 30, 32, 0.8) 0%, rgba(20, 20, 22, 0.8) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: radial-gradient(circle at top, rgba(10, 132, 255, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .featured-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 22px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      object-fit: cover;
+    }
+
+    .featured-card .featured-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 8px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 10px rgba(10, 132, 255, 0.5);
+    }
+
+    .featured-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .featured-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+
+    .featured-card .btn {
+      width: 100%;
+      border-radius: 12px;
+      padding: 10px;
+    }
+
+    /* App List */
+    .app-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .app-item {
+      display: flex;
+      align-items: center;
+      padding: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      transition: transform 0.2s, background 0.2s;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .app-item:active {
+      transform: scale(0.98);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .app-item img {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      margin-right: 14px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .app-info {
+      flex: 1;
+      min-width: 0;
+      margin-right: 10px;
+    }
+
+    .app-info h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .app-info p {
+      font-size: 13px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-align: center;
+      display: inline-block;
+      min-width: 90px;
+    }
+
+    .btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(10, 132, 255, 0.4);
+    }
+
+    /* Bottom Nav */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding-bottom: max(10px, env(safe-area-inset-bottom));
+      z-index: 200;
+      box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      font-family: inherit;
+      width: 33.33%;
+      padding: 10px 0;
+      transition: color 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .nav-item i {
+      font-size: 22px;
+      margin-bottom: 4px;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .nav-item span {
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .nav-item.active {
+      color: var(--accent);
+    }
+
+    .nav-item.active i {
+      transform: scale(1.15);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    #noResults {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      display: none;
+    }
+
+    #noResults i {
+      font-size: 40px;
+      margin-bottom: 10px;
+      opacity: 0.5;
+    }
+  </style>
 </head>
 
-<script>
-  // Filtrar apps en tiempo real según búsqueda
-  const searchInput = document.getElementById('searchInput');
-  const appsContainer = document.getElementById('appsContainer');
-  const miniBlogs = appsContainer.querySelectorAll('.mini-blog');
+<body>
 
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase().trim();
+  <div class="blur-blob-1"></div>
+  <div class="blur-blob-2"></div>
 
-    miniBlogs.forEach(blog => {
+  <header>Erik <span>Store</span></header>
+
+  <div class="search-bar">
+    <input type="search" id="searchInput" placeholder="Juegos, apps, utilidades..." aria-label="Buscar aplicaciones">
+    <i class="fa fa-magnifying-glass"></i>
+  </div>
+
+  <div class="container">
+    <div id="featuredSection">
+      <div class="section-title"><i class="fa-solid fa-star" style="color:#ffd60a;"></i> Destacadas</div>
+      <div class="featured-container" id="featuredContainer">
+        <!-- JS will populate 3 random apps here -->
+      </div>
+    </div>
+
+    <div class="section-title" id="allAppsTitle"><i class="fa-solid fa-layer-group" style="color:var(--accent);"></i>
+      Todas las Apps</div>
+
+    <div class="app-list" id="appList">
+      <div class="app-item" data-name="erik mail">
+        <img src="https://img.icons8.com/ios-filled/512/007AFF/mac-mail.png" alt="Erik Mail">
+        <div class="app-info">
+          <h4>Erik Mail (iOS)</h4>
+          <p>App de mails de Erik.</p>
+        </div>
+        <a onclick="alert('No disponible por ahora')" class="btn">Próximamente</a>
+      </div>
+
+      <div class="app-item" data-name="shareplay">
+        <img src="https://developer.apple.com/assets/elements/icons/shareplay/shareplay-128x128_2x.png" alt="SharePlay">
+        <div class="app-info">
+          <h4>SharePlay</h4>
+          <p>Recibe contenido con SharePlay.</p>
+        </div>
+        <a href="SharePlayInstaller.apk" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="erikchat">
+        <img src="https://cdn.glitch.global/1978d8e0-5613-45c1-8413-2938417819a9/ErikSearch_logo-removebg-preview.png"
+          alt="ErikChat">
+        <div class="app-info">
+          <h4>ErikChat (iOS)</h4>
+          <p>App de mensajes perfecta para ti.</p>
+        </div>
+        <a href="https://erikappstore.vercel.app/apptwo/api/erikchat/erikchat.html" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="erik search">
+        <img
+          src="https://cdn.glitch.global/1978d8e0-5613-45c1-8413-2938417819a9/ErikSearch_logo-removebg-preview.png?v=1733161461974"
+          alt="Erik Search">
+        <div class="app-info">
+          <h4>Erik Search (iOS)</h4>
+          <p>App de busquedas perfecta para ti.</p>
+        </div>
+        <a href="https://erikappstore.vercel.app/apptwo/api/eriksearch/install.html" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="erik ai">
+        <img src="https://erikai.vercel.app/source/New%20logo%20in%20ErikAi.gif" alt="Erik AI">
+        <div class="app-info">
+          <h4>ErikAI (iOS)</h4>
+          <p>Tu asistente virtual de IA.</p>
+        </div>
+        <a href="https://erikappstore.vercel.app/apptwo/api/erikai/erikai.html" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="nulls brawl">
+        <img src="https://coimobile.io/uploads/2024/8/nulls-brawl-icon.jpg" alt="Null's Brawl">
+        <div class="app-info">
+          <h4>Null's Brawl</h4>
+          <p>Versión modificada de Brawl Stars.</p>
+        </div>
+        <a href="https://www.dropbox.com/scl/fi/pnel34vkcf0foesh8tvt5/nb_59.197_fp.apk?rlkey=rwog5ighq2qlksxds2p3ciz3z&st=xj5v3tym&dl=1"
+          class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="capcut">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/capcut%20icono.png?v=1727981874841"
+          alt="Capcut">
+        <div class="app-info">
+          <h4>Capcut</h4>
+          <p>Editor de video fácil y potente.</p>
+        </div>
+        <a href="https://www.dropbox.com/scl/fi/l3dj4cva01ktzvv3ptp71/com-mod-download-capcut-video-editor-13-7-0-13700100.apk?rlkey=rolwn9i2f53enhv6xprig478c&st=guue9dh7&dl=1"
+          class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="minecraft">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Minecraft.png?v=1727295741216"
+          alt="Minecraft">
+        <div class="app-info">
+          <h4>Minecraft</h4>
+          <p>Construye y explora mundos.</p>
+        </div>
+        <a href="https://erikappstore.vercel.app/payments/minecraft.html" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="tiktok">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnpoaWxpYW9hcHAubXVzaWNhbGx5X2ljb25fMTY4OTkyNjIwM18wMDg/icon.png?w=280&fakeurl=1"
+          alt="TikTok">
+        <div class="app-info">
+          <h4>TikTok</h4>
+          <p>Videos cortos y virales.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="roblox">
+        <img
+          src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/0/e/e/0eeeb19633422b1241f4306419a0f15f39d58de9.png"
+          alt="Roblox">
+        <div class="app-info">
+          <h4>Roblox</h4>
+          <p>Crea y juega en mundos virtuales.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.roblox.client?versionCode=1750" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="emulador damonps2">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmRhbW9ucGxheS5kYW1vbnBzMi5mcmVlX2ljb25fMTU1NTU2MDE5OF8wNTA/icon.png?w=280&fakeurl=1"
+          alt="Emulador de PS2">
+        <div class="app-info">
+          <h4>Emulador de PS2 DamonPS2</h4>
+          <p>Juega juegos de consola.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.damonplay.damonps2.free?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="generador qr">
+        <img
+          src="https://image.winudf.com/v2/image1/cXJjb2RlZ2VuZXJhdG9yLnFyY3JlYXRvci5xcm1ha2VyLmNyZWF0ZXFyY29kZV9pY29uXzE3MjI5NjA2NTFfMDQ1/icon.png?w=280&fakeurl=1"
+          alt="Generador de QR">
+        <div class="app-info">
+          <h4>Generador de QR</h4>
+          <p>App generador de Codigo QR.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/qrcodegenerator.qrcreator.qrmaker.createqrcode?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="spotify">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnNwb3RpZnkubXVzaWNfaWNvbl8xNzE2NDYwMTQ4XzA0Nw/icon.png?w=280&fakeurl=1"
+          alt="Spotify">
+        <div class="app-info">
+          <h4>Spotify</h4>
+          <p>Música y podcasts sin límite.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.spotify.music?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="brawl stars">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnN1cGVyY2VsbC5icmF3bHN0YXJzX2ljb25fMTczMzgxNTE5Nl8wMzg/icon.png?w=280&fakeurl=1"
+          alt="Brawl Stars">
+        <div class="app-info">
+          <h4>Brawl Stars</h4>
+          <p>Batallas 3v3 y más rápidas.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.supercell.brawlstars?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="snapchat">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnNuYXBjaGF0LmFuZHJvaWRfaWNvbl8xNTY2ODQ0NzEzXzA4Nw/icon.png?w=280&fakeurl=1"
+          alt="Snapchat">
+        <div class="app-info">
+          <h4>Snapchat</h4>
+          <p>Comparte momentos al instante.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.snapchat.android?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="instagram">
+        <img src="https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid" alt="Instagram">
+        <div class="app-info">
+          <h4>Instagram</h4>
+          <p>Comparte fotos y videos.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.instagram.android?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="twitch">
+        <img
+          src="https://image.winudf.com/v2/image1/dHYudHdpdGNoLmFuZHJvaWQuYXBwX2ljb25fMTczNzQ4Mzk2Ml8wMjE/icon.png?w=280&fakeurl=1"
+          alt="Twitch">
+        <div class="app-info">
+          <h4>Twitch</h4>
+          <p>Transmisiones en vivo de juegos.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/tv.twitch.android.app?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="rompecabezas tuerca y perno">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmZjLm51dC5zY3Jldy5ib2x0Lndhc2hlci5mYXN0ZW5lci5wdXp6bGVfaWNvbl8xNzA5MTQ3Njk3XzA1Mg/icon.png?w=280&fakeurl=1"
+          alt="Rompecabezas: Tuerca y perno">
+        <div class="app-info">
+          <h4>Tuerca y perno</h4>
+          <p>Juego de Rompecabezas.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.fc.nut.screw.bolt.washer.fastener.puzzle?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="subway surfers">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmtpbG9vLnN1YndheXN1cmZfaWNvbl8xNzM3OTYzNzMyXzA5Mg/icon.png?w=280&fakeurl=1"
+          alt="Subway Surfers">
+        <div class="app-info">
+          <h4>Subway Surfers</h4>
+          <p>Corre sin parar.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.kiloo.subwaysurf?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="paper.io 2">
+        <img
+          src="https://image.winudf.com/v2/image1/aW8udm9vZG9vLnBhcGVyMl9pY29uXzE3MjU2MzUxODJfMDc3/icon.png?w=280&fakeurl=1"
+          alt="Paper.io 2">
+        <div class="app-info">
+          <h4>Paper.io 2</h4>
+          <p>Conquista territorio.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/io.voodoo.paper2?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="8 ball pool">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLm1pbmljbGlwLmVpZ2h0YmFsbHBvb2xfaWNvbl8xNTYxMzk3MjU5XzAyOQ/icon.png?w=280&fakeurl=1"
+          alt="8 Ball Pool">
+        <div class="app-info">
+          <h4>8 Ball Pool</h4>
+          <p>Juega al billar.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.miniclip.eightballpool?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="crossy road">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnlvZG8xLmNyb3NzeXJvYWRfaWNvbl8xNzE5ODg4MDE3XzA4Mw/icon.png?w=280&fakeurl=1"
+          alt="Crossy Road">
+        <div class="app-info">
+          <h4>Crossy Road</h4>
+          <p>Cruza la calle.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.yodo1.crossyroad?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="2 player games the challenge">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLkppbmRvQmx1LlR3b1BsYXllckdhbWVzQ2hhbGxlbmdlX2ljb25fMTYzNTg1MTY4NF8wOTM/icon.png?w=280&fakeurl=1"
+          alt="2 Player games">
+        <div class="app-info">
+          <h4>2 Player games</h4>
+          <p>Mini juegos para dos.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.JindoBlu.TwoPlayerGamesChallenge?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="discord">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmRpc2NvcmRfaWNvbl8xNjI2ODI3OTExXzA0Nw/icon.png?w=280&fakeurl=1"
+          alt="Discord">
+        <div class="app-info">
+          <h4>Discord</h4>
+          <p>Chat para gamers.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.discord?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="free fire max">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmR0cy5mcmVlZmlyZW1heF9pY29uXzE3MzMyODU0NzdfMDAx/icon.png?w=280&fakeurl=1"
+          alt="Free Fire MAX">
+        <div class="app-info">
+          <h4>Free Fire MAX</h4>
+          <p>Batallas épicas.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.dts.freefiremax?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="pizza ready">
+        <img
+          src="https://image.winudf.com/v2/image1/aW8uc3VwZXJjZW50LnBpenphaWRsZV9pY29uXzE3MzUwMTg2NjZfMDQy/icon.png?w=280&fakeurl=1"
+          alt="Pizza Ready!">
+        <div class="app-info">
+          <h4>Pizza Ready!</h4>
+          <p>Juego de pizzería.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/io.supercent.pizzaidle?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="x twitter">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnR3aXR0ZXIuYW5kcm9pZF9pY29uXzE2OTA0NTMzNTBfMDAw/icon.png?w=280&fakeurl=1"
+          alt="X">
+        <div class="app-info">
+          <h4>X (Twitter)</h4>
+          <p>Red social.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.twitter.android?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="crunchyroll">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmNydW5jaHlyb2xsLmNydW5jaHlyb2lkX2ljb25fMTcyMzA0ODYyMF8wMzQ/icon.png?w=280&fakeurl=1"
+          alt="Crunchyroll">
+        <div class="app-info">
+          <h4>Crunchyroll</h4>
+          <p>Anime y manga.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.crunchyroll.crunchyroid?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="opera">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLm9wZXJhLmJyb3dzZXJfaWNvbl8xNzM4Njg1MzkzXzA5Mg/icon.png?w=280&fakeurl=1"
+          alt="Opera">
+        <div class="app-info">
+          <h4>Opera</h4>
+          <p>Navegador web.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.opera.browser?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="good pizza great pizza">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnRhcGJsYXplLnBpenphYnVzaW5lc3NfaWNvbl8xNzA5OTQ0MDAwXzA2Ng/icon.png?w=280&fakeurl=1"
+          alt="Good Pizza">
+        <div class="app-info">
+          <h4>Good Pizza</h4>
+          <p>Haz las mejores pizzas.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.tapblaze.pizzabusiness?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="be real">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmJlcmVhbC5mdF9pY29uXzE2MDgxOTI3ODVfMDA1/icon.png?w=280&fakeurl=1"
+          alt="Be Real.">
+        <div class="app-info">
+          <h4>Be Real.</h4>
+          <p>Auténtico tú.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.bereal.ft?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="sonic dash endless runner game">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnNlZ2Euc29uaWNkYXNoX2ljb25fMTYwNjgyMTcxNV8wMTE/icon.png?w=280&fakeurl=1"
+          alt="Sonic Dash">
+        <div class="app-info">
+          <h4>Sonic Dash</h4>
+          <p>Corre con Sonic.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.sega.sonicdash?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="threads">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmluc3RhZ3JhbS5iYXJjZWxvbmFfaWNvbl8xNjg4MjYzMjE4XzAyMg/icon.png?w=280&fakeurl=1"
+          alt="Threads">
+        <div class="app-info">
+          <h4>Threads</h4>
+          <p>Plataforma de texto.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.instagram.barcelona?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="firefox navegador web privado">
+        <img
+          src="https://image.winudf.com/v2/image1/b3JnLm1vemlsbGEuZmlyZWZveF9pY29uXzE1OTE3MjIwNDdfMDA1/icon.png?w=280&fakeurl=1"
+          alt="Firefox">
+        <div class="app-info">
+          <h4>Firefox</h4>
+          <p>Navegador web privado.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/org.mozilla.firefox?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="disney plus +">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmRpc25leS5kaXNuZXlwbHVzX2ljb25fMTcxNjk1MjU2OF8wMTc/icon.png?w=280&fakeurl=1"
+          alt="Disney+">
+        <div class="app-info">
+          <h4>Disney+</h4>
+          <p>Tus películas favoritas.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.disney.disneyplus?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="chatgpt">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLm9wZW5haS5jaGF0Z3B0X2ljb25fMTczODY5NDY0NV8wMjM/icon.png?w=280&fakeurl=1"
+          alt="ChatGPT">
+        <div class="app-info">
+          <h4>ChatGPT</h4>
+          <p>La IA de OpenAI.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.openai.chatgpt?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="glovo">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmdsb3ZvX2ljb25fMTU1OTU1Nzk0M18wMzE/icon.png?w=280&fakeurl=1"
+          alt="Glovo">
+        <div class="app-info">
+          <h4>Glovo</h4>
+          <p>Pide lo que quieras.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.glovo?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="el juego del calamar frenesi">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLm5ldGZsaXguTkdQLlByb2plY3RLcmFrZW5faWNvbl8xNzM0NDU2MTA3XzA4NA/icon.png?w=280&fakeurl=1"
+          alt="El juego del calamar: Frenesí">
+        <div class="app-info">
+          <h4>Squid Game Frenzy</h4>
+          <p>Juego de Netflix.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.netflix.NGP.ProjectKraken?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="whatsapp">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLndoYXRzYXBwX2ljb25fMTU1OTg1MDA2NF8wNjI/icon.png?w=212&fakeurl=1"
+          alt="WhatsApp">
+        <div class="app-info">
+          <h4>WhatsApp</h4>
+          <p>Mensajería instantánea.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.whatsapp?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="happymod">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/happymod.png?v=1727963785191"
+          alt="HappyMod">
+        <div class="app-info">
+          <h4>HappyMod</h4>
+          <p>Tienda de mods.</p>
+        </div>
+        <a href="https://www.dropbox.com/scl/fi/25f4cf188vl04ghjrxg05/HappyMod-2-9-3.apk?rlkey=r1oxkb9ahsuw769x9tc612w74&st=qhec19k0&dl=1"
+          class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="vlc">
+        <img
+          src="https://image.winudf.com/v2/image1/b3JnLnZpZGVvbGFuLnZsY19pY29uXzE1NTc1MDk0MTJfMDk1/icon.png?w=280&fakeurl=1"
+          alt="VLC">
+        <div class="app-info">
+          <h4>VLC</h4>
+          <p>Reproductor de medios.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/org.videolan.vlc?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="skype">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnNreXBlLnJhaWRlcl9pY29uXzE1NjYyOTg4ODRfMDI5/icon.png?w=280&fakeurl=1"
+          alt="Skype">
+        <div class="app-info">
+          <h4>Skype</h4>
+          <p>Videollamadas y chat.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.skype.raider?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="geometry dash lite">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnJvYnRvcHguZ2VvbWV0cnlqdW1wbGl0ZV9pY29uXzE1NjA5ODcxNThfMDE1/icon.png?w=280&fakeurl=1"
+          alt="Geometry Dash Lite">
+        <div class="app-info">
+          <h4>Geometry Dash Lite</h4>
+          <p>Salta y vuela.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.robtopx.geometryjumplite?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="aliexpress">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmFsaWJhYmEuYWxpZXhwcmVzc2hkX2ljb25fMTcyMTI5NzQ1N18wMTA/icon.png?w=280&fakeurl=1"
+          alt="AliExpress">
+        <div class="app-info">
+          <h4>AliExpress</h4>
+          <p>Compras mundiales.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.alibaba.aliexpresshd?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="among us">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/among-us.png?v=1738852422608"
+          alt="Among Us">
+        <div class="app-info">
+          <h4>Among Us</h4>
+          <p>Descubre al impostor.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/XAPK/com.innersloth.spacemafia?version=latest" class="btn"
+          target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="messenger">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmZhY2Vib29rLm9yY2FfaWNvbl8xNjAyNjkxODU1XzA2NQ/icon.png?w=280&fakeurl=1"
+          alt="Messenger">
+        <div class="app-info">
+          <h4>Messenger</h4>
+          <p>Textos y videollamadas.</p>
+        </div>
+        <a href="https://d.apkpure.com/b/APK/com.facebook.orca?version=latest" class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="erik os app">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/engadget.png?v=1727295366119"
+          alt="Erik OS App">
+        <div class="app-info">
+          <h4>Erik OS App</h4>
+          <p>El SO de Erik.</p>
+        </div>
+        <a href="https://www.dropbox.com/scl/fo/dznvctuv8wu4xevo0g83n/AImYXXWXLVee4FO2lM6QCgQ?rlkey=46tyqleoeamxdpdbmjn03yr56&st=v2alumf9&dl=1"
+          class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="erik backup">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Time%20Machine.png?v=1731580886504"
+          alt="Erik BackUP">
+        <div class="app-info">
+          <h4>Erik BackUP</h4>
+          <p>Time Machine en tu teléfono.</p>
+        </div>
+        <a onclick="alert('No disponible por ahora')" class="btn">No disponible</a>
+      </div>
+
+      <div class="app-item" data-name="social gram">
+        <img
+          src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/SocialGram%20perfet%20icon.png?v=1733654515342"
+          alt="Social Gram">
+        <div class="app-info">
+          <h4>Social Gram</h4>
+          <p>La red social perfeta.</p>
+        </div>
+        <a href="https://www.dropbox.com/scl/fi/zazperd8w2bzlyzlwdq11/SocialGram_Installer.apk?rlkey=arxiegpz9bpk0z0bo2a0k2pwi&st=zgzhj3wt&dl=1"
+          class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="mando de sonidos">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/button%20png.png?v=1727964041691"
+          alt="Mando de Sonidos">
+        <div class="app-info">
+          <h4>Mando de Sonidos</h4>
+          <p>Para tus audios favoritos.</p>
+        </div>
+        <a href="https://www.dropbox.com/scl/fi/w91sn2fyoo8iosmnjv3dw/Mando_ierik.apk?rlkey=1a2uf63kiuilsg2fz6kgrsoh7&st=445hlvnm&dl=1"
+          class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="buttons game">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/button%20png.png?v=1727964041691"
+          alt="Buttons Game">
+        <div class="app-info">
+          <h4>Buttons Game</h4>
+          <p>Diviértete con botones.</p>
+        </div>
+        <a href="https://www.dropbox.com/scl/fi/6g0ciyukhlctkjz4ns8zi/ControlPanel-1.apk?rlkey=5ygwazwzf582l3xwa5dce5coc&st=tzpsc2mm&dl=1"
+          class="btn" target="_blank">Descargar</a>
+      </div>
+
+      <div class="app-item" data-name="fake google pay">
+        <img
+          src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/ICONO%20GOOGLE%20PAY.png?v=1727963547564"
+          alt="Fake Google Pay">
+        <div class="app-info">
+          <h4>Fake Google Pay</h4>
+          <p>Paga de broma.</p>
+        </div>
+        <a onclick="alert('No disponible por ahora')" class="btn">No disponible</a>
+      </div>
+
+      <div class="app-item" data-name="windows app store">
+        <img src="https://img.icons8.com/ios_filled/512/FA5252/microsoft.png" alt="Windows App Store">
+        <div class="app-info">
+          <h4>Windows App Store</h4>
+          <p>Aplicaciones para Windows.</p>
+        </div>
+        <a href="search/windows.html" class="btn">Abrir</a>
+      </div>
+
+      <div class="app-item" data-name="fan made comunidad">
+        <img src="https://cdn-icons-png.flaticon.com/512/33/33308.png" alt="Fan made">
+        <div class="app-info">
+          <h4>Fan made</h4>
+          <p>Apps hechas por la comunidad.</p>
+        </div>
+        <a href="com.html" class="btn">Abrir</a>
+      </div>
+    </div>
+
+    <div id="noResults">
+      <i class="fa-regular fa-face-frown"></i>
+      <h3>Oops!</h3>
+      <p>No encontramos lo que buscas.</p>
+    </div>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item active" onclick="scrollToTop(event, this)">
+      <i class="fa-solid fa-house"></i>
+      <span>Inicio</span>
+    </a>
+    <a href="#" class="nav-item" onclick="focusSearch(event, this)">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <span>Buscar</span>
+    </a>
+    <a href="library.html" class="nav-item">
+      <i class="fa-solid fa-box-archive"></i>
+      <span>Biblioteca</span>
+    </a>
+  </nav>
+
+  <script>
+    // Random Featured Apps Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      const allAppElements = Array.from(document.querySelectorAll('.app-item'));
+      const featuredContainer = document.getElementById('featuredContainer');
+
+      let selectedIndices = [];
+      while (selectedIndices.length < 3 && selectedIndices.length < allAppElements.length) {
+        let r = Math.floor(Math.random() * allAppElements.length);
+        if (selectedIndices.indexOf(r) === -1) selectedIndices.push(r);
+      }
+
+      selectedIndices.forEach(idx => {
+        const item = allAppElements[idx];
+        const img = item.querySelector('img').src;
+        const title = item.querySelector('h4').innerText;
+        const desc = item.querySelector('p').innerText;
+        const aClone = item.querySelector('.btn').cloneNode(true);
+
+        const card = document.createElement('div');
+        card.className = 'featured-card';
+        card.innerHTML = `
+          <div class="featured-badge">Destacada</div>
+          <img src="${img}" alt="${title}">
+          <h3>${title}</h3>
+          <p>${desc}</p>
+        `;
+        card.appendChild(aClone);
+        featuredContainer.appendChild(card);
+      });
+    });
+
+    // Filtering logic
+    const searchInput = document.getElementById('searchInput');
+    const appItems = document.querySelectorAll('.app-item');
+    const noResults = document.getElementById('noResults');
+    const featuredSection = document.getElementById('featuredSection');
+    const allAppsTitle = document.getElementById('allAppsTitle');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
       let anyVisible = false;
-      const appCards = blog.querySelectorAll('.app-card');
-      appCards.forEach(card => {
-        const name = card.getAttribute('data-name').toLowerCase();
+
+      if (query.length > 0) {
+        featuredSection.classList.add('hidden');
+        allAppsTitle.innerHTML = `<i class="fa-solid fa-magnifying-glass" style="color:var(--accent);"></i> Resultados`;
+      } else {
+        featuredSection.classList.remove('hidden');
+        allAppsTitle.innerHTML = `<i class="fa-solid fa-layer-group" style="color:var(--accent);"></i> Todas las Apps`;
+      }
+
+      appItems.forEach(item => {
+        const name = item.getAttribute('data-name');
         if (name.includes(query)) {
-          card.style.display = 'flex';
+          item.style.display = 'flex';
           anyVisible = true;
         } else {
-          card.style.display = 'none';
+          item.style.display = 'none';
         }
       });
-      // Mostrar mini blog solo si tiene apps visibles
-      blog.style.display = anyVisible ? 'block' : 'none';
-    });
-  });
 
-  // Navegación barra inferior (solo efecto visual)
-  const navButtons = document.querySelectorAll('nav.bottom-nav button');
-  navButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      navButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      // Aquí puedes agregar lógica para cambiar vistas si quieres
-      if (btn.id === 'navBuscar') {
-        searchInput.focus();
-      }
+      noResults.style.display = anyVisible ? 'none' : 'block';
     });
-  });
-</script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
-     crossorigin="anonymous"></script>
+    function scrollToTop(e, element) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+    }
+
+    function focusSearch(e, element) {
+      e.preventDefault();
+      document.getElementById('searchInput').focus();
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      element.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
 </body>
+
 </html>
