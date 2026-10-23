@@ -1,68 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- 
-      This is an HTML comment
-      You can write text in a comment and the content won't be visible in the page
-    -->
+<html lang="es">
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <link rel="icon" type="image/png" sizes="64x64" href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070b08">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2316301b' stroke='%23a3e635' stroke-width='6'/><circle cx='50' cy='50' r='34' fill='%2384cc16'/><circle cx='50' cy='50' r='14' fill='%23ecfccb'/></svg>"
+    type="image/svg+xml">
+  <title>Kiwi Pro — Lleva tu Kiwi Store al Siguiente Nivel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style-premium.css" />
+  <script src="/script.js" defer></script>
+  <style>
+    :root {
+      --bg-color: #070b08;
+      --card-bg: rgba(18, 28, 21, 0.78);
+      --card-border: rgba(163, 230, 53, 0.22);
+      --text-main: #f4f9f4;
+      --text-muted: #93a898;
+      --accent: #a3e635;
+      --accent-dark: #071209;
+      --gradient-kiwi: linear-gradient(135deg, #a3e635 0%, #22c55e 100%);
+    }
 
-    <!--
-      This is the page head - it contains info the browser uses
-      Like the title, which appears on the browser tab but not inside the page
-      Further down you'll see the content that displays in the page
-    -->
-    <title>Premium - Erik App Store</title>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- The website stylesheet -->
-    <link rel="stylesheet" href="/style-premium.css" />
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 100px;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(163, 230, 53, 0.22) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(34, 197, 94, 0.14) 0%, transparent 45%);
+    }
 
-    <!-- The website JavaScript file -->
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <!--
-      The body includes the content you see in the page
-      Each element is defined using tags, like this <div></div>
-      The attributes like class="wrapper" let us style elements in the CSS
-    -->
-    <div class="wrapper">
-      <div class="content" role="main">
-           <img
-          src="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791"
-          class="illustration"
-          alt="Editor illustration"
-          title="Click the image!"
-        />
-        <h1>Erik App Store - Premium</h1>
-        <h3>
-          - No ads
-        </h3>
-        <h3>
-          - Premium apps
-        </h3>
-        <h3>
-          - Upload apps and put them on the top...
-        </h3>
-        <h3>
-          And more...
-        </h3>
-        <h2>
-          Comming soon...
-        </h2>
-     
-   
-          <!--  🚧 TODO: ADD BUTTON HERE -->
+    h1, h2, h3 {
+      font-family: 'Outfit', sans-serif;
+    }
 
-          <!-- Once you've added the button from TODO.md, click it in the page -->
-          <!-- Check out the function in script.js to see how it works -->
-      
+    header {
+      padding: 18px 24px;
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    .brand span {
+      background: var(--gradient-kiwi);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .back-link {
+      padding: 8px 16px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .pro-container {
+      max-width: 880px;
+      margin: 30px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .crown-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 99px;
+      background: rgba(163, 230, 53, 0.14);
+      border: 1px solid rgba(163, 230, 53, 0.4);
+      color: var(--accent);
+      font-size: 12.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 18px;
+    }
+
+    .pro-container h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .pro-container h1 span {
+      background: var(--gradient-kiwi);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .pro-lead {
+      color: var(--text-muted);
+      font-size: 17px;
+      max-width: 580px;
+      margin: 0 auto 36px;
+      line-height: 1.55;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-bottom: 36px;
+      text-align: left;
+    }
+
+    .benefit-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(12px);
+    }
+
+    .benefit-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: rgba(163, 230, 53, 0.14);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .benefit-card h3 {
+      font-size: 19px;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .benefit-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .cta-box {
+      background: linear-gradient(145deg, rgba(24, 42, 29, 0.9), rgba(11, 19, 13, 0.95));
+      border: 1px solid rgba(163, 230, 53, 0.35);
+      border-radius: 26px;
+      padding: 32px 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .cta-box h2 {
+      font-size: 26px;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .cta-box p {
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .pro-btn {
+      background: var(--gradient-kiwi);
+      color: var(--accent-dark);
+      font-weight: 800;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 99px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 26px rgba(163, 230, 53, 0.35);
+      transition: transform 0.2s;
+    }
+
+    .pro-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="inicio.html" class="brand">
+      🥝 Kiwi <span>Store Pro</span>
+    </a>
+    <a href="inicio.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Volver a la tienda</a>
+  </header>
+
+  <main class="pro-container">
+    <div class="crown-badge"><i class="fa-solid fa-crown"></i> Membresía Exclusiva Kiwi Pro</div>
+    <h1>Desbloquea todo el poder de <span>Kiwi Store Pro</span></h1>
+    <p class="pro-lead">Diseñado para power-users y desarrolladores que buscan velocidad máxima, cero anuncios y acceso
+      anticipado a mods exclusivos.</p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fa-solid fa-ban"></i></div>
+        <h3>100% Sin Anuncios</h3>
+        <p>Navega y descarga por toda Kiwi Store con una interfaz limpia, directa y sin interrupciones publicitarias.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fa-solid fa-gem"></i></div>
+        <h3>Apps &amp; Mods VIP</h3>
+        <p>Acceso prioritario a betas cerradas, servidores privados actualizados y herramientas exclusivas.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3>Destaca tus Apps</h3>
+        <p>Sube tus propias creaciones y posiciónalas en el carrusel principal de Destacadas de Kiwi Store.</p>
       </div>
     </div>
-    <!-- The footer holds our remix button — you can keep or delete it ✂ -->
 
-  </body>
+    <div class="cta-box">
+      <h2>Próximamente en Kiwi Store 2026</h2>
+      <p>Estamos preparando el lanzamiento oficial de Kiwi Pro. Mientras tanto, disfruta del catálogo gratuito.</p>
+      <button class="pro-btn" onclick="alert('¡Te avisaremos en cuanto Kiwi Store Pro esté disponible!')">
+        <i class="fa-solid fa-bell"></i> Unirme a la Lista de Espera
+      </button>
+    </div>
+  </main>
+</body>
+
 </html>

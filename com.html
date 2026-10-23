@@ -1,327 +1,361 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791" type="image/png">
-    <title>Erik App Store</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Contenedor principal alineado a la derecha */
-        .2 body {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070b08">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2316301b' stroke='%23a3e635' stroke-width='6'/><circle cx='50' cy='50' r='34' fill='%2384cc16'/><circle cx='50' cy='50' r='14' fill='%23ecfccb'/></svg>"
+    type="image/svg+xml">
+  <title>Kiwi Store — Comunidad &amp; Creadores</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #070b08;
+      --card-bg: rgba(18, 28, 21, 0.78);
+      --card-border: rgba(163, 230, 53, 0.16);
+      --card-border-hover: rgba(163, 230, 53, 0.45);
+      --text-main: #f4f9f4;
+      --text-muted: #93a898;
+      --accent: #a3e635;
+      --accent-dark: #071209;
+      --gradient-kiwi: linear-gradient(135deg, #a3e635 0%, #22c55e 100%);
+    }
 
-        /* Estilo del botón inicial */
-        .iniciar-sesion {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Estilo del contenedor que mostrará el nombre e icono */
-        .perfil {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            position: relative;
-        }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 100px;
+    }
 
-        /* Estilo del ícono de usuario */
-        .perfil img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+    h1, h2, h3, .app-title {
+      font-family: 'Outfit', sans-serif;
+    }
 
-        /* Estilo del menú desplegable */
-        .menu-opciones {
-            display: none;
-            position: absolute;
-            top: 50x;
-            right: 0;
-            background-color: blue;
-            border: 1px solid #ccc;
-            list-style: none;
-            padding: 10px;
-            margin-top: 10px;
-            z-index: 1;
-        }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        .menu-opciones li {
-            padding: 5px;
-            cursor: pointer;
-        }
+    header {
+      background: rgba(7, 11, 8, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--card-border);
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .menu-opciones li:hover {
-            background-color: #ADD8E6;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-          
-        }
-        header {
-            background-color: #007aff;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-           .container2 {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: left;
-            padding: 3px;
-        }
-        .app-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            margin: 15px;
-            padding: 15px;
-            width: 200px;
-            text-align: center;
-            transition: transform 0.2s; /* Animación al escalar */
-        }
-        .app-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .app-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .download-btn {
-            background-color: #007aff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.2s, transform 0.2s; /* Transición suave */
-        }
-        .download-btn:hover {
-            background-color: #005bb5; /* Color al pasar el mouse */
-            transform: scale(1.05); /* Escala al pasar el mouse */
-        }
-        .app-card:hover {
-            transform: scale(1.05); /* Escala la tarjeta al pasar el mouse */
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #007aff;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-     .search-container {
-  
-            display: flex;
-            justify-content: center; /* Centra el contenido */
-            align-items: center; /* Centra el contenido verticalmente */
-            border-radius: 25px;
-       
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
- .search-container {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  display: flex; /* Usamos flexbox para alinear los elementos */
-  justify-content: center; /* Centra el contenido horizontalmente */
-}
+    .header-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.search-container input {
-  width: 50%; /* El campo de búsqueda ocupará el 50% del ancho */
-  max-width: 600px; /* Limita el ancho máximo de la barra de búsqueda */
-  padding: 10px; /* Espaciado interno para que se vea más amplia */
-  margin-right: 10px; /* Espacio entre el input y el botón */
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+    }
 
-.search-container button {
-  padding: 10px 20px; /* Añade un poco de espacio alrededor del texto del botón */
-  cursor: pointer; /* Cambia el cursor a pointer cuando pases sobre el botón */
-}
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: var(--gradient-kiwi);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-dark);
+      font-size: 18px;
+    }
 
+    .brand span {
+      background: var(--gradient-kiwi);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-              input[type="text"] {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            outline: none;
-            border-radius: 25px 0 0 25px;
-            font-size: 16px;
-            background-color: #fff;
-            transition: all 0.3s;
-        }
+    .perfil {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 6px 14px;
+      border-radius: 99px;
+      border: 1px solid var(--card-border);
+    }
 
-        input[type="text"]:focus {
-            box-shadow: 0 0 5px #007bff;
-        }
-             button {
-            padding: 15px;
-            border: none;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-            border-radius: 0 25px 25px 0;
-            transition: background-color 0.3s;
-        }
-       /* Contenedor principal alineado a la derecha */
-        body {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px;
-        }
+    .perfil img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
 
-        /* Estilo del botón inicial */
-        .iniciar-sesion {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+    .menu-opciones {
+      display: none;
+      position: absolute;
+      top: 48px;
+      right: 0;
+      background: #101912;
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      list-style: none;
+      padding: 8px;
+      min-width: 150px;
+      z-index: 200;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+    }
 
-        /* Estilo del contenedor que mostrará el nombre e icono */
-        .perfil {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            position: relative; /* Para posicionar el menú desplegable */
-        }
+    .menu-opciones li {
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
 
-        /* Estilo del ícono de usuario */
-        .perfil img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+    .menu-opciones li:hover {
+      background: rgba(163, 230, 53, 0.15);
+      color: var(--accent);
+    }
 
-        /* Estilo del menú desplegable */
-        .menu-opciones {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 0;
-            background-color: white;
-            border: 1px solid #ccc;
-            list-style: none;
-            padding: 10px;
-            margin-top: 10px;
-            z-index: 1;
-        }
+    .main-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
 
-        .menu-opciones li {
-            padding: 5px;
-            cursor: pointer;
-        }
+    .community-hero {
+      background: radial-gradient(circle at top right, rgba(163, 230, 53, 0.22), transparent 60%),
+        linear-gradient(145deg, rgba(20, 35, 24, 0.94), rgba(10, 17, 12, 0.98));
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 28px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
 
-        .menu-opciones li:hover {
-            background-color: #f0f0f0;
-        }
-      
-    </style>
+    .community-hero h1 {
+      font-size: clamp(24px, 4vw, 34px);
+      margin-bottom: 8px;
+    }
+
+    .community-hero p {
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 20px;
+      font-size: 15px;
+    }
+
+    .search-container {
+      display: flex;
+      max-width: 560px;
+      margin: 0 auto;
+      gap: 10px;
+    }
+
+    .search-container input[type="text"] {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--card-border);
+      background: rgba(12, 20, 15, 0.9);
+      color: var(--text-main);
+      font-size: 15px;
+      outline: none;
+      font-family: inherit;
+    }
+
+    .search-container input[type="text"]:focus {
+      border-color: var(--accent);
+    }
+
+    .search-container button {
+      padding: 14px 22px;
+      border: none;
+      background: var(--gradient-kiwi);
+      color: var(--accent-dark);
+      font-weight: 700;
+      border-radius: 14px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform 0.2s;
+    }
+
+    .search-container button:hover {
+      transform: translateY(-1px);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .app-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .app-card img {
+      width: 84px;
+      height: 84px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .app-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .app-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .download-btn {
+      background: var(--gradient-kiwi);
+      color: var(--accent-dark);
+      border: none;
+      border-radius: 99px;
+      padding: 10px 22px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      width: 100%;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .download-btn:hover {
+      filter: brightness(1.08);
+      transform: scale(1.02);
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-    <h1>Erik App Store</h1>
+  <header>
+    <div class="header-inner">
+      <a href="inicio.html" class="brand">
+        <div class="brand-logo"><i class="fa-solid fa-seedling"></i></div>
+        <div>Kiwi <span>Community</span></div>
+      </a>
 
+      <div class="perfil" id="perfilUsuario" style="display:none;">
+        <img src="https://cdn.glitch.global/d81feb0e-5571-4186-a9a0-76af988749be/Finder.png?v=1718642111168"
+          alt="Icono de usuario">
+        <span id="nombreUsuario"></span>
+        <ul class="menu-opciones" id="menuOpciones">
+          <li id="cerrarSesion">Cerrar sesión</li>
+          <li id="descargas">Descargas</li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-<!-- Contenedor que mostrará el nombre e icono del usuario -->
-<div class="perfil" id="perfilUsuario" style="display:none;">
-    <img src="https://cdn.glitch.global/d81feb0e-5571-4186-a9a0-76af988749be/Finder.png?v=1718642111168" alt="Icono de usuario">
-    <span id="nombreUsuario"></span>
-<head>
-      
-  </head>
-  
-    <!-- Menú desplegable -->
-    <ul class="menu-opciones" id="menuOpciones">
-        <li id="cerrarSesion">Cerrar sesión</li>
-        <li id="descargas">Descargas</li>
-    </ul>
-</div>
-</header>
-  <p>
-      
-  </p>
-   <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Buscar aplicaciones..." aria-label="Buscar aplicaciones">
-    <button onclick="searchApp()">Buscar</button>
-</div> 
+  <main class="main-wrap">
+    <section class="community-hero">
+      <h1>🌱 Hub de Creadores Kiwi Store</h1>
+      <p>Explora aplicaciones creadas por la comunidad o envía tu propio APK / proyecto para que miles de usuarios lo
+        descarguen gratis.</p>
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar proyecto en Kiwi Store..."
+          aria-label="Buscar aplicaciones">
+        <button onclick="searchApp()"><i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+      </div>
+    </section>
 
-
-    
-<div class="container">
- <div class="app-card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png" alt="App 1">
+    <div class="container">
+      <div class="app-card">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png"
+          alt="Asier App">
         <div class="app-title">Asier App</div>
-        <a href="https://www.dropbox.com/scl/fi/opi9x7mi8psu7tfi5lpiq/asier_app.apk?rlkey=cxghi9uspc7nmg2ssioj6kn4e&st=bv48bb3p&dl=1" class="download-btn">Descargar</a>
+        <p class="app-sub">Proyecto destacado de la comunidad Kiwi.</p>
+        <a href="https://www.dropbox.com/scl/fi/opi9x7mi8psu7tfi5lpiq/asier_app.apk?rlkey=cxghi9uspc7nmg2ssioj6kn4e&st=bv48bb3p&dl=1"
+          class="download-btn">Descargar APK</a>
+      </div>
+
+      <div class="app-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/117/117885.png" alt="Añadir tu app"
+          style="filter: invert(1) brightness(0.9);">
+        <div class="app-title">Publicar tu App</div>
+        <p class="app-sub">Envía tu aplicación mediante nuestro formulario oficial de desarrolladores.</p>
+        <a href="https://forms.gle/1B6fKMtNdpp55U3V8" target="_blank" class="download-btn">Subir a Kiwi Store</a>
+      </div>
+
+      <div class="app-card">
+        <img
+          src="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791"
+          alt="Volver al inicio">
+        <div class="app-title">Catálogo Principal</div>
+        <p class="app-sub">Regresa a la portada de Kiwi Store con todas las apps.</p>
+        <a href="inicio.html" class="download-btn">Volver a Kiwi Store</a>
+      </div>
     </div>
+  </main>
 
-    <div class="app-card">
-              <img src="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791" alt="App 1">
-        <div class="app-title">Volver a el inicio</div>
-        <a href="index.html" class="download-btn">Encuentra mas apps</a>
-    </div>
-   <div class="app-card">
-     <a href="https://forms.gle/1B6fKMtNdpp55U3V8"> 
-       
-       <img src="https://cdn-icons-png.flaticon.com/512/117/117885.png" alt="App 1">
-
-     </a>
-             <div class="app-title">Añadir tu app</div>
-    </div>
- 
-
-    <!-- Agrega más tarjetas de aplicaciones según sea necesario -->
-</div>
-  
- 
-
-  <script>  
+  <script>
     function ErikBacknoApp() {
-    alert('La app a esperimentado una serie de bugs i se a marcado como no estable, por eso no la podras probar hasta que sea estable con todas sus funciones funcionando');
+      alert('La app ha experimentado una serie de bugs y se ha marcado como no estable temporalmente.');
     }
-</script>
-    <script>  
     function FallerosnoApp() {
-    alert('La app a sido removida por el usuario');
+      alert('La app ha sido removida por el usuario');
     }
-</script>
-    <script>
-        function searchApp() {
-            const query = document.getElementById('searchInput').value;
-            if (query) {
-                window.location.href = 'search/' + query + '.html';
-            } else {
-                alert('Por favor, ingresa el nombre de la aplicación.');
-            }
-        }
-    </script>
-<script>
-    // Obtener el parámetro 'name' de la URL
+    function searchApp() {
+      const query = document.getElementById('searchInput').value.trim();
+      if (query) {
+        window.location.href = 'search/' + query + '.html';
+      } else {
+        alert('Por favor, ingresa el nombre de la aplicación.');
+      }
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     const nombreUsuarioURL = urlParams.get('name');
-
-    // Elementos del DOM
     const iniciarSesionBtn = document.getElementById('iniciarSesionBtn');
     const perfilUsuario = document.getElementById('perfilUsuario');
     const nombreUsuario = document.getElementById('nombreUsuario');
@@ -329,66 +363,50 @@
     const cerrarSesion = document.getElementById('cerrarSesion');
     const descargas = document.getElementById('descargas');
 
-    // Verificar si ya hay un nombre de usuario en la URL
     if (nombreUsuarioURL) {
-        // Si hay un nombre en la URL, mostrar la interfaz de usuario
-        mostrarPerfil(nombreUsuarioURL);
+      mostrarPerfil(nombreUsuarioURL);
     }
 
-    // Función que muestra la alerta de inicio de sesión
-    iniciarSesionBtn.addEventListener('click', function() {
-        // Redirigir a la página de inicio de sesión
+    if (iniciarSesionBtn) {
+      iniciarSesionBtn.addEventListener('click', function () {
         window.location.href = 'https://erikaccount.glitch.me/logins/erikappstore.html';
-    });
-
-    // Función que muestra el perfil del usuario y oculta el botón de inicio de sesión
-    function mostrarPerfil(nombre) {
-        iniciarSesionBtn.style.display = 'none'; // Ocultar el botón
-        perfilUsuario.style.display = 'flex'; // Mostrar el perfil
-        nombreUsuario.textContent = nombre; // Mostrar el nombre
+      });
     }
 
-    // Función para mostrar/ocultar el menú de opciones cuando se toca el perfil
-    perfilUsuario.addEventListener('click', function() {
+    function mostrarPerfil(nombre) {
+      if (iniciarSesionBtn) iniciarSesionBtn.style.display = 'none';
+      if (perfilUsuario) perfilUsuario.style.display = 'flex';
+      if (nombreUsuario) nombreUsuario.textContent = nombre;
+    }
+
+    if (perfilUsuario) {
+      perfilUsuario.addEventListener('click', function () {
         menuOpciones.style.display = menuOpciones.style.display === 'block' ? 'none' : 'block';
-    });
+      });
+    }
 
-    // Cerrar sesión: eliminar el nombre guardado y reiniciar la página
-    cerrarSesion.addEventListener('click', function() {
-        // Redirigir a index.html sin parámetros
-        window.location.href = 'index.html';
-    });
+    if (cerrarSesion) {
+      cerrarSesion.addEventListener('click', function () {
+        window.location.href = 'inicio.html';
+      });
+    }
 
-    // Redirigir a la página de descargas
-    descargas.addEventListener('click', function() {
-        // Verificar si el parámetro 'name' está presente en la URL
+    if (descargas) {
+      descargas.addEventListener('click', function () {
         if (nombreUsuarioURL) {
-            window.location.href = 'descargas.html' + window.location.search; // Mantener el parámetro 'name'
+          window.location.href = 'descargas.html' + window.location.search;
         } else {
-            window.location.href = 'index.html'; // Si no hay nombre, redirigir a index
+          window.location.href = 'inicio.html';
         }
-    });
+      });
+    }
 
-</script>
-<script>
-function noApp() {
-    alert('App no disponible');
-}
-  
+    function noApp() { alert('App no disponible'); }
+    function noApp1() { alert('Esta app no existe.'); }
+    function copyApp() {
+      alert('Esta app infringe los términos y condiciones de los creadores.');
+    }
   </script>
-  <script>
-function noApp1() {
-    alert('Esta app no existe.');
-}
-  
-  </script>
-  <script>
-function copyApp() {
-    alert('Esta app infringe los terminos i condiciones de los creador, infringe copyright, una de las normas mas importantes en internet.');
-}
-  
-  </script>
-
-
 </body>
+
 </html>

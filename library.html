@@ -1,524 +1,773 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
+    crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-6925115608826156">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="https://cdn.glitch.global/e4c4249d-45fa-49f4-bd87-14989b959c4b/Erik_Downlader-removebg-preview.png?v=1723730045791" type="image/png">
-    <title>Erik App Store - Library</title>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    
-    <script src="/script.js" defer></script>
- 
-    <style>
-      
-        /* Reset y base */
-  * {
-    box-sizing: border-box;
-  }
-  body, html {
-    margin: 0; padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    background-color: #f2f2f7;
-    color: #1c1c1e;
-    min-height: 100vh;
-    padding-bottom: 70px; /* espacio para barra inferior */
-  }
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  /* Header */
-  header {
-    background-color: #007aff;
-    color: white;
-    padding: 14px 20px;
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
-  }
-  /* Search bar */
-  .search-bar {
-    margin: 12px 20px;
-    position: relative;
-  }
-  .search-bar input[type="search"] {
-    width: 100%;
-    padding: 12px 40px 12px 14px;
-    border-radius: 12px;
-    border: none;
-    background-color: #e5e5ea;
-    font-size: 17px;
-    outline: none;
-    transition: background-color 0.3s;
-  }
-  .search-bar input[type="search"]:focus {
-    background-color: #d1d1d6;
-  }
-  .search-bar .fa-magnifying-glass {
-    position: absolute;
-    right: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #8e8e93;
-    font-size: 18px;
-  }
-  /* Container apps */
-  .apps-container {
-    max-width: 960px;
-    margin: 0 auto 80px auto;
-    padding: 0 20px;
-  }
-  /* Mini blog style */
-  .mini-blog {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
-  }
-  .mini-blog h2 {
-    margin-top: 0;
-    font-weight: 700;
-    font-size: 22px;
-    color: #007aff;
-  }
-  .mini-blog p {
-    font-size: 16px;
-    line-height: 1.4;
-    color: #3c3c4399;
-  }
-  /* App card inside mini blog */
-  .app-card {
-    display: flex;
-    align-items: center;
-    margin-top: 14px;
-    padding: 10px 0;
-    border-bottom: 1px solid #e5e5ea;
-  }
-  .app-card:last-child {
-    border-bottom: none;
-  }
-  .app-card img {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    object-fit: cover;
-    margin-right: 14px;
-    box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-  }
-  .app-info {
-    flex: 1;
-  }
-  .app-title {
-    font-weight: 600;
-    font-size: 18px;
-    margin: 0 0 4px 0;
-  }
-  .app-desc {
-    font-size: 14px;
-    color: #6e6e73;
-  }
-  .download-btn {
-    background-color: #007aff;
-    color: white;
-    border: none;
-    border-radius: 14px;
-    padding: 8px 16px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 6px rgb(0 122 255 / 0.4);
-  }
-  .download-btn:hover {
-    background-color: #005bb5;
-  }
-  /* Barra inferior estilo iOS 18 */
-  nav.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: #fff;
-    border-top: 1px solid #d1d1d6;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0 -1px 5px rgb(0 0 0 / 0.1);
-    z-index: 200;
-  }
-  nav.bottom-nav button {
-    background: none;
-    border: none;
-    outline: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 11px;
-    color: #8e8e93;
-    cursor: pointer;
-    transition: color 0.3s;
-    padding: 6px 0;
-    width: 60px;
-  }
-  nav.bottom-nav button.active,
-  nav.bottom-nav button:hover {
-    color: #007aff;
-  }
-  nav.bottom-nav button i {
-    font-size: 24px;
-    margin-bottom: 4px;
-  }
-  /* Responsive */
-  @media (min-width: 600px) {
-    .app-card {
-      max-width: 600px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#070b08">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2316301b' stroke='%23a3e635' stroke-width='6'/><circle cx='50' cy='50' r='34' fill='%2384cc16'/><circle cx='50' cy='50' r='14' fill='%23ecfccb'/><g fill='%23070b08'><circle cx='50' cy='28' r='2.5'/><circle cx='65' cy='35' r='2.5'/><circle cx='72' cy='50' r='2.5'/><circle cx='65' cy='65' r='2.5'/><circle cx='50' cy='72' r='2.5'/><circle cx='35' cy='65' r='2.5'/><circle cx='28' cy='50' r='2.5'/><circle cx='35' cy='35' r='2.5'/></g></svg>"
+    type="image/svg+xml">
+  <title>Kiwi Store — Biblioteca de Apps</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <script src="/script.js" defer></script>
+
+  <style>
+    :root {
+      --bg-color: #070b08;
+      --card-bg: rgba(18, 28, 21, 0.75);
+      --card-hover: rgba(26, 41, 30, 0.92);
+      --card-border: rgba(163, 230, 53, 0.14);
+      --card-border-hover: rgba(163, 230, 53, 0.42);
+      --text-main: #f4f9f4;
+      --text-muted: #93a898;
+      --accent: #a3e635;
+      --accent-dark: #071209;
+      --gradient-kiwi: linear-gradient(135deg, #a3e635 0%, #22c55e 100%);
+      --nav-bg: rgba(9, 15, 11, 0.88);
     }
-  }
-    </style>
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body,
+    html {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding-bottom: 110px;
+    }
+
+    h1, h2, h3, .app-title {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .blur-blob {
+      position: fixed;
+      top: -120px;
+      right: -100px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(163, 230, 53, 0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(90px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      padding: 16px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 11, 8, 0.8);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      background: var(--gradient-kiwi);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(163, 230, 53, 0.25);
+    }
+
+    .brand-logo svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .brand span {
+      background: var(--gradient-kiwi);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge-count {
+      background: rgba(163, 230, 53, 0.14);
+      border: 1px solid rgba(163, 230, 53, 0.35);
+      color: var(--accent);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 99px;
+    }
+
+    .apps-container {
+      max-width: 1080px;
+      margin: 24px auto 40px;
+      padding: 0 20px;
+    }
+
+    .library-banner {
+      background: linear-gradient(135deg, rgba(20, 35, 24, 0.92) 0%, rgba(12, 20, 15, 0.96) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .library-banner h1 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .library-banner p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .search-bar {
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .search-bar input[type="search"] {
+      width: 100%;
+      padding: 15px 46px 15px 46px;
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      background-color: rgba(18, 28, 21, 0.85);
+      color: var(--text-main);
+      font-size: 15.5px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.25s;
+    }
+
+    .search-bar input[type="search"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(163, 230, 53, 0.16);
+    }
+
+    .search-bar .fa-magnifying-glass {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+      font-size: 16px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 14px;
+    }
+
+    .app-card {
+      display: flex;
+      align-items: center;
+      padding: 15px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      transition: all 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .app-card:hover {
+      transform: translateY(-2px);
+      background: var(--card-hover);
+      border-color: var(--card-border-hover);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    }
+
+    .app-card img {
+      width: 62px;
+      height: 62px;
+      border-radius: 16px;
+      object-fit: cover;
+      margin-right: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+      flex-shrink: 0;
+    }
+
+    .app-title {
+      flex: 1;
+      font-weight: 700;
+      font-size: 16px;
+      margin-right: 12px;
+      line-height: 1.3;
+    }
+
+    .download-btn {
+      background: var(--gradient-kiwi);
+      color: var(--accent-dark);
+      border: none;
+      border-radius: 99px;
+      padding: 9px 16px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.25s;
+      box-shadow: 0 4px 12px rgba(132, 204, 22, 0.25);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(163, 230, 53, 0.45);
+      filter: brightness(1.06);
+    }
+
+    .download-btn[onclick] {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      box-shadow: none;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Floating Bottom Nav */
+    nav.bottom-nav {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 460px;
+      height: 68px;
+      background: var(--nav-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(163, 230, 53, 0.22);
+      border-radius: 99px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 10px;
+      z-index: 200;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7);
+    }
+
+    nav.bottom-nav a,
+    nav.bottom-nav button {
+      background: none;
+      border: none;
+      outline: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.25s;
+      height: 52px;
+      flex: 1;
+      border-radius: 99px;
+    }
+
+    nav.bottom-nav a.active,
+    nav.bottom-nav button.active,
+    nav.bottom-nav a:hover,
+    nav.bottom-nav button:hover {
+      color: var(--accent);
+    }
+
+    nav.bottom-nav a.active,
+    nav.bottom-nav button.active {
+      background: rgba(163, 230, 53, 0.12);
+    }
+
+    nav.bottom-nav i {
+      font-size: 19px;
+      margin-bottom: 3px;
+    }
+  </style>
 </head>
-       
+
 <body>
+  <div class="blur-blob"></div>
 
-<header>Erik App Store - Library</header>
+  <header>
+    <div class="header-inner">
+      <a href="inicio.html" class="brand">
+        <div class="brand-logo" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="44" fill="#071209" />
+            <circle cx="50" cy="50" r="34" fill="#a3e635" />
+            <circle cx="50" cy="50" r="14" fill="#ecfccb" />
+          </svg>
+        </div>
+        <div>Kiwi <span>Library</span></div>
+      </a>
+      <span class="badge-count" id="libCount">Biblioteca Completa</span>
+    </div>
+  </header>
 
+  <div class="apps-container" id="appsContainer">
+    <div class="library-banner">
+      <div>
+        <h1>📚 Tu Biblioteca Kiwi Store</h1>
+        <p>Acceso rápido e instantáneo a todas tus descargas, herramientas y colecciones de la comunidad.</p>
+      </div>
+      <a href="download.html" class="download-btn"><i class="fa-solid fa-mobile-screen"></i> App Kiwi Store</a>
+    </div>
 
-   
+    <div class="search-bar">
+      <i class="fa fa-magnifying-glass"></i>
+      <input type="search" id="searchInput" placeholder="Filtrar en la biblioteca por nombre..."
+        aria-label="Filtrar en la biblioteca">
+    </div>
 
+    <div class="cards-grid" id="cardsGrid">
       <div class="app-card">
-        <img src="https://cdn.glitch.global/647fd858-f0a6-4652-b1c7-40ab5ea1e6bc/erik-ia-animation-more-visual-unscreen.gif?v=1744748575452" alt="App 2">
+        <img
+          src="https://cdn.glitch.global/647fd858-f0a6-4652-b1c7-40ab5ea1e6bc/erik-ia-animation-more-visual-unscreen.gif?v=1744748575452"
+          alt="Erik AI">
         <div class="app-title">Erik AI</div>
-         <a onclick="ErikIAnoApp()" class="download-btn">No disponible</a>
-    </div>
-    <div class="app-card">
-        <img src="https://coimobile.io/uploads/2024/8/nulls-brawl-icon.jpg" alt="App 2">
+        <a onclick="ErikIAnoApp()" class="download-btn">No disponible</a>
+      </div>
+      <div class="app-card">
+        <img src="https://coimobile.io/uploads/2024/8/nulls-brawl-icon.jpg" alt="Null's Brawl">
         <div class="app-title">Null's Brawl</div>
-        <a href="https://www.dropbox.com/scl/fi/pnel34vkcf0foesh8tvt5/nb_59.197_fp.apk?rlkey=rwog5ighq2qlksxds2p3ciz3z&st=xj5v3tym&dl=1" class="download-btn">Descargar</a>
-    </div>
-
+        <a href="https://www.dropbox.com/scl/fi/pnel34vkcf0foesh8tvt5/nb_59.197_fp.apk?rlkey=rwog5ighq2qlksxds2p3ciz3z&st=xj5v3tym&dl=1"
+          class="download-btn">Descargar</a>
+      </div>
       <div class="app-card">
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/capcut%20icono.png?v=1727981874841" alt="App 1">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/capcut%20icono.png?v=1727981874841"
+          alt="Capcut">
         <div class="app-title">Capcut</div>
-        <a href="https://www.dropbox.com/scl/fi/l3dj4cva01ktzvv3ptp71/com-mod-download-capcut-video-editor-13-7-0-13700100.apk?rlkey=rolwn9i2f53enhv6xprig478c&st=guue9dh7&dl=1" class="download-btn">Descargar</a>
-    </div>
+        <a href="https://www.dropbox.com/scl/fi/l3dj4cva01ktzvv3ptp71/com-mod-download-capcut-video-editor-13-7-0-13700100.apk?rlkey=rolwn9i2f53enhv6xprig478c&st=guue9dh7&dl=1"
+          class="download-btn">Descargar</a>
+      </div>
       <div class="app-card">
-       
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Minecraft.png?v=1727295741216" alt="App 2">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Minecraft.png?v=1727295741216"
+          alt="Minecraft">
         <div class="app-title">Minecraft</div>
         <a href="https://erikappstore.vercel.app/payments/minecraft.html" class="download-btn">Descargar</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnpoaWxpYW9hcHAubXVzaWNhbGx5X2ljb25fMTY4OTkyNjIwM18wMDg/icon.png?w=280&fakeurl=1" alt="App 3">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnpoaWxpYW9hcHAubXVzaWNhbGx5X2ljb25fMTY4OTkyNjIwM18wMDg/icon.png?w=280&fakeurl=1"
+          alt="TikTok">
         <div class="app-title">TikTok</div>
         <a href="https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/0/e/e/0eeeb19633422b1241f4306419a0f15f39d58de9.png" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://devforum-uploads.s3.dualstack.us-east-2.amazonaws.com/uploads/original/4X/0/e/e/0eeeb19633422b1241f4306419a0f15f39d58de9.png"
+          alt="Roblox">
         <div class="app-title">Roblox</div>
         <a href="https://d.apkpure.com/b/XAPK/com.roblox.client?versionCode=1750" class="download-btn">Descargar</a>
-    </div>
-  <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmRhbW9ucGxheS5kYW1vbnBzMi5mcmVlX2ljb25fMTU1NTU2MDE5OF8wNTA/icon.png?w=280&fakeurl=1" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmRhbW9ucGxheS5kYW1vbnBzMi5mcmVlX2ljb25fMTU1NTU2MDE5OF8wNTA/icon.png?w=280&fakeurl=1"
+          alt="Emulador de PS2 DamonPS2">
         <div class="app-title">Emulador de PS2 DamonPS2</div>
-        <a href="https://d.apkpure.com/b/APK/com.damonplay.damonps2.free?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/cXJjb2RlZ2VuZXJhdG9yLnFyY3JlYXRvci5xcm1ha2VyLmNyZWF0ZXFyY29kZV9pY29uXzE3MjI5NjA2NTFfMDQ1/icon.png?w=280&fakeurl=1" alt="App 2">
+        <a href="https://d.apkpure.com/b/APK/com.damonplay.damonps2.free?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/cXJjb2RlZ2VuZXJhdG9yLnFyY3JlYXRvci5xcm1ha2VyLmNyZWF0ZXFyY29kZV9pY29uXzE3MjI5NjA2NTFfMDQ1/icon.png?w=280&fakeurl=1"
+          alt="Generador de QR">
         <div class="app-title">Generador de QR, Codigo QR</div>
-        <a href="https://d.apkpure.com/b/APK/qrcodegenerator.qrcreator.qrmaker.createqrcode?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnNwb3RpZnkubXVzaWNfaWNvbl8xNzE2NDYwMTQ4XzA0Nw/icon.png?w=280&fakeurl=1" alt="App 3">
-        <div class="app-title">Spotify música y podcasts </div>
+        <a href="https://d.apkpure.com/b/APK/qrcodegenerator.qrcreator.qrmaker.createqrcode?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnNwb3RpZnkubXVzaWNfaWNvbl8xNzE2NDYwMTQ4XzA0Nw/icon.png?w=280&fakeurl=1"
+          alt="Spotify">
+        <div class="app-title">Spotify música y podcasts</div>
         <a href="https://d.apkpure.com/b/APK/com.spotify.music?version=latest" class="download-btn">Descargar</a>
-    </div>
-       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnN1cGVyY2VsbC5icmF3bHN0YXJzX2ljb25fMTczMzgxNTE5Nl8wMzg/icon.png?w=280&fakeurl=1" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnN1cGVyY2VsbC5icmF3bHN0YXJzX2ljb25fMTczMzgxNTE5Nl8wMzg/icon.png?w=280&fakeurl=1"
+          alt="Brawl Stars">
         <div class="app-title">Brawl Stars</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.supercell.brawlstars?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnNuYXBjaGF0LmFuZHJvaWRfaWNvbl8xNTY2ODQ0NzEzXzA4Nw/icon.png?w=280&fakeurl=1" alt="App 2">
+        <a href="https://d.apkpure.com/b/XAPK/com.supercell.brawlstars?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnNuYXBjaGF0LmFuZHJvaWRfaWNvbl8xNTY2ODQ0NzEzXzA4Nw/icon.png?w=280&fakeurl=1"
+          alt="Snapchat">
         <div class="app-title">Snapchat</div>
         <a href="https://d.apkpure.com/b/APK/com.snapchat.android?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img src="https://cdn-icons-png.freepik.com/256/15707/15707869.png?semt=ais_hybrid" alt="Instagram">
         <div class="app-title">Instagram</div>
         <a href="https://d.apkpure.com/b/APK/com.instagram.android?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/dHYudHdpdGNoLmFuZHJvaWQuYXBwX2ljb25fMTczNzQ4Mzk2Ml8wMjE/icon.png?w=280&fakeurl=1" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/dHYudHdpdGNoLmFuZHJvaWQuYXBwX2ljb25fMTczNzQ4Mzk2Ml8wMjE/icon.png?w=280&fakeurl=1"
+          alt="Twitch">
         <div class="app-title">Twitch</div>
         <a href="https://d.apkpure.com/b/APK/tv.twitch.android.app?version=latest" class="download-btn">Descargar</a>
-    </div>
-   <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmZjLm51dC5zY3Jldy5ib2x0Lndhc2hlci5mYXN0ZW5lci5wdXp6bGVfaWNvbl8xNzA5MTQ3Njk3XzA1Mg/icon.png?w=280&fakeurl=1" alt="App 2">
-        <div class="app-title">Rompecabezas: Tuerca y perno</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.fc.nut.screw.bolt.washer.fastener.puzzle?version=latest" class="download-btn">Descargar</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmtpbG9vLnN1YndheXN1cmZfaWNvbl8xNzM3OTYzNzMyXzA5Mg/icon.png?w=280&fakeurl=1" alt="App 2">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmZjLm51dC5zY3Jldy5ib2x0Lndhc2hlci5mYXN0ZW5lci5wdXp6bGVfaWNvbl8xNzA5MTQ3Njk3XzA1Mg/icon.png?w=280&fakeurl=1"
+          alt="Rompecabezas: Tuerca y perno">
+        <div class="app-title">Rompecabezas: Tuerca y perno</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.fc.nut.screw.bolt.washer.fastener.puzzle?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmtpbG9vLnN1YndheXN1cmZfaWNvbl8xNzM3OTYzNzMyXzA5Mg/icon.png?w=280&fakeurl=1"
+          alt="Subway Surfers">
         <div class="app-title">Subway Surfers</div>
         <a href="https://d.apkpure.com/b/APK/com.kiloo.subwaysurf?version=latest" class="download-btn">Descargar</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/aW8udm9vZG9vLnBhcGVyMl9pY29uXzE3MjU2MzUxODJfMDc3/icon.png?w=280&fakeurl=1" alt="App 3">
+        <img
+          src="https://image.winudf.com/v2/image1/aW8udm9vZG9vLnBhcGVyMl9pY29uXzE3MjU2MzUxODJfMDc3/icon.png?w=280&fakeurl=1"
+          alt="Paper.io 2">
         <div class="app-title">Paper.io 2</div>
         <a href="https://d.apkpure.com/b/XAPK/io.voodoo.paper2?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLm1pbmljbGlwLmVpZ2h0YmFsbHBvb2xfaWNvbl8xNTYxMzk3MjU5XzAyOQ/icon.png?w=280&fakeurl=1" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLm1pbmljbGlwLmVpZ2h0YmFsbHBvb2xfaWNvbl8xNTYxMzk3MjU5XzAyOQ/icon.png?w=280&fakeurl=1"
+          alt="8 Ball Pool">
         <div class="app-title">8 Ball Pool</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.miniclip.eightballpool?version=latest" class="download-btn">Descargar</a>
-    </div>
-   <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnlvZG8xLmNyb3NzeXJvYWRfaWNvbl8xNzE5ODg4MDE3XzA4Mw/icon.png?w=280&fakeurl=1" alt="App 2">
+        <a href="https://d.apkpure.com/b/XAPK/com.miniclip.eightballpool?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnlvZG8xLmNyb3NzeXJvYWRfaWNvbl8xNzE5ODg4MDE3XzA4Mw/icon.png?w=280&fakeurl=1"
+          alt="Crossy Road">
         <div class="app-title">Crossy Road</div>
         <a href="https://d.apkpure.com/b/XAPK/com.yodo1.crossyroad?version=latest" class="download-btn">Descargar</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLkppbmRvQmx1LlR3b1BsYXllckdhbWVzQ2hhbGxlbmdlX2ljb25fMTYzNTg1MTY4NF8wOTM/icon.png?w=280&fakeurl=1" alt="App 3">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLkppbmRvQmx1LlR3b1BsYXllckdhbWVzQ2hhbGxlbmdlX2ljb25fMTYzNTg1MTY4NF8wOTM/icon.png?w=280&fakeurl=1"
+          alt="2 Player games">
         <div class="app-title">2 Player games : the Challenge</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.JindoBlu.TwoPlayerGamesChallenge?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmRpc2NvcmRfaWNvbl8xNjI2ODI3OTExXzA0Nw/icon.png?w=280&fakeurl=1" alt="App 2">
+        <a href="https://d.apkpure.com/b/XAPK/com.JindoBlu.TwoPlayerGamesChallenge?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmRpc2NvcmRfaWNvbl8xNjI2ODI3OTExXzA0Nw/icon.png?w=280&fakeurl=1"
+          alt="Discord">
         <div class="app-title">Discord</div>
         <a href="https://d.apkpure.com/b/XAPK/com.discord?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmR0cy5mcmVlZmlyZW1heF9pY29uXzE3MzMyODU0NzdfMDAx/icon.png?w=280&fakeurl=1" alt="App 3">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmR0cy5mcmVlZmlyZW1heF9pY29uXzE3MzMyODU0NzdfMDAx/icon.png?w=280&fakeurl=1"
+          alt="Free Fire MAX">
         <div class="app-title">Free Fire MAX</div>
         <a href="https://d.apkpure.com/b/XAPK/com.dts.freefiremax?version=latest" class="download-btn">Descargar</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/aW8uc3VwZXJjZW50LnBpenphaWRsZV9pY29uXzE3MzUwMTg2NjZfMDQy/icon.png?w=280&fakeurl=1" alt="App 2">
+        <img
+          src="https://image.winudf.com/v2/image1/aW8uc3VwZXJjZW50LnBpenphaWRsZV9pY29uXzE3MzUwMTg2NjZfMDQy/icon.png?w=280&fakeurl=1"
+          alt="Pizza Ready!">
         <div class="app-title">Pizza Ready!</div>
         <a href="https://d.apkpure.com/b/APK/io.supercent.pizzaidle?version=latest" class="download-btn">Descargar</a>
-    </div>
-        <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnR3aXR0ZXIuYW5kcm9pZF9pY29uXzE2OTA0NTMzNTBfMDAw/icon.png?w=280&fakeurl=1" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnR3aXR0ZXIuYW5kcm9pZF9pY29uXzE2OTA0NTMzNTBfMDAw/icon.png?w=280&fakeurl=1"
+          alt="X">
         <div class="app-title">X</div>
         <a href="https://d.apkpure.com/b/XAPK/com.twitter.android?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmNydW5jaHlyb2xsLmNydW5jaHlyb2lkX2ljb25fMTcyMzA0ODYyMF8wMzQ/icon.png?w=280&fakeurl=1" alt="App 3">
-        <div class="app-title">Crunchyroll</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.crunchyroll.crunchyroid?version=latest" class="download-btn">Descargar</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLm9wZXJhLmJyb3dzZXJfaWNvbl8xNzM4Njg1MzkzXzA5Mg/icon.png?w=280&fakeurl=1" alt="App 3">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmNydW5jaHlyb2xsLmNydW5jaHlyb2lkX2ljb25fMTcyMzA0ODYyMF8wMzQ/icon.png?w=280&fakeurl=1"
+          alt="Crunchyroll">
+        <div class="app-title">Crunchyroll</div>
+        <a href="https://d.apkpure.com/b/XAPK/com.crunchyroll.crunchyroid?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLm9wZXJhLmJyb3dzZXJfaWNvbl8xNzM4Njg1MzkzXzA5Mg/icon.png?w=280&fakeurl=1"
+          alt="Opera">
         <div class="app-title">Opera</div>
         <a href="https://d.apkpure.com/b/XAPK/com.opera.browser?version=latest" class="download-btn">Descargar</a>
-    </div>
-         <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnRhcGJsYXplLnBpenphYnVzaW5lc3NfaWNvbl8xNzA5OTQ0MDAwXzA2Ng/icon.png?w=280&fakeurl=1" alt="App 3">
-        <div class="app-title">Good Pizza, Great Pizza</div>
-        <a href="https://d.apkpure.com/b/APK/com.tapblaze.pizzabusiness?version=latest" class="download-btn">Descargar</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmJlcmVhbC5mdF9pY29uXzE2MDgxOTI3ODVfMDA1/icon.png?w=280&fakeurl=1" alt="App 3">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnRhcGJsYXplLnBpenphYnVzaW5lc3NfaWNvbl8xNzA5OTQ0MDAwXzA2Ng/icon.png?w=280&fakeurl=1"
+          alt="Good Pizza, Great Pizza">
+        <div class="app-title">Good Pizza, Great Pizza</div>
+        <a href="https://d.apkpure.com/b/APK/com.tapblaze.pizzabusiness?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmJlcmVhbC5mdF9pY29uXzE2MDgxOTI3ODVfMDA1/icon.png?w=280&fakeurl=1"
+          alt="Be Real.">
         <div class="app-title">Be Real.</div>
         <a href="https://d.apkpure.com/b/XAPK/com.bereal.ft?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnNlZ2Euc29uaWNkYXNoX2ljb25fMTYwNjgyMTcxNV8wMTE/icon.png?w=280&fakeurl=1" alt="App 3">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnNlZ2Euc29uaWNkYXNoX2ljb25fMTYwNjgyMTcxNV8wMTE/icon.png?w=280&fakeurl=1"
+          alt="Sonic Dash">
         <div class="app-title">Sonic Dash Endless Runner Game</div>
         <a href="https://d.apkpure.com/b/XAPK/com.sega.sonicdash?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmluc3RhZ3JhbS5iYXJjZWxvbmFfaWNvbl8xNjg4MjYzMjE4XzAyMg/icon.png?w=280&fakeurl=1" alt="App 3">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmluc3RhZ3JhbS5iYXJjZWxvbmFfaWNvbl8xNjg4MjYzMjE4XzAyMg/icon.png?w=280&fakeurl=1"
+          alt="Threads">
         <div class="app-title">Threads</div>
         <a href="https://d.apkpure.com/b/APK/com.instagram.barcelona?version=latest" class="download-btn">Descargar</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/b3JnLm1vemlsbGEuZmlyZWZveF9pY29uXzE1OTE3MjIwNDdfMDA1/icon.png?w=280&fakeurl=1" alt="App 2">
-        <div class="app-title">Firefox: navegador web privado </div>
+        <img
+          src="https://image.winudf.com/v2/image1/b3JnLm1vemlsbGEuZmlyZWZveF9pY29uXzE1OTE3MjIwNDdfMDA1/icon.png?w=280&fakeurl=1"
+          alt="Firefox">
+        <div class="app-title">Firefox: navegador web privado</div>
         <a href="https://d.apkpure.com/b/APK/org.mozilla.firefox?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmRpc25leS5kaXNuZXlwbHVzX2ljb25fMTcxNjk1MjU2OF8wMTc/icon.png?w=280&fakeurl=1" alt="App 2">
-        <div class="app-title">Disney+ </div>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmRpc25leS5kaXNuZXlwbHVzX2ljb25fMTcxNjk1MjU2OF8wMTc/icon.png?w=280&fakeurl=1"
+          alt="Disney+">
+        <div class="app-title">Disney+</div>
         <a href="https://d.apkpure.com/b/XAPK/com.disney.disneyplus?version=latest" class="download-btn">Descargar</a>
-    </div>
-   <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLm9wZW5haS5jaGF0Z3B0X2ljb25fMTczODY5NDY0NV8wMjM/icon.png?w=280&fakeurl=1" alt="App 3">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLm9wZW5haS5jaGF0Z3B0X2ljb25fMTczODY5NDY0NV8wMjM/icon.png?w=280&fakeurl=1"
+          alt="ChatGPT">
         <div class="app-title">ChatGPT</div>
         <a href="https://d.apkpure.com/b/XAPK/com.openai.chatgpt?version=latest" class="download-btn">Descargar</a>
-    </div>
-       <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmdsb3ZvX2ljb25fMTU1OTU1Nzk0M18wMzE/icon.png?w=280&fakeurl=1" alt="App 3">
+      </div>
+      <div class="app-card">
+        <img src="https://image.winudf.com/v2/image1/Y29tLmdsb3ZvX2ljb25fMTU1OTU1Nzk0M18wMzE/icon.png?w=280&fakeurl=1"
+          alt="Glovo">
         <div class="app-title">Glovo</div>
         <a href="https://d.apkpure.com/b/XAPK/com.glovo?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLm5ldGZsaXguTkdQLlByb2plY3RLcmFrZW5faWNvbl8xNzM0NDU2MTA3XzA4NA/icon.png?w=280&fakeurl=1" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLm5ldGZsaXguTkdQLlByb2plY3RLcmFrZW5faWNvbl8xNzM0NDU2MTA3XzA4NA/icon.png?w=280&fakeurl=1"
+          alt="El juego del calamar: Frenesí">
         <div class="app-title">El juego del calamar: Frenesí</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.netflix.NGP.ProjectKraken?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLndoYXRzYXBwX2ljb25fMTU1OTg1MDA2NF8wNjI/icon.png?w=212&fakeurl=1" alt="App 3">
+        <a href="https://d.apkpure.com/b/XAPK/com.netflix.NGP.ProjectKraken?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLndoYXRzYXBwX2ljb25fMTU1OTg1MDA2NF8wNjI/icon.png?w=212&fakeurl=1"
+          alt="WhatsApp">
         <div class="app-title">WhatsApp</div>
         <a href="https://d.apkpure.com/b/XAPK/com.whatsapp?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/happymod.png?v=1727963785191" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/happymod.png?v=1727963785191"
+          alt="HappyMod">
         <div class="app-title">HappyMod</div>
-        <a href="https://www.dropbox.com/scl/fi/25f4cf188vl04ghjrxg05/HappyMod-2-9-3.apk?rlkey=r1oxkb9ahsuw769x9tc612w74&st=qhec19k0&dl=1" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/b3JnLnZpZGVvbGFuLnZsY19pY29uXzE1NTc1MDk0MTJfMDk1/icon.png?w=280&fakeurl=1" alt="App 2">
+        <a href="https://www.dropbox.com/scl/fi/25f4cf188vl04ghjrxg05/HappyMod-2-9-3.apk?rlkey=r1oxkb9ahsuw769x9tc612w74&st=qhec19k0&dl=1"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/b3JnLnZpZGVvbGFuLnZsY19pY29uXzE1NTc1MDk0MTJfMDk1/icon.png?w=280&fakeurl=1"
+          alt="VLC">
         <div class="app-title">VLC</div>
         <a href="https://d.apkpure.com/b/APK/org.videolan.vlc?version=latest" class="download-btn">Descargar</a>
-    </div>
-   <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnNreXBlLnJhaWRlcl9pY29uXzE1NjYyOTg4ODRfMDI5/icon.png?w=280&fakeurl=1" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnNreXBlLnJhaWRlcl9pY29uXzE1NjYyOTg4ODRfMDI5/icon.png?w=280&fakeurl=1"
+          alt="Skype">
         <div class="app-title">Skype</div>
         <a href="https://d.apkpure.com/b/APK/com.skype.raider?version=latest" class="download-btn">Descargar</a>
-    </div>
-     <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLnJvYnRvcHguZ2VvbWV0cnlqdW1wbGl0ZV9pY29uXzE1NjA5ODcxNThfMDE1/icon.png?w=280&fakeurl=1" alt="App 2">
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLnJvYnRvcHguZ2VvbWV0cnlqdW1wbGl0ZV9pY29uXzE1NjA5ODcxNThfMDE1/icon.png?w=280&fakeurl=1"
+          alt="Geometry Dash Lite">
         <div class="app-title">Geometry Dash Lite</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.robtopx.geometryjumplite?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmFsaWJhYmEuYWxpZXhwcmVzc2hkX2ljb25fMTcyMTI5NzQ1N18wMTA/icon.png?w=280&fakeurl=1" alt="App 2">
+        <a href="https://d.apkpure.com/b/XAPK/com.robtopx.geometryjumplite?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmFsaWJhYmEuYWxpZXhwcmVzc2hkX2ljb25fMTcyMTI5NzQ1N18wMTA/icon.png?w=280&fakeurl=1"
+          alt="AliExpress">
         <div class="app-title">AliExpress</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.alibaba.aliexpresshd?version=latest" class="download-btn">Descargar</a>
-    </div>
-  <div class="app-card">
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/among-us.png?v=1738852422608" alt="App 2">
+        <a href="https://d.apkpure.com/b/XAPK/com.alibaba.aliexpresshd?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/among-us.png?v=1738852422608"
+          alt="Among Us">
         <div class="app-title">Among Us</div>
-        <a href="https://d.apkpure.com/b/XAPK/com.innersloth.spacemafia?version=latest" class="download-btn">Descargar</a>
-    </div>
-<div class="app-card">
-        <img src="https://image.winudf.com/v2/image1/Y29tLmZhY2Vib29rLm9yY2FfaWNvbl8xNjAyNjkxODU1XzA2NQ/icon.png?w=280&fakeurl=1" alt="App 2">
+        <a href="https://d.apkpure.com/b/XAPK/com.innersloth.spacemafia?version=latest"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://image.winudf.com/v2/image1/Y29tLmZhY2Vib29rLm9yY2FfaWNvbl8xNjAyNjkxODU1XzA2NQ/icon.png?w=280&fakeurl=1"
+          alt="Messenger">
         <div class="app-title">Messenger</div>
         <a href="https://d.apkpure.com/b/APK/com.facebook.orca?version=latest" class="download-btn">Descargar</a>
-    </div>
-    <div class="app-card">
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/engadget.png?v=1727295366119" alt="App 1">
-        <div class="app-title">Erik OS App</div>
-        <a href="https://www.dropbox.com/scl/fo/dznvctuv8wu4xevo0g83n/AImYXXWXLVee4FO2lM6QCgQ?rlkey=46tyqleoeamxdpdbmjn03yr56&st=v2alumf9&dl=1" class="download-btn">Descargar</a>
-    </div>
-
+      </div>
       <div class="app-card">
-
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Time%20Machine.png?v=1731580886504" alt="App 1">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/engadget.png?v=1727295366119"
+          alt="Erik OS App">
+        <div class="app-title">Erik OS App</div>
+        <a href="https://www.dropbox.com/scl/fo/dznvctuv8wu4xevo0g83n/AImYXXWXLVee4FO2lM6QCgQ?rlkey=46tyqleoeamxdpdbmjn03yr56&st=v2alumf9&dl=1"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/Time%20Machine.png?v=1731580886504"
+          alt="Erik BackUP">
         <div class="app-title">Erik BackUP</div>
         <a onclick="ErikBacknoApp()" class="download-btn">No disponible</a>
-    </div>
+      </div>
       <div class="app-card">
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/SocialGram%20perfet%20icon.png?v=1733654515342" alt="App 1">
+        <img
+          src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/SocialGram%20perfet%20icon.png?v=1733654515342"
+          alt="Social Gram">
         <div class="app-title">Social Gram</div>
-        <a href="https://www.dropbox.com/scl/fi/zazperd8w2bzlyzlwdq11/SocialGram_Installer.apk?rlkey=arxiegpz9bpk0z0bo2a0k2pwi&st=zgzhj3wt&dl=1" class="download-btn">Descargar</a>
-    </div>
-
-     <div class="app-card">
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/button%20png.png?v=1727964041691" alt="App 2">
+        <a href="https://www.dropbox.com/scl/fi/zazperd8w2bzlyzlwdq11/SocialGram_Installer.apk?rlkey=arxiegpz9bpk0z0bo2a0k2pwi&st=zgzhj3wt&dl=1"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/button%20png.png?v=1727964041691"
+          alt="Mando de Sonidos">
         <div class="app-title">Mando de Sonidos</div>
-        <a href="https://www.dropbox.com/scl/fi/w91sn2fyoo8iosmnjv3dw/Mando_ierik.apk?rlkey=1a2uf63kiuilsg2fz6kgrsoh7&st=445hlvnm&dl=1" class="download-btn">Descargar</a>
-    </div>
-    
-   
-          <div class="app-card">
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/button%20png.png?v=1727964041691" alt="App 2">
+        <a href="https://www.dropbox.com/scl/fi/w91sn2fyoo8iosmnjv3dw/Mando_ierik.apk?rlkey=1a2uf63kiuilsg2fz6kgrsoh7&st=445hlvnm&dl=1"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/button%20png.png?v=1727964041691"
+          alt="Buttons Game">
         <div class="app-title">Buttons Game</div>
-        <a href="https://www.dropbox.com/scl/fi/6g0ciyukhlctkjz4ns8zi/ControlPanel-1.apk?rlkey=5ygwazwzf582l3xwa5dce5coc&st=tzpsc2mm&dl=1" class="download-btn">Descargar</a>
-    </div>
- 
-    <div class="app-card">
-        <img src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/ICONO%20GOOGLE%20PAY.png?v=1727963547564" alt="App 3">
+        <a href="https://www.dropbox.com/scl/fi/6g0ciyukhlctkjz4ns8zi/ControlPanel-1.apk?rlkey=5ygwazwzf582l3xwa5dce5coc&st=tzpsc2mm&dl=1"
+          class="download-btn">Descargar</a>
+      </div>
+      <div class="app-card">
+        <img
+          src="https://cdn.glitch.global/22db19f6-a3d5-4c98-9b1a-836a8b7e2db2/ICONO%20GOOGLE%20PAY.png?v=1727963547564"
+          alt="Fake Google Pay">
         <div class="app-title">Fake Google Pay</div>
         <a onclick="copyApp()" class="download-btn">No disponible</a>
+      </div>
+      <div class="app-card">
+        <img src="https://img.icons8.com/ios_filled/512/FA5252/microsoft.png" alt="Windows App Store">
+        <div class="app-title">Kiwi Store para Windows</div>
+        <a href="search/OSsim1.html" class="download-btn">Explorar</a>
+      </div>
+      <div class="app-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/33/33308.png" alt="Fan made (comunidad)">
+        <div class="app-title">Fan made (Comunidad Kiwi)</div>
+        <a href="com.html" class="download-btn">Explorar</a>
+      </div>
     </div>
-       <div class="app-card">
-              <img src="https://img.icons8.com/ios_filled/512/FA5252/microsoft.png" alt="App 1">
-        <div class="app-title">Windows App Store</div>
-        <a href="search/windows.html" class="download-btn">Encuentra mas apps</a>
-    </div>
-    <div class="app-card">
-              <img src="https://cdn-icons-png.flaticon.com/512/33/33308.png" alt="App 1">
-        <div class="app-title">Fan made (comunidad)</div>
-        <a href="com.html" class="download-btn">Encuentra mas apps</a>
-    </div>
+  </div>
 
-    <!-- Agrega más tarjetas de aplicaciones según sea necesario -->
-</div>
-  <!-- Barra inferior estilo iOS -->
-<nav class="bottom-nav" role="navigation" aria-label="Barra de navegación principal">
-  <form action="https://erikappstore.vercel.app/inicio.html?enter=1" method="get" style="margin:0; padding:0;">
-   <button id="navInicio" aria-label="Inicio">
-     <i class="fa fa-house"></i>
-     <span>Inicio</span>
-   </button>
-  </form>
-   <form action="index.html" method="get" style="margin:0; padding:0;">
-  <button id="navBuscar" aria-label="Buscar">
-    <i class="fa fa-magnifying-glass"></i>
-    <span>Buscar</span>
-  </button>
- </form>
-  <form action="library.html" method="get" style="margin:0; padding:0;">
-      <button id="navBiblioteca" class="active" aria-label="Biblioteca">
-    <i class="fa fa-box-archive"></i>
-    <span>Biblioteca</span>
-  </button>
-  </form>
+  <nav class="bottom-nav" role="navigation" aria-label="Barra de navegación principal">
+    <a href="inicio.html" id="navInicio" aria-label="Inicio">
+      <i class="fa-solid fa-compass"></i>
+      <span>Explorar</span>
+    </a>
+    <button id="navBuscar" type="button" aria-label="Buscar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <span>Buscar</span>
+    </button>
+    <a href="library.html" id="navBiblioteca" class="active" aria-label="Biblioteca">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Biblioteca</span>
+    </a>
+    <a href="premium.html" id="navPro" aria-label="Kiwi Pro">
+      <i class="fa-solid fa-crown"></i>
+      <span>Kiwi Pro</span>
+    </a>
+  </nav>
 
-</nav>
+  <script>
+    function ErikIAnoApp() {
+      alert('Erik AI está recibiendo una actualización en Kiwi Store. Prueba desde la pestaña Explorar.');
+    }
+    function ErikBacknoApp() {
+      alert('La app ha experimentado una serie de bugs y se ha marcado como no estable temporalmente.');
+    }
+    function copyApp() {
+      alert('Esta app no está disponible actualmente por políticas de derechos de autor.');
+    }
 
+    const searchInput = document.getElementById('searchInput');
+    const appCards = document.querySelectorAll('.app-card');
+    const libCount = document.getElementById('libCount');
 
-<script>
-  // Filtrar apps en tiempo real según búsqueda
-  const searchInput = document.getElementById('searchInput');
-  const appsContainer = document.getElementById('appsContainer');
-  const miniBlogs = appsContainer.querySelectorAll('.mini-blog');
-
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.toLowerCase().trim();
-
-    miniBlogs.forEach(blog => {
-      let anyVisible = false;
-      const appCards = blog.querySelectorAll('.app-card');
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
+      let count = 0;
       appCards.forEach(card => {
-        const name = card.getAttribute('data-name').toLowerCase();
-        if (name.includes(query)) {
+        const title = (card.querySelector('.app-title')?.innerText || '').toLowerCase();
+        if (title.includes(query)) {
           card.style.display = 'flex';
-          anyVisible = true;
+          count++;
         } else {
           card.style.display = 'none';
         }
       });
-      // Mostrar mini blog solo si tiene apps visibles
-      blog.style.display = anyVisible ? 'block' : 'none';
+      libCount.textContent = `${count} apps`;
     });
-  });
 
-  // Navegación barra inferior (solo efecto visual)
-  const navButtons = document.querySelectorAll('nav.bottom-nav button');
-  navButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      navButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      // Aquí puedes agregar lógica para cambiar vistas si quieres
-      if (btn.id === 'navBuscar') {
-        searchInput.focus();
-      }
+    document.getElementById('navBuscar').addEventListener('click', () => {
+      searchInput.focus();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  });
-</script>
+  </script>
 </body>
+
 </html>
