@@ -7,30 +7,29 @@
   <meta name="google-adsense-account" content="ca-pub-6925115608826156">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#070b08">
+  <meta name="theme-color" content="#06070f">
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2316301b' stroke='%23a3e635' stroke-width='6'/><circle cx='50' cy='50' r='34' fill='%2384cc16'/><circle cx='50' cy='50' r='14' fill='%23ecfccb'/><g fill='%23070b08'><circle cx='50' cy='28' r='2.5'/><circle cx='65' cy='35' r='2.5'/><circle cx='72' cy='50' r='2.5'/><circle cx='65' cy='65' r='2.5'/><circle cx='50' cy='72' r='2.5'/><circle cx='35' cy='65' r='2.5'/><circle cx='28' cy='50' r='2.5'/><circle cx='35' cy='35' r='2.5'/></g></svg>"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='26' fill='%230d0f24'/><rect x='3' y='3' width='94' height='94' rx='23' fill='none' stroke='%238b5cf6' stroke-width='4'/><path d='M56 14L24 56h24l-6 30 34-42H52l4-30z' fill='%2338bdf8'/></svg>"
     type="image/svg+xml">
-  <title>Kiwi Store — Biblioteca de Apps</title>
+  <title>Zapp Store ⚡ Zapp Vault (Biblioteca)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <script src="/script.js" defer></script>
 
   <style>
     :root {
-      --bg-color: #070b08;
-      --card-bg: rgba(18, 28, 21, 0.75);
-      --card-hover: rgba(26, 41, 30, 0.92);
-      --card-border: rgba(163, 230, 53, 0.14);
-      --card-border-hover: rgba(163, 230, 53, 0.42);
-      --text-main: #f4f9f4;
-      --text-muted: #93a898;
-      --accent: #a3e635;
-      --accent-dark: #071209;
-      --gradient-kiwi: linear-gradient(135deg, #a3e635 0%, #22c55e 100%);
-      --nav-bg: rgba(9, 15, 11, 0.88);
+      --bg-base: #06070f;
+      --card-bg: rgba(16, 19, 38, 0.78);
+      --card-hover: rgba(24, 29, 58, 0.94);
+      --border-subtle: rgba(139, 92, 246, 0.18);
+      --border-glow: rgba(56, 189, 248, 0.5);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --zapp-cyan: #38bdf8;
+      --zapp-violet: #8b5cf6;
+      --gradient-zapp: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
     }
 
     * {
@@ -42,15 +41,18 @@
 
     body,
     html {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-color);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-base);
       color: var(--text-main);
       min-height: 100vh;
       padding-bottom: 110px;
+      background-image:
+        radial-gradient(circle at 80% 10%, rgba(139, 92, 246, 0.16), transparent 40%),
+        radial-gradient(circle at 15% 80%, rgba(56, 189, 248, 0.12), transparent 40%);
     }
 
     h1, h2, h3, .app-title {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
     a {
@@ -58,32 +60,19 @@
       color: inherit;
     }
 
-    .blur-blob {
-      position: fixed;
-      top: -120px;
-      right: -100px;
-      width: 360px;
-      height: 360px;
-      background: radial-gradient(circle, rgba(163, 230, 53, 0.18) 0%, transparent 70%);
-      border-radius: 50%;
-      filter: blur(90px);
-      z-index: -1;
-      pointer-events: none;
-    }
-
     header {
-      padding: 16px 24px;
+      padding: 15px 24px;
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(7, 11, 8, 0.8);
+      background: rgba(6, 7, 15, 0.84);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
-      border-bottom: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .header-inner {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -95,36 +84,32 @@
       align-items: center;
       gap: 12px;
       font-size: 24px;
-      font-weight: 800;
-      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
     .brand-logo {
       width: 38px;
       height: 38px;
       border-radius: 11px;
-      background: var(--gradient-kiwi);
+      background: var(--gradient-zapp);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px rgba(163, 230, 53, 0.25);
-    }
-
-    .brand-logo svg {
-      width: 24px;
-      height: 24px;
+      color: #fff;
+      box-shadow: 0 0 18px rgba(139, 92, 246, 0.45);
     }
 
     .brand span {
-      background: var(--gradient-kiwi);
+      background: linear-gradient(90deg, #38bdf8, #a78bfa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .badge-count {
-      background: rgba(163, 230, 53, 0.14);
-      border: 1px solid rgba(163, 230, 53, 0.35);
-      color: var(--accent);
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--zapp-cyan);
       font-size: 12.5px;
       font-weight: 700;
       padding: 6px 14px;
@@ -132,16 +117,16 @@
     }
 
     .apps-container {
-      max-width: 1080px;
+      max-width: 1120px;
       margin: 24px auto 40px;
       padding: 0 20px;
     }
 
-    .library-banner {
-      background: linear-gradient(135deg, rgba(20, 35, 24, 0.92) 0%, rgba(12, 20, 15, 0.96) 100%);
-      border: 1px solid var(--card-border);
-      border-radius: 22px;
-      padding: 22px 24px;
+    .vault-banner {
+      background: linear-gradient(145deg, #11152c 0%, #090b18 100%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 24px;
+      padding: 24px 26px;
       margin-bottom: 20px;
       display: flex;
       align-items: center;
@@ -150,13 +135,13 @@
       gap: 16px;
     }
 
-    .library-banner h1 {
+    .vault-banner h1 {
       font-size: 24px;
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 4px;
     }
 
-    .library-banner p {
+    .vault-banner p {
       font-size: 14px;
       color: var(--text-muted);
     }
@@ -168,20 +153,20 @@
 
     .search-bar input[type="search"] {
       width: 100%;
-      padding: 15px 46px 15px 46px;
+      padding: 15px 46px;
       border-radius: 16px;
-      border: 1px solid var(--card-border);
-      background-color: rgba(18, 28, 21, 0.85);
+      border: 1px solid var(--border-subtle);
+      background-color: rgba(15, 18, 36, 0.9);
       color: var(--text-main);
-      font-size: 15.5px;
+      font-size: 15px;
       font-family: inherit;
       outline: none;
       transition: all 0.25s;
     }
 
     .search-bar input[type="search"]:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(163, 230, 53, 0.16);
+      border-color: var(--zapp-cyan);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
     }
 
     .search-bar .fa-magnifying-glass {
@@ -189,7 +174,7 @@
       left: 18px;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--accent);
+      color: var(--zapp-cyan);
       font-size: 16px;
     }
 
@@ -204,17 +189,17 @@
       align-items: center;
       padding: 15px 16px;
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      border: 1px solid var(--border-subtle);
       border-radius: 18px;
       transition: all 0.25s ease;
       backdrop-filter: blur(10px);
     }
 
     .app-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       background: var(--card-hover);
-      border-color: var(--card-border-hover);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+      border-color: var(--border-glow);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
     }
 
     .app-card img {
@@ -223,66 +208,65 @@
       border-radius: 16px;
       object-fit: cover;
       margin-right: 14px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
       flex-shrink: 0;
     }
 
     .app-title {
       flex: 1;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15.5px;
       margin-right: 12px;
       line-height: 1.3;
     }
 
     .download-btn {
-      background: var(--gradient-kiwi);
-      color: var(--accent-dark);
+      background: var(--gradient-zapp);
+      color: #ffffff;
       border: none;
-      border-radius: 99px;
+      border-radius: 12px;
       padding: 9px 16px;
       font-weight: 700;
       font-size: 13px;
       cursor: pointer;
-      transition: all 0.25s;
-      box-shadow: 0 4px 12px rgba(132, 204, 22, 0.25);
+      transition: all 0.22s;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
       white-space: nowrap;
       flex-shrink: 0;
     }
 
     .download-btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(163, 230, 53, 0.45);
-      filter: brightness(1.06);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+      filter: brightness(1.08);
     }
 
     .download-btn[onclick] {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
       color: var(--text-muted);
       box-shadow: none;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Floating Bottom Nav */
     nav.bottom-nav {
       position: fixed;
       bottom: 16px;
       left: 50%;
       transform: translateX(-50%);
       width: calc(100% - 32px);
-      max-width: 460px;
+      max-width: 480px;
       height: 68px;
-      background: var(--nav-bg);
+      background: rgba(10, 12, 26, 0.88);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(163, 230, 53, 0.22);
-      border-radius: 99px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 22px;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 0 10px;
+      padding: 0 8px;
       z-index: 200;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
     }
 
     nav.bottom-nav a,
@@ -299,62 +283,53 @@
       font-family: inherit;
       color: var(--text-muted);
       cursor: pointer;
-      transition: all 0.25s;
+      transition: all 0.22s;
       height: 52px;
       flex: 1;
-      border-radius: 99px;
-    }
-
-    nav.bottom-nav a.active,
-    nav.bottom-nav button.active,
-    nav.bottom-nav a:hover,
-    nav.bottom-nav button:hover {
-      color: var(--accent);
+      border-radius: 16px;
     }
 
     nav.bottom-nav a.active,
     nav.bottom-nav button.active {
-      background: rgba(163, 230, 53, 0.12);
+      color: #ffffff;
+      background: rgba(139, 92, 246, 0.22);
+      box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.4);
+    }
+
+    nav.bottom-nav a.active i {
+      color: var(--zapp-cyan);
     }
 
     nav.bottom-nav i {
-      font-size: 19px;
-      margin-bottom: 3px;
+      font-size: 18px;
+      margin-bottom: 4px;
     }
   </style>
 </head>
 
 <body>
-  <div class="blur-blob"></div>
-
   <header>
     <div class="header-inner">
       <a href="inicio.html" class="brand">
-        <div class="brand-logo" aria-hidden="true">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="44" fill="#071209" />
-            <circle cx="50" cy="50" r="34" fill="#a3e635" />
-            <circle cx="50" cy="50" r="14" fill="#ecfccb" />
-          </svg>
-        </div>
-        <div>Kiwi <span>Library</span></div>
+        <div class="brand-logo"><i class="fa-solid fa-bolt"></i></div>
+        <div>Zapp <span>Vault</span></div>
       </a>
-      <span class="badge-count" id="libCount">Biblioteca Completa</span>
+      <span class="badge-count" id="libCount">Catálogo Zapp</span>
     </div>
   </header>
 
   <div class="apps-container" id="appsContainer">
-    <div class="library-banner">
+    <div class="vault-banner">
       <div>
-        <h1>📚 Tu Biblioteca Kiwi Store</h1>
-        <p>Acceso rápido e instantáneo a todas tus descargas, herramientas y colecciones de la comunidad.</p>
+        <h1>⚡ Zapp Vault — Tu Biblioteca</h1>
+        <p>Repositorio directo de todas las aplicaciones, juegos y mods de Zapp Store.</p>
       </div>
-      <a href="download.html" class="download-btn"><i class="fa-solid fa-mobile-screen"></i> App Kiwi Store</a>
+      <a href="download.html" class="download-btn"><i class="fa-solid fa-bolt"></i> Instalar App Zapp</a>
     </div>
 
     <div class="search-bar">
       <i class="fa fa-magnifying-glass"></i>
-      <input type="search" id="searchInput" placeholder="Filtrar en la biblioteca por nombre..."
+      <input type="search" id="searchInput" placeholder="Filtrar rápidamente en Zapp Vault..."
         aria-label="Filtrar en la biblioteca">
     </div>
 
@@ -703,12 +678,12 @@
       </div>
       <div class="app-card">
         <img src="https://img.icons8.com/ios_filled/512/FA5252/microsoft.png" alt="Windows App Store">
-        <div class="app-title">Kiwi Store para Windows</div>
+        <div class="app-title">Zapp Store para Windows</div>
         <a href="search/OSsim1.html" class="download-btn">Explorar</a>
       </div>
       <div class="app-card">
         <img src="https://cdn-icons-png.flaticon.com/512/33/33308.png" alt="Fan made (comunidad)">
-        <div class="app-title">Fan made (Comunidad Kiwi)</div>
+        <div class="app-title">Zapp Creators (Comunidad)</div>
         <a href="com.html" class="download-btn">Explorar</a>
       </div>
     </div>
@@ -716,26 +691,26 @@
 
   <nav class="bottom-nav" role="navigation" aria-label="Barra de navegación principal">
     <a href="inicio.html" id="navInicio" aria-label="Inicio">
-      <i class="fa-solid fa-compass"></i>
-      <span>Explorar</span>
+      <i class="fa-solid fa-bolt"></i>
+      <span>Zapp Home</span>
     </a>
     <button id="navBuscar" type="button" aria-label="Buscar">
       <i class="fa-solid fa-magnifying-glass"></i>
       <span>Buscar</span>
     </button>
-    <a href="library.html" id="navBiblioteca" class="active" aria-label="Biblioteca">
-      <i class="fa-solid fa-layer-group"></i>
-      <span>Biblioteca</span>
+    <a href="library.html" id="navBiblioteca" class="active" aria-label="Vault">
+      <i class="fa-solid fa-vault"></i>
+      <span>Vault</span>
     </a>
-    <a href="premium.html" id="navPro" aria-label="Kiwi Pro">
-      <i class="fa-solid fa-crown"></i>
-      <span>Kiwi Pro</span>
+    <a href="premium.html" id="navPro" aria-label="Zapp Nitro">
+      <i class="fa-solid fa-rocket"></i>
+      <span>Nitro</span>
     </a>
   </nav>
 
   <script>
     function ErikIAnoApp() {
-      alert('Erik AI está recibiendo una actualización en Kiwi Store. Prueba desde la pestaña Explorar.');
+      alert('Erik AI está disponible directamente desde Zapp Home.');
     }
     function ErikBacknoApp() {
       alert('La app ha experimentado una serie de bugs y se ha marcado como no estable temporalmente.');
@@ -760,7 +735,7 @@
           card.style.display = 'none';
         }
       });
-      libCount.textContent = `${count} apps`;
+      libCount.textContent = `${count} Zapps`;
     });
 
     document.getElementById('navBuscar').addEventListener('click', () => {

@@ -4,22 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#070b08">
-  <title>404 — Página no encontrada | Kiwi Store</title>
+  <meta name="theme-color" content="#06070f">
+  <title>404 — Página no encontrada | Zapp Store</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <style>
     :root {
-      --bg-color: #070b08;
-      --card-bg: rgba(18, 28, 21, 0.82);
-      --card-border: rgba(163, 230, 53, 0.22);
-      --text-main: #f4f9f4;
-      --text-muted: #93a898;
-      --accent: #a3e635;
-      --accent-dark: #071209;
-      --gradient-kiwi: linear-gradient(135deg, #a3e635 0%, #22c55e 100%);
+      --bg-base: #06070f;
+      --card-bg: rgba(16, 19, 38, 0.85);
+      --border-subtle: rgba(139, 92, 246, 0.25);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --zapp-cyan: #38bdf8;
+      --gradient-zapp: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
     }
 
     * {
@@ -29,8 +28,8 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-color);
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-base);
       color: var(--text-main);
       min-height: 100vh;
       display: flex;
@@ -39,24 +38,24 @@
       justify-content: center;
       padding: 24px;
       text-align: center;
-      background-image: radial-gradient(circle at 50% 25%, rgba(163, 230, 53, 0.16), transparent 55%);
+      background-image: radial-gradient(circle at 50% 25%, rgba(139, 92, 246, 0.22), transparent 55%);
     }
 
     .error-card {
       max-width: 520px;
       width: 100%;
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      border: 1px solid var(--border-subtle);
       border-radius: 28px;
       padding: 40px 28px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
     }
 
     .code-badge {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 64px;
-      font-weight: 800;
-      background: var(--gradient-kiwi);
+      font-weight: 700;
+      background: var(--gradient-zapp);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1;
@@ -64,7 +63,7 @@
     }
 
     h1 {
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Space Grotesk', sans-serif;
       font-size: 26px;
       margin-bottom: 10px;
     }
@@ -85,8 +84,8 @@
       flex: 1;
       padding: 13px 16px;
       border-radius: 14px;
-      border: 1px solid var(--card-border);
-      background: rgba(10, 16, 12, 0.9);
+      border: 1px solid var(--border-subtle);
+      background: rgba(10, 12, 24, 0.9);
       color: var(--text-main);
       outline: none;
     }
@@ -96,8 +95,8 @@
       padding: 13px 20px;
       border-radius: 14px;
       border: none;
-      background: var(--gradient-kiwi);
-      color: var(--accent-dark);
+      background: var(--gradient-zapp);
+      color: #ffffff;
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
@@ -111,15 +110,15 @@
 <body>
   <div class="error-card">
     <div class="code-badge">404</div>
-    <h1>Página no encontrada en Kiwi Store</h1>
-    <p>Parece que este enlace se ha movido o la aplicación que buscas está en el catálogo principal.</p>
+    <h1>Ruta no encontrada en Zapp Store</h1>
+    <p>Parece que este enlace cambió de ubicación o la aplicación está en el catálogo principal.</p>
 
     <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Buscar aplicación..." aria-label="Buscar aplicaciones">
+      <input type="text" id="searchInput" placeholder="Buscar Zapp..." aria-label="Buscar aplicaciones">
       <button onclick="searchApp()"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
 
-    <a href="/inicio.html" class="home-btn"><i class="fa-solid fa-compass"></i> Ir al Inicio de Kiwi Store</a>
+    <a href="/inicio.html" class="home-btn"><i class="fa-solid fa-bolt"></i> Volver a Zapp Store</a>
   </div>
 
   <script>

@@ -5,42 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <meta name="theme-color" content="#070b08">
+  <meta name="theme-color" content="#06070f">
   <meta name="google-adsense-account" content="ca-pub-6925115608826156">
   <meta name="description"
-    content="Kiwi Store — Tu tienda de aplicaciones, juegos y mods exclusivos para iOS, Android y Windows. Rápida, segura y sin límites.">
-  <title>Kiwi Store — Apps, Juegos y Mods sin Límites</title>
+    content="Zapp Store — Descargas a la velocidad del rayo. Apps exclusivas, juegos y mods verificados para iOS, Android y Windows.">
+  <title>Zapp Store ⚡ Apps, Juegos &amp; Mods al Instante</title>
   <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2316301b' stroke='%23a3e635' stroke-width='6'/><circle cx='50' cy='50' r='34' fill='%2384cc16'/><circle cx='50' cy='50' r='14' fill='%23ecfccb'/><g fill='%23070b08'><circle cx='50' cy='28' r='2.5'/><circle cx='65' cy='35' r='2.5'/><circle cx='72' cy='50' r='2.5'/><circle cx='65' cy='65' r='2.5'/><circle cx='50' cy='72' r='2.5'/><circle cx='35' cy='65' r='2.5'/><circle cx='28' cy='50' r='2.5'/><circle cx='35' cy='35' r='2.5'/></g></svg>"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='26' fill='%230d0f24'/><rect x='3' y='3' width='94' height='94' rx='23' fill='none' stroke='%238b5cf6' stroke-width='4'/><path d='M56 14L24 56h24l-6 30 34-42H52l4-30z' fill='%2338bdf8'/></svg>"
     type="image/svg+xml">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <script src="/script.js" defer></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6925115608826156"
     crossorigin="anonymous"></script>
   <style>
     :root {
-      --bg-color: #070b08;
-      --bg-elevated: #0e1610;
-      --card-bg: rgba(18, 28, 21, 0.72);
-      --card-hover: rgba(26, 41, 30, 0.9);
-      --card-border: rgba(163, 230, 53, 0.14);
-      --card-border-hover: rgba(163, 230, 53, 0.42);
-      --text-main: #f4f9f4;
-      --text-muted: #93a898;
-      --accent: #a3e635;
-      --accent-strong: #84cc16;
-      --accent-emerald: #22c55e;
-      --accent-dark: #071209;
-      --accent-glow: rgba(163, 230, 53, 0.28);
-      --gradient-kiwi: linear-gradient(135deg, #a3e635 0%, #22c55e 100%);
-      --gradient-surface: linear-gradient(145deg, rgba(24, 38, 28, 0.85) 0%, rgba(12, 19, 14, 0.92) 100%);
-      --nav-bg: rgba(9, 15, 11, 0.86);
-      --radius-xl: 24px;
-      --radius-lg: 18px;
-      --radius-md: 14px;
+      --bg-base: #06070f;
+      --bg-surface: #0d1021;
+      --card-bg: rgba(16, 19, 38, 0.72);
+      --card-hover: rgba(24, 29, 58, 0.92);
+      --border-subtle: rgba(139, 92, 246, 0.16);
+      --border-glow: rgba(56, 189, 248, 0.5);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --zapp-violet: #8b5cf6;
+      --zapp-indigo: #6366f1;
+      --zapp-cyan: #38bdf8;
+      --zapp-bolt: #facc15;
+      --gradient-zapp: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+      --gradient-bolt: linear-gradient(135deg, #38bdf8 0%, #8b5cf6 100%);
+      --shadow-neon: 0 10px 30px -5px rgba(99, 102, 241, 0.35);
     }
 
     * {
@@ -52,8 +48,8 @@
 
     body,
     html {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-color);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-base);
       color: var(--text-main);
       min-height: 100vh;
       padding-bottom: 110px;
@@ -61,8 +57,8 @@
       scroll-behavior: smooth;
     }
 
-    h1, h2, h3, h4, .brand-font {
-      font-family: 'Outfit', sans-serif;
+    h1, h2, h3, h4, .display-font {
+      font-family: 'Space Grotesk', sans-serif;
     }
 
     a {
@@ -70,78 +66,64 @@
       color: inherit;
     }
 
-    /* Ambient Mesh Gradients */
-    .blur-blob-1 {
+    /* Cyber Grid & Ambient Lighting */
+    .cyber-backdrop {
       position: fixed;
-      top: -120px;
-      left: -100px;
-      width: 380px;
-      height: 380px;
-      background: radial-gradient(circle, rgba(163, 230, 53, 0.22) 0%, rgba(34, 197, 94, 0.05) 70%);
-      border-radius: 50%;
-      filter: blur(90px);
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 10%, rgba(139, 92, 246, 0.18) 0%, transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
       z-index: -1;
       pointer-events: none;
     }
 
-    .blur-blob-2 {
-      position: fixed;
-      bottom: 80px;
-      right: -120px;
-      width: 360px;
-      height: 360px;
-      background: radial-gradient(circle, rgba(34, 197, 94, 0.18) 0%, rgba(163, 230, 53, 0.04) 70%);
-      border-radius: 50%;
-      filter: blur(100px);
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* Top Marketing Announcement Bar */
-    .promo-strip {
-      background: linear-gradient(90deg, rgba(163, 230, 53, 0.12), rgba(34, 197, 94, 0.2), rgba(163, 230, 53, 0.12));
-      border-bottom: 1px solid rgba(163, 230, 53, 0.2);
-      text-align: center;
+    /* High-Conversion Top Ticker */
+    .zapp-ticker {
+      background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 50%, #0891b2 100%);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 700;
       padding: 8px 16px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: #d9f99d;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
+      letter-spacing: 0.3px;
     }
 
-    .promo-strip a {
-      background: var(--gradient-kiwi);
-      color: var(--accent-dark);
-      padding: 2px 10px;
-      border-radius: 99px;
-      font-weight: 700;
-      font-size: 11px;
+    .zapp-ticker .ticker-badge {
+      background: var(--zapp-bolt);
+      color: #06070f;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 10.5px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
-      transition: transform 0.2s;
     }
 
-    .promo-strip a:hover {
-      transform: scale(1.05);
+    .zapp-ticker a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      color: #bae6fd;
     }
 
-    /* Sticky Glass Header */
+    /* Command Navbar */
     header {
-      padding: 16px 24px;
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(7, 11, 8, 0.78);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-      border-bottom: 1px solid var(--card-border);
+      z-index: 120;
+      background: rgba(6, 7, 15, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 24px;
     }
 
-    .header-inner {
-      max-width: 1080px;
+    .nav-shell {
+      max-width: 1160px;
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -149,263 +131,332 @@
       gap: 16px;
     }
 
-    .brand {
+    .zapp-brand {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.7px;
     }
 
-    .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: var(--gradient-kiwi);
+    .zapp-icon-box {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: var(--gradient-zapp);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 16px var(--accent-glow);
+      box-shadow: 0 0 22px rgba(139, 92, 246, 0.5);
       position: relative;
-      overflow: hidden;
     }
 
-    .brand-logo svg {
-      width: 26px;
-      height: 26px;
+    .zapp-icon-box i {
+      color: #ffffff;
+      font-size: 20px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
     }
 
-    .brand span {
-      background: var(--gradient-kiwi);
+    .zapp-brand span {
+      background: linear-gradient(90deg, #38bdf8, #a78bfa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .header-actions {
+    /* Integrated Header Search + Quick Actions */
+    .header-search {
+      flex: 1;
+      max-width: 460px;
+      position: relative;
+    }
+
+    .header-search input {
+      width: 100%;
+      padding: 12px 68px 12px 42px;
+      border-radius: 14px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 18, 36, 0.9);
+      color: var(--text-main);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+
+    .header-search input:focus {
+      border-color: var(--zapp-cyan);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+      background: #11152b;
+    }
+
+    .header-search .fa-magnifying-glass {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--zapp-cyan);
+      font-size: 14px;
+    }
+
+    .header-search kbd {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+      font-size: 10.5px;
+      padding: 3px 7px;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+
+    .nav-cta-group {
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .header-pill {
+    .chip-action {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 8px 14px;
-      border-radius: 99px;
+      padding: 9px 15px;
+      border-radius: 12px;
       font-size: 13px;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
-      transition: all 0.25s ease;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.2s;
     }
 
-    .header-pill:hover {
-      border-color: var(--accent);
-      background: rgba(163, 230, 53, 0.12);
+    .chip-action:hover {
+      border-color: var(--zapp-cyan);
+      background: rgba(56, 189, 248, 0.1);
     }
 
-    .header-pill.pro-pill {
-      background: rgba(163, 230, 53, 0.14);
-      border-color: rgba(163, 230, 53, 0.35);
-      color: var(--accent);
+    .chip-action.nitro {
+      background: var(--gradient-zapp);
+      border-color: transparent;
+      color: #fff;
+      box-shadow: var(--shadow-neon);
     }
 
     .container {
-      max-width: 1080px;
+      max-width: 1160px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* Marketing Hero Section */
-    .hero-banner {
-      margin: 22px 0 20px;
-      padding: 28px 26px;
-      border-radius: var(--radius-xl);
-      background:
-        radial-gradient(circle at 85% 20%, rgba(163, 230, 53, 0.24) 0%, transparent 55%),
-        linear-gradient(135deg, rgba(20, 35, 24, 0.95) 0%, rgba(10, 17, 12, 0.98) 100%);
-      border: 1px solid rgba(163, 230, 53, 0.25);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      position: relative;
-      overflow: hidden;
+    /* Split Asymmetric Bento Hero */
+    .bento-hero {
+      display: grid;
+      grid-template-columns: 1.65fr 1fr;
+      gap: 18px;
+      margin: 24px 0;
     }
 
-    .hero-eyebrow {
+    .bento-main {
+      border-radius: 26px;
+      padding: 32px 30px;
+      background:
+        radial-gradient(circle at 90% 15%, rgba(56, 189, 248, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 10% 90%, rgba(139, 92, 246, 0.28) 0%, transparent 55%),
+        linear-gradient(145deg, #11152c 0%, #090b18 100%);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .voltage-tag {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
       align-self: flex-start;
-      background: rgba(163, 230, 53, 0.14);
-      border: 1px solid rgba(163, 230, 53, 0.35);
-      color: var(--accent);
-      font-size: 12px;
+      padding: 5px 13px;
+      border-radius: 99px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--zapp-cyan);
+      font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.8px;
-      padding: 5px 12px;
-      border-radius: 99px;
+      margin-bottom: 14px;
     }
 
-    .hero-banner h1 {
-      font-size: clamp(26px, 4.5vw, 38px);
-      line-height: 1.12;
-      font-weight: 800;
-      letter-spacing: -0.6px;
-      max-width: 640px;
+    .bento-main h1 {
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.08;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
     }
 
-    .hero-banner h1 span {
-      background: var(--gradient-kiwi);
+    .bento-main h1 span {
+      background: linear-gradient(90deg, #38bdf8 0%, #a78bfa 60%, #facc15 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-banner p {
+    .bento-main p {
       color: var(--text-muted);
       font-size: 15px;
       line-height: 1.55;
-      max-width: 580px;
+      max-width: 520px;
+      margin-bottom: 22px;
     }
 
-    .hero-stats {
+    .hero-metrics {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 4px;
+      gap: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
     }
 
-    .stat-chip {
+    .metric-item {
       display: flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 7px 13px;
-      border-radius: 12px;
-      font-size: 12.5px;
+      gap: 9px;
+      font-size: 13px;
       font-weight: 600;
-      color: #d4e3d7;
+      color: #cbd5e1;
     }
 
-    .stat-chip i {
-      color: var(--accent);
+    .metric-item i {
+      color: var(--zapp-bolt);
     }
 
-    /* Search Bar */
-    .search-wrapper {
-      margin: 18px 0 14px;
+    .bento-side {
+      border-radius: 26px;
+      padding: 26px 24px;
+      background: linear-gradient(160deg, rgba(99, 102, 241, 0.2) 0%, rgba(13, 16, 33, 0.95) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       position: relative;
+      overflow: hidden;
     }
 
-    .search-bar {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .search-bar input {
-      width: 100%;
-      padding: 16px 50px 16px 48px;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--card-border);
-      background: rgba(18, 28, 21, 0.85);
-      color: var(--text-main);
-      font-size: 15.5px;
-      font-weight: 500;
-      outline: none;
-      transition: all 0.25s ease;
-      font-family: inherit;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    .search-bar input:focus {
-      background: rgba(24, 38, 28, 0.95);
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(163, 230, 53, 0.18), 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .search-bar input::placeholder {
-      color: var(--text-muted);
-    }
-
-    .search-bar .search-icon {
-      position: absolute;
-      left: 18px;
-      color: var(--accent);
-      font-size: 17px;
-      pointer-events: none;
-    }
-
-    .search-bar .shortcut-hint {
-      position: absolute;
-      right: 16px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--text-muted);
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 8px;
-      border-radius: 6px;
-      pointer-events: none;
-    }
-
-    /* Category Pills */
-    .category-pills {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      padding: 6px 0 14px;
-      scrollbar-width: none;
-    }
-
-    .category-pills::-webkit-scrollbar {
-      display: none;
-    }
-
-    .cat-pill {
-      flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      border-radius: 99px;
-      font-size: 13.5px;
-      font-weight: 600;
-      font-family: inherit;
-      background: var(--card-bg);
-      color: var(--text-muted);
-      border: 1px solid var(--card-border);
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
-
-    .cat-pill:hover {
-      color: var(--text-main);
-      border-color: rgba(163, 230, 53, 0.35);
-      transform: translateY(-1px);
-    }
-
-    .cat-pill.active {
-      background: var(--gradient-kiwi);
-      color: var(--accent-dark);
-      border-color: transparent;
-      font-weight: 700;
-      box-shadow: 0 6px 18px var(--accent-glow);
-    }
-
-    .section-header {
+    .spotlight-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 26px 0 16px;
+      margin-bottom: 14px;
+    }
+
+    .spotlight-badge {
+      background: rgba(250, 204, 21, 0.15);
+      border: 1px solid rgba(250, 204, 21, 0.4);
+      color: var(--zapp-bolt);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      text-transform: uppercase;
+    }
+
+    .spotlight-app {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 14px;
+    }
+
+    .spotlight-app img {
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 2px solid rgba(56, 189, 248, 0.4);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .spotlight-app h3 {
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+
+    .spotlight-app span {
+      font-size: 12.5px;
+      color: var(--zapp-cyan);
+      font-weight: 600;
+    }
+
+    .bento-side p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
+
+    /* Segmented Category Bar */
+    .filter-rail {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 22px 0 18px;
+      flex-wrap: wrap;
+    }
+
+    .category-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px;
+      background: rgba(15, 18, 36, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      scrollbar-width: none;
+    }
+
+    .category-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .zapp-tab {
+      flex: 0 0 auto;
+      padding: 9px 16px;
+      border-radius: 12px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+    }
+
+    .zapp-tab:hover {
+      color: var(--text-main);
+    }
+
+    .zapp-tab.active {
+      background: var(--gradient-zapp);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Section Headers */
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 28px 0 16px;
     }
 
     .section-title {
@@ -414,22 +465,25 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      letter-spacing: -0.3px;
     }
 
-    .section-subtitle {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
+    .section-count {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--zapp-cyan);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 4px 11px;
+      border-radius: 99px;
     }
 
-    /* Featured Bento Carousel */
+    /* Top 3 Numbered Leaderboard Carousel */
     .featured-container {
       display: grid;
-      grid-template-columns: repeat(3, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, minmax(275px, 1fr));
       gap: 16px;
       overflow-x: auto;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
     }
@@ -440,118 +494,83 @@
 
     .featured-card {
       scroll-snap-align: start;
-      background: var(--gradient-surface);
-      border: 1px solid var(--card-border);
+      background: linear-gradient(155deg, rgba(22, 27, 54, 0.9) 0%, rgba(11, 14, 29, 0.95) 100%);
+      border: 1px solid var(--border-subtle);
       border-radius: 22px;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
+      padding: 20px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.28s ease;
     }
 
     .featured-card:hover {
       transform: translateY(-4px);
-      border-color: var(--card-border-hover);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(163, 230, 53, 0.12);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-neon);
     }
 
-    .featured-card::before {
-      content: '';
+    .rank-number {
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 110px;
-      background: radial-gradient(circle at top right, rgba(163, 230, 53, 0.22) 0%, transparent 70%);
+      top: 10px;
+      right: 16px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.35), rgba(139, 92, 246, 0.04));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       pointer-events: none;
     }
 
-    .featured-top {
+    .featured-card-head {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      width: 100%;
+      gap: 14px;
       margin-bottom: 14px;
     }
 
     .featured-card img {
-      width: 76px;
-      height: 76px;
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
+      width: 68px;
+      height: 68px;
+      border-radius: 18px;
       object-fit: cover;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
-    .featured-card .featured-badge {
-      background: rgba(163, 230, 53, 0.16);
-      border: 1px solid rgba(163, 230, 53, 0.4);
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      border-radius: 99px;
-      letter-spacing: 0.5px;
+    .featured-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-    }
-
-    .featured-card h3 {
-      font-size: 19px;
+      gap: 4px;
+      font-size: 10.5px;
       font-weight: 700;
+      text-transform: uppercase;
+      color: var(--zapp-cyan);
+      background: rgba(56, 189, 248, 0.12);
+      padding: 3px 8px;
+      border-radius: 6px;
       margin-bottom: 4px;
     }
 
-    .featured-card p {
-      font-size: 13.5px;
-      color: var(--text-muted);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      margin-bottom: 16px;
-      line-height: 1.45;
-      min-height: 38px;
-    }
-
-    .featured-footer {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      padding-top: 12px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-    }
-
-    .rating-pill {
-      font-size: 12.5px;
+    .featured-card h3 {
+      font-size: 18px;
       font-weight: 700;
-      color: #fde047;
-      display: flex;
-      align-items: center;
-      gap: 4px;
     }
 
-    .rating-pill span {
+    .featured-card p {
+      font-size: 13px;
       color: var(--text-muted);
-      font-weight: 500;
+      line-height: 1.45;
+      margin-bottom: 16px;
+      flex: 1;
     }
 
-    /* App Grid / List */
+    /* Main App Store Grid */
     .app-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
       gap: 14px;
     }
 
@@ -560,32 +579,27 @@
       align-items: center;
       padding: 15px 16px;
       background: var(--card-bg);
-      border: 1px solid var(--card-border);
+      border: 1px solid var(--border-subtle);
       border-radius: 20px;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      position: relative;
     }
 
     .app-item:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
       background: var(--card-hover);
-      border-color: var(--card-border-hover);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-    }
-
-    .app-item:active {
-      transform: scale(0.985);
+      border-color: var(--border-glow);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(99, 102, 241, 0.15);
     }
 
     .app-item img {
-      width: 66px;
-      height: 66px;
-      border-radius: 17px;
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
       margin-right: 15px;
       object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
       border: 1px solid rgba(255, 255, 255, 0.08);
       flex-shrink: 0;
     }
@@ -603,16 +617,15 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      color: var(--text-main);
     }
 
     .app-info p {
-      font-size: 13px;
+      font-size: 12.8px;
       color: var(--text-muted);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
 
     .app-meta {
@@ -624,107 +637,108 @@
     }
 
     .meta-tag {
-      background: rgba(163, 230, 53, 0.12);
-      color: var(--accent);
+      background: rgba(139, 92, 246, 0.16);
+      color: #c4b5fd;
+      border: 1px solid rgba(139, 92, 246, 0.3);
       padding: 2px 8px;
       border-radius: 6px;
-      letter-spacing: 0.2px;
     }
 
     .meta-stars {
-      color: #facc15;
+      color: var(--zapp-bolt);
       display: inline-flex;
       align-items: center;
       gap: 3px;
     }
 
-    /* Call to Action Buttons */
+    /* Zapp Button */
     .btn {
-      background: var(--gradient-kiwi);
-      color: var(--accent-dark);
+      background: var(--gradient-zapp);
+      color: #ffffff;
       border: none;
       padding: 9px 18px;
-      border-radius: 99px;
-      font-size: 13.5px;
+      border-radius: 12px;
+      font-size: 13px;
       font-weight: 700;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: inherit;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.22s ease;
       text-align: center;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      min-width: 98px;
-      box-shadow: 0 4px 14px rgba(132, 204, 22, 0.25);
+      min-width: 100px;
+      box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
       flex-shrink: 0;
     }
 
     .btn:hover {
-      transform: translateY(-1px) scale(1.02);
-      box-shadow: 0 6px 20px rgba(163, 230, 53, 0.45);
-      filter: brightness(1.06);
+      transform: translateY(-1px) scale(1.03);
+      box-shadow: 0 6px 22px rgba(56, 189, 248, 0.5);
+      filter: brightness(1.1);
     }
 
     .btn.btn-muted,
     .btn[onclick*="No disponible"] {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.06);
       color: var(--text-muted);
       box-shadow: none;
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Marketing Promo Card inside Store */
-    .kiwi-promo-card {
-      margin: 34px 0 18px;
-      padding: 24px;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(135deg, rgba(163, 230, 53, 0.16) 0%, rgba(34, 197, 94, 0.08) 100%);
-      border: 1px solid rgba(163, 230, 53, 0.3);
+    /* Creator & Native App Marketing Banner */
+    .zapp-callout {
+      margin: 38px 0 20px;
+      padding: 28px;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 100% 50%, rgba(56, 189, 248, 0.2), transparent 55%),
+        linear-gradient(135deg, rgba(30, 27, 75, 0.85) 0%, rgba(13, 16, 33, 0.95) 100%);
+      border: 1px solid rgba(99, 102, 241, 0.35);
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 20px;
     }
 
-    .kiwi-promo-text h3 {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 4px;
+    .zapp-callout h3 {
+      font-size: 22px;
+      margin-bottom: 5px;
     }
 
-    .kiwi-promo-text p {
-      font-size: 14px;
+    .zapp-callout p {
       color: var(--text-muted);
+      font-size: 14px;
     }
 
-    .kiwi-promo-actions {
+    .zapp-callout-btns {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
     }
 
-    /* Floating Bottom Navigation */
+    /* Floating Cyber Bottom Nav */
     .bottom-nav {
       position: fixed;
       bottom: 16px;
       left: 50%;
       transform: translateX(-50%);
       width: calc(100% - 32px);
-      max-width: 460px;
+      max-width: 480px;
       height: 68px;
-      background: var(--nav-bg);
+      background: rgba(10, 12, 26, 0.88);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(163, 230, 53, 0.22);
-      border-radius: 99px;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 22px;
       display: flex;
       justify-content: space-around;
       align-items: center;
-      padding: 0 10px;
+      padding: 0 8px;
       z-index: 200;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.7), 0 0 20px rgba(163, 230, 53, 0.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75), 0 0 24px rgba(99, 102, 241, 0.18);
     }
 
     .nav-item {
@@ -738,16 +752,16 @@
       font-family: inherit;
       flex: 1;
       height: 52px;
-      border-radius: 99px;
-      transition: all 0.25s ease;
+      border-radius: 16px;
+      transition: all 0.22s ease;
       cursor: pointer;
       text-decoration: none;
     }
 
     .nav-item i {
-      font-size: 19px;
-      margin-bottom: 3px;
-      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 18px;
+      margin-bottom: 4px;
+      transition: transform 0.25s;
     }
 
     .nav-item span {
@@ -756,12 +770,14 @@
     }
 
     .nav-item.active {
-      color: var(--accent);
-      background: rgba(163, 230, 53, 0.12);
+      color: #ffffff;
+      background: rgba(139, 92, 246, 0.22);
+      box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.4);
     }
 
     .nav-item.active i {
-      transform: translateY(-1px) scale(1.1);
+      color: var(--zapp-cyan);
+      transform: translateY(-1px);
     }
 
     .hidden {
@@ -774,145 +790,167 @@
       color: var(--text-muted);
       display: none;
       background: var(--card-bg);
-      border: 1px dashed var(--card-border);
-      border-radius: var(--radius-xl);
+      border: 1px dashed var(--border-subtle);
+      border-radius: 24px;
       margin-top: 16px;
     }
 
     #noResults i {
-      font-size: 42px;
+      font-size: 40px;
       margin-bottom: 12px;
-      color: var(--accent);
-      opacity: 0.8;
+      color: var(--zapp-cyan);
     }
 
-    @media (max-width: 640px) {
-      .header-pill span {
-        display: none;
-      }
-      .hero-banner {
-        padding: 22px 18px;
+    @media (max-width: 860px) {
+      .bento-hero {
+        grid-template-columns: 1fr;
       }
       .featured-container {
         display: flex;
       }
       .featured-card {
-        min-width: 270px;
+        min-width: 280px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-shell {
+        flex-wrap: wrap;
+      }
+      .header-search {
+        order: 3;
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
+      .chip-action span {
+        display: none;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="cyber-backdrop"></div>
 
-  <div class="blur-blob-1"></div>
-  <div class="blur-blob-2"></div>
-
-  <div class="promo-strip">
-    <span>🥝 Bienvenido a la nueva <strong>Kiwi Store</strong> — Más rápida, fresca y sin límites</span>
-    <a href="download.html">Obtener App</a>
+  <div class="zapp-ticker">
+    <span class="ticker-badge">⚡ ZAPP 2.0</span>
+    <span>Descargas directas a máxima velocidad sin límites de región</span>
+    <a href="download.html">Instalar App Oficial →</a>
   </div>
 
   <header>
-    <div class="header-inner">
-      <a href="inicio.html" class="brand">
-        <div class="brand-logo" aria-hidden="true">
-          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="44" fill="#071209" stroke="#071209" stroke-width="4" />
-            <circle cx="50" cy="50" r="34" fill="#a3e635" />
-            <circle cx="50" cy="50" r="14" fill="#ecfccb" />
-            <g fill="#071209">
-              <circle cx="50" cy="27" r="3" />
-              <circle cx="66" cy="34" r="3" />
-              <circle cx="73" cy="50" r="3" />
-              <circle cx="66" cy="66" r="3" />
-              <circle cx="50" cy="73" r="3" />
-              <circle cx="34" cy="66" r="3" />
-              <circle cx="27" cy="50" r="3" />
-              <circle cx="34" cy="34" r="3" />
-            </g>
-          </svg>
+    <div class="nav-shell">
+      <a href="inicio.html" class="zapp-brand">
+        <div class="zapp-icon-box">
+          <i class="fa-solid fa-bolt"></i>
         </div>
-        <div>Kiwi <span>Store</span></div>
+        <div>Zapp <span>Store</span></div>
       </a>
 
-      <div class="header-actions">
-        <a href="com.html" class="header-pill" title="Comunidad Kiwi">
-          <i class="fa-solid fa-users"></i>
-          <span>Comunidad</span>
+      <div class="header-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" id="searchInput" placeholder="Busca juegos, mods, IA o utilidades en Zapp..."
+          aria-label="Buscar aplicaciones">
+        <kbd>/</kbd>
+      </div>
+
+      <div class="nav-cta-group">
+        <a href="com.html" class="chip-action" title="Hub de Creadores">
+          <i class="fa-solid fa-code-branch"></i>
+          <span>Creadores</span>
         </a>
-        <a href="premium.html" class="header-pill pro-pill" title="Kiwi Store Pro">
-          <i class="fa-solid fa-crown"></i>
-          <span>Kiwi Pro</span>
+        <a href="premium.html" class="chip-action nitro" title="Zapp Nitro">
+          <i class="fa-solid fa-bolt-lightning"></i>
+          <span>Zapp Nitro</span>
         </a>
       </div>
     </div>
   </header>
 
   <div class="container">
-    <!-- Marketing Hero Section -->
-    <section class="hero-banner">
-      <div class="hero-eyebrow">
-        <i class="fa-solid fa-bolt"></i> Ecosistema Oficial Kiwi 2026
+    <!-- Split Asymmetric Bento Hero -->
+    <section class="bento-hero" id="heroSection">
+      <div class="bento-main">
+        <div>
+          <div class="voltage-tag">
+            <i class="fa-solid fa-bolt"></i> Marketplace de Alta Velocidad
+          </div>
+          <h1>Instala tus apps y mods al instante con <span>Zapp Store</span>.</h1>
+          <p>El ecosistema definitivo para iOS, Android y Windows. Sin esperas, con verificación de seguridad Zapp
+            Shield y servidores de descarga directa.</p>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric-item"><i class="fa-solid fa-bolt"></i> 1-Click Direct APK / iOS</div>
+          <div class="metric-item"><i class="fa-solid fa-shield-halved"></i> Zapp Shield Verificado</div>
+          <div class="metric-item"><i class="fa-solid fa-fire-flame-curved"></i> +37 Apps Exclusivas</div>
+        </div>
       </div>
-      <h1>Tus apps, juegos y mods favoritos en <span>Kiwi Store</span>.</h1>
-      <p>Explora un catálogo curado de aplicaciones exclusivas para iOS, Android y Windows. Descargas directas,
-        actualizaciones al día y experiencia ultrarrápida libre de fricción.</p>
-      <div class="hero-stats">
-        <div class="stat-chip"><i class="fa-solid fa-shield-halved"></i> Verificado por Kiwi Shield</div>
-        <div class="stat-chip"><i class="fa-solid fa-cloud-arrow-down"></i> +35 Apps &amp; Mods Directos</div>
-        <div class="stat-chip"><i class="fa-brands fa-apple"></i> <i class="fa-brands fa-android"></i> Multiplataforma</div>
+
+      <div class="bento-side">
+        <div>
+          <div class="spotlight-header">
+            <span class="spotlight-badge">⚡ App Spotlight</span>
+            <span style="font-size:12px; color:var(--text-muted);">★ 5.0 Rating</span>
+          </div>
+          <div class="spotlight-app">
+            <img src="https://erikai.vercel.app/source/New%20logo%20in%20ErikAi.gif" alt="ErikAI">
+            <div>
+              <h3>ErikAI Next-Gen</h3>
+              <span>iOS &amp; Android • IA Oficial</span>
+            </div>
+          </div>
+          <p>Potencia tu día con el asistente de inteligencia artificial más rápido del ecosistema Zapp Store.</p>
+        </div>
+        <a href="https://erikappstore.vercel.app/apptwo/api/erikai/erikai.html" target="_blank" class="btn"
+          style="width:100%; padding:12px;">
+          <i class="fa-solid fa-bolt"></i> Obtener Ahora Gratis
+        </a>
       </div>
     </section>
 
-    <!-- Search Bar -->
-    <div class="search-wrapper">
-      <div class="search-bar">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="search" id="searchInput" placeholder="Buscar en Kiwi Store: juegos, IA, redes sociales, mods..."
-          aria-label="Buscar aplicaciones">
-        <span class="shortcut-hint">/ Buscar</span>
+    <!-- Category Filter Bar -->
+    <div class="filter-rail">
+      <div class="category-tabs" role="tablist" aria-label="Filtrar por categoría">
+        <button class="zapp-tab active" data-filter="all"><i class="fa-solid fa-grip"></i> Todo el Catálogo</button>
+        <button class="zapp-tab" data-filter="exclusivas"><i class="fa-solid fa-bolt"></i> Zapp Originals</button>
+        <button class="zapp-tab" data-filter="juegos"><i class="fa-solid fa-gamepad"></i> Gaming &amp; Mods</button>
+        <button class="zapp-tab" data-filter="social"><i class="fa-solid fa-comments"></i> Social &amp; Stream</button>
+        <button class="zapp-tab" data-filter="utilidades"><i class="fa-solid fa-microchip"></i> IA &amp; Tools</button>
       </div>
     </div>
 
-    <!-- Category Filter Pills -->
-    <div class="category-pills" role="tablist" aria-label="Categorías de aplicaciones">
-      <button class="cat-pill active" data-filter="all"><i class="fa-solid fa-border-all"></i> Todas</button>
-      <button class="cat-pill" data-filter="exclusivas"><i class="fa-solid fa-fire"></i> Exclusivas Kiwi</button>
-      <button class="cat-pill" data-filter="juegos"><i class="fa-solid fa-gamepad"></i> Juegos &amp; Mods</button>
-      <button class="cat-pill" data-filter="social"><i class="fa-solid fa-comments"></i> Social &amp; Media</button>
-      <button class="cat-pill" data-filter="utilidades"><i class="fa-solid fa-wand-magic-sparkles"></i> IA &amp; Utilidades</button>
-    </div>
-
-    <!-- Featured Bento Section -->
+    <!-- Top 3 Numbered Leaderboard -->
     <div id="featuredSection">
-      <div class="section-header">
-        <div class="section-title"><i class="fa-solid fa-star" style="color:var(--accent);"></i> Selección Kiwi del Día</div>
-        <span class="section-subtitle">Recomendadas para ti</span>
+      <div class="section-head">
+        <div class="section-title">
+          <i class="fa-solid fa-trophy" style="color:var(--zapp-bolt);"></i> Top 3 En Tendencia Hoy
+        </div>
+        <span class="section-count">Actualizado en vivo</span>
       </div>
       <div class="featured-container" id="featuredContainer">
-        <!-- JS will populate 3 featured apps here -->
+        <!-- Populated by JS -->
       </div>
     </div>
 
-    <div class="section-header">
+    <!-- Full Catalog -->
+    <div class="section-head">
       <div class="section-title" id="allAppsTitle">
-        <i class="fa-solid fa-layer-group" style="color:var(--accent);"></i> Catálogo Completo
+        <i class="fa-solid fa-cubes" style="color:var(--zapp-cyan);"></i> Todas las Aplicaciones
       </div>
-      <span class="section-subtitle" id="appCounter">37 aplicaciones</span>
+      <span class="section-count" id="appCounter">37 Zapps</span>
     </div>
 
     <div class="app-list" id="appList">
       <div class="app-item" data-name="erik mail" data-category="exclusivas utilidades">
         <img
-          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAH2AfYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1eiiiuw4wooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigApaltolkfBOK0l0+Ij1pOaW5Si3sZFJW1/Z0XpR/Z0XpUe0iPkZi0Vs/2bF6Uv9nRe9HtEPkkYtFbB0yL3pP7Mj9TR7RBySMiitf+zI/U0f2ZH6mj2iFySMiitf8AsyP1NH9mR+po9og5JGRRWv8A2ZH6mj+zI/U0e0QckjIorX/syP1NH9mR+po9oh8kjIorVOlp2Yik/sxf7xp+0iLkkZdFan9mL/eNH9mL/eNHtIhySMuitT+zF/vGj+zF/vGj2kQ5JGXRWp/Zi/3jR/Zi/wB40e0iHJIy6K1P7MX+8aP7LHZqPaRDkkZdFaf9lf7dH9lf7dHtIhyyMyitI6Ww6MKqT2jwDJII9qamnsLlaIKKKMVQgooooEFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVPbQGZyPSoK0NKGXf2FTKVkVFXditLC8EnoO1XbO75COauzQJMpBrGlia3kYc4B4NZX5jS3Lsb/AFFGKzrO8DAI/wCBrQByKzasaJ3Cig0UiwooooAKKKKACiiigAooooAKKKKACjFFFMAxRiiigAxRiiigAxRiiigAxRRQKACilxTJJFRck4oEDuEUk8Csa7ut8hUHg067vGlJVTxRaWbSEOw49K0iktzKTvoisYHEe/bxTM1tzoFt2AA4FYh61pGVzNxa3EoooqyAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACtLSRzIazTWnpP/LSs6mxpT+I06guLdZlwRzU9FYJ2NmrmDLE9u/p6Ves7zcAjmrM9usyYI5rIkjeCQjGMdKu6ZFmmbwORkUVQtLwNhGPSr+QelQ1Y0TuFFFFIoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoHWimuyou4nAFAnoLJII1yaxbu5aRyoPFPurppmIBwBTrS0L4dhWsVZXZm5X0Qy0si5Dv0rXRAqgDpSIgQYAp2aiTuVGJDdD9w9YJ61v3I/0dvpWAetXTIqCUUUVuYBRRRQAppKU0lABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABWlpQ+dz221m1p6V95/pWdTY0p/EadFAornOhBUE9usynPWp6KadgaTMCVHglIPHPBrQs7sMoRjzVi4t1mQ5HNY7o9vLg8elaKzRk7o3wciiqFpdhwFJ5q8DkZFZtWNE7i0UUUigooooAKKKKACiiigAooooAKKKKACiiigAoopkkixrknFMTdgklWNSx6Vj3V200m0ZA9KLm6MzlRwKls7MsQ8g+lWkkrszcm9EFpZs5Dyfd7CtVECjAGBQiBRgdKdjFS5XKjGwUmKU0lSWR3P8Ax7t9K54/eNb90cW7/SufPWtaZjVCiiitzAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArU0zqay61NM6ms6mxpT+I0hRQKK5zoQUUUUDFqvc26zIeOasA0daadiWrnPSI9vJ3ArRs7sMoRjVi5tlmU8DNY7o8EhHTFaXTRmk07m/wBsiiqFleBwFY81frNqxoncKKKKRQUUUUAFFFFABRRRQAUUUCgAopcVFJKsakk0JXFewSyLEhYnFY89y07HBwvakurlp5NoJxngVPaWZYh37dBWiVkZNtuyCzsySJHH0FaoUKMAcUKuABTs1Ddy4xsJTh0ptOHSkUIaSlNJQMgvP+PV/pWCetb95/x6v9KwD1ralsY1RKKKK2MAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACtTTOprLrU0zqazqbGlP4jSFFAornOhBRRRQMKKKKAAVXurdZkPHNWKDgDmmnYmSuc86PBJg8elalpeCUBW4YVBqMiFQoA3Vno5Ugg8itLcyM72Z0lFU7K7EiBWPNXO2RWbVjVO4UUUUhhRRRQAUUUUAFLSVHLKsS7mOKEriYTTLEhJI4rFuLh532jpTrm4M8m0H5abbbBON1aqNlcycr6FqzssfO45NaaKFFImCox0p2ahyuXFAaKKUVJYlOopM0CA0lGaKBkF3/x6v8ASsE9a3rv/j1f6VgnrW1MxqiUUUVsYBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFammdTWXWnpnU1nU2NKfxGnRRRXOdCCiiigYUUUE4pgBOBVG7vAgKqeaLu7CDap5rOSN7iX1q4x7mbl0BIpLiX1q/wD2enkjIwwqzb26xIOOanxQ5W0QuW+5gsrQS4GQBWnZ3ayrtJ5p1zbLKh45rIdXt5OOMU7qSEtGdBRVK0vVkUK3Bq6CCMis2rGqdwooopDCil4qCe4SFSSaaQmxZZ0iUknntWNPcPcOQTxngCklme4f27Vcs7TBDsKtRsrmTk3oNtrIlQWFV54DDKTgitwAAVHPAsyEHrQphy6XKVleAfIx+laIO4cVhT27W78VdsrzcAjnmhxvqhxlbRmjilFAIIpTWZoGaaaWkoAKKKKBkF3/AMer/SsE9a3rv/j1f6VgnrW1MxqiUUUVsYBRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFaemdTWZWppg+9WdTY0p/EaVFFFc50IKKKKBiHgVRu7sKpVTzS3d2EygPNZscbzyADnNaRj1ZnKXRAiPcShR3PWtm2t1hQDqfWkt7dYVAA571YHFKT6IIx6sWjFJS5qCxDVe4tlmXpzViimnYTVzAlheB+ARU0F/JHw3IrWeNXGCM1Tl01XyVOKtNPchxa2FXUYycHgUp1GADg5qp/ZcmeooOly9iKfLHuK8h8uqFhhBj3qmzS3B5ywq9FpgBBc59qux26RgADFDcVsFpNlW1stuGYVfChRxSjgYorNtsuMbBiiijNIqxHLCsqEEc1i3EDwSZXgVvVHLCsqEEVUZW0IcSjZXuQEc81pAgjIrCuITBJkcVdsrzd8jnmnKPVCjLozRpKAciioNQooooAgu/8Aj1f6VgnrW9d/8er/AErBPWtqZjVEooorYwCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAK1dM6N9Kyh1rW0zofpWdTY0p/EaAooo6VznQg6VRvLsINiNk028vAoKRnJNUIYnnkx1yeTWkY9WRKXRAkTzydznvWxb2ywqMDmi3t1hQDjIqelKXRCjHqwxig0UVBqFFFFABRRRQAUYopw6UAJijFLRQIaRRSmkoGFFFFABRRRQAClpKKAIp4FmQgjmsaWF7eTp071vVFPAsykEc1UZdGQ4lWzvA4CMeavA56VhTRPBJkcVes7zeoRzzTlHqhRl0ZoUUA5oqC07kN5/x6t9KwD1rfvP+PVvpWAetbUjKqJRRRWxgFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQADrWvpn3WNZFammOAjKT05qKnwlw0Zok461QvLwICiHmi8vAoKKaoRQvPJntWUY9zSUuiCCJ55eQcetbUFusSjjmiCBYUAA5qYmlKV9EVGPViGiiioNAooooAKKKKACiiigApaSigB2aM02igBaSiigAooooAKKKKACiiigAooooAguIBKpGOayJImgk9K3qhnt1mQjoauMraGco9itZ3gbCOcGr/AFrAkia3k9CK0LK8DjY557USj1QlK2hYvDi1b6VgnrWzfsBbEevFYprSktCajuFFFFamIUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABUkcjx52nGRg1HSihq47k0MDzyYHTua2oIFhQBR2rDjleNsq2KsjUZgMcVjOLexrFrqbFGKxxqUo9KcNTl9BUcjNOZGtRWWNUfHKimnVG7LS5JBzo1qKyRqj5+6KX+1G/uijkkHOjVorK/tRv7oo/tRv7oo5JB7RGrRWV/ajf3RR/ajf3RRySD2iNWisr+1G/uij+1G/uijkkHtEatFZX9qN/dFH9qN/dFHJIOdGrRWX/AGqw/gFKNWPdKOSQc6NOis4aovdKX+1E/uGjkYc6NCis/wDtRf7tH9qr/co5JBzo0KKz/wC1U7rij+1E/umjlYcyNCis/wDtRP7po/tRP7po5WHMjQorP/tRP7po/tRP7po5WPmRZuLdZlII5rHlikt5OKvnVExwtU7m6E+MLjFXFPqZSa3QS3TSxKh7daqmg0VrFWM27hRRRVEhRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRRYAooooAKKKKBhRRRQAZozRRRZAFFFFFkIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k="
+          src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAH2AfYDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD1eiiiuw4wooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigApaltolkfBOK0l0+Ij1pOaW5Si3sZFJW1/Z0XpR/Z0XpUe0iPkZi0Vs/2bF6Uv9nRe9HtEPkkYtFbB0yL3pP7Mj9TR7RBySMiitf+zI/U0f2ZH6mj2iFySMiitf8AsyP1NH9mR+po9og5JGRRWv8A2ZH6mj+zI/U0e0QckjIorX/syP1NH9mR+po9oh8kjIorVOlp2Yik/sxf7xp+0iLkkZdFan9mL/eNH9mL/eNHtIhySMuitT+zF/vGj+zF/vGj2kQ5JGXRWp/Zi/3jR/Zi/wB40e0iHJIy6K1P7MX+8aP7LHZqPaRDkkZdFaf9lf7dH9lf7dHtIhyyMyitI6Ww6MKqT2jwDJII9qamnsLlaIKKKMVQgooooEFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAVPbQGZyPSoK0NKGXf2FTKVkVFXditLC8EnoO1XbO75COauzQJMpBrGlia3kYc4B4NZX5jS3Lsb/AFFGKzrO8DAI/wCBrQByKzasaJ3Cig0UiwooooAKKKKACiiigAooooAKKKKACjFFFMAxRiiigAxRiiigAxRiiigAxRRQKACilxTJJFRck4oEDuEUk8Csa7ut8hUHg067vGlJVTxRaWbSEOw49K0iktzKTvoisYHEe/bxTM1tzoFt2AA4FYh61pGVzNxa3EoooqyAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACtLSRzIazTWnpP/LSs6mxpT+I06guLdZlwRzU9FYJ2NmrmDLE9u/p6Ves7zcAjmrM9usyYI5rIkjeCQjGMdKu6ZFmmbwORkUVQtLwNhGPSr+QelQ1Y0TuFFFFIoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoHWimuyou4nAFAnoLJII1yaxbu5aRyoPFPurppmIBwBTrS0L4dhWsVZXZm5X0Qy0si5Dv0rXRAqgDpSIgQYAp2aiTuVGJDdD9w9YJ61v3I/0dvpWAetXTIqCUUUVuYBRRRQAppKU0lABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABWlpQ+dz221m1p6V95/pWdTY0p/EadFAornOhBUE9usynPWp6KadgaTMCVHglIPHPBrQs7sMoRjzVi4t1mQ5HNY7o9vLg8elaKzRk7o3wciiqFpdhwFJ5q8DkZFZtWNE7i0UUUigooooAKKKKACiiigAooooAKKKKACiiigAoopkkixrknFMTdgklWNSx6Vj3V200m0ZA9KLm6MzlRwKls7MsQ8g+lWkkrszcm9EFpZs5Dyfd7CtVECjAGBQiBRgdKdjFS5XKjGwUmKU0lSWR3P8Ax7t9K54/eNb90cW7/SufPWtaZjVCiiitzAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArU0zqay61NM6ms6mxpT+I0hRQKK5zoQUUUUDFqvc26zIeOasA0daadiWrnPSI9vJ3ArRs7sMoRjVi5tlmU8DNY7o8EhHTFaXTRmk07m/wBsiiqFleBwFY81frNqxoncKKKKRQUUUUAFFFFABRRRQAUUUCgAopcVFJKsakk0JXFewSyLEhYnFY89y07HBwvakurlp5NoJxngVPaWZYh37dBWiVkZNtuyCzsySJHH0FaoUKMAcUKuABTs1Ddy4xsJTh0ptOHSkUIaSlNJQMgvP+PV/pWCetb95/x6v9KwD1ralsY1RKKKK2MAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACtTTOprLrU0zqazqbGlP4jSFFAornOhBRRRQMKKKKAAVXurdZkPHNWKDgDmmnYmSuc86PBJg8elalpeCUBW4YVBqMiFQoA3Vno5Ugg8itLcyM72Z0lFU7K7EiBWPNXO2RWbVjVO4UUUUhhRRRQAUUUUAFLSVHLKsS7mOKEriYTTLEhJI4rFuLh532jpTrm4M8m0H5abbbBON1aqNlcycr6FqzssfO45NaaKFFImCox0p2ahyuXFAaKKUVJYlOopM0CA0lGaKBkF3/x6v8ASsE9a3rv/j1f6VgnrW1MxqiUUUVsYBRRRQAU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zRRRZAFFFFFkIKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k="
           alt="Erik Mail">
         <div class="app-info">
           <h4>Erik Mail (iOS)</h4>
           <p>Cliente de correo ultrarrápido y privado.</p>
           <div class="app-meta">
             <span class="meta-tag">iOS</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
         <a onclick="alert('No disponible por ahora')" class="btn btn-muted">Próximamente</a>
@@ -925,10 +963,10 @@
           <p>Comparte y recibe contenido al instante.</p>
           <div class="app-meta">
             <span class="meta-tag">APK Directo</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="SharePlayInstaller.apk" class="btn" target="_blank">Descargar</a>
+        <a href="SharePlayInstaller.apk" class="btn" target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="erikchat" data-category="exclusivas social">
@@ -938,12 +976,12 @@
           <h4>ErikChat (iOS &amp; Android)</h4>
           <p>Mensajería instantánea cifrada y ligera.</p>
           <div class="app-meta">
-            <span class="meta-tag">Exclusiva</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-tag">Zapp Original</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="https://erikappstore.vercel.app/apptwo/api/erikchat/erikchat.html" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://erikappstore.vercel.app/apptwo/api/erikchat/erikchat.html" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="erik search" data-category="exclusivas utilidades">
@@ -955,11 +993,11 @@
           <p>Motor de búsqueda inteligente sin rastreo.</p>
           <div class="app-meta">
             <span class="meta-tag">Utilidad</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://erikappstore.vercel.app/apptwo/api/eriksearch/install.html" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://erikappstore.vercel.app/apptwo/api/eriksearch/install.html" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="erik ai" data-category="exclusivas utilidades">
@@ -969,11 +1007,11 @@
           <p>Tu asistente virtual de IA de nueva generación.</p>
           <div class="app-meta">
             <span class="meta-tag">IA Destacada</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 5.0</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 5.0</span>
           </div>
         </div>
-        <a href="https://erikappstore.vercel.app/apptwo/api/erikai/erikai.html" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://erikappstore.vercel.app/apptwo/api/erikai/erikai.html" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="nulls brawl" data-category="juegos">
@@ -983,11 +1021,11 @@
           <p>Servidor privado modificado de Brawl Stars.</p>
           <div class="app-meta">
             <span class="meta-tag">Mod VIP</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
         <a href="https://www.dropbox.com/scl/fi/pnel34vkcf0foesh8tvt5/nb_59.197_fp.apk?rlkey=rwog5ighq2qlksxds2p3ciz3z&st=xj5v3tym&dl=1"
-          class="btn" target="_blank">Descargar</a>
+          class="btn" target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="capcut" data-category="utilidades social">
@@ -998,11 +1036,11 @@
           <p>Editor de video profesional todo en uno.</p>
           <div class="app-meta">
             <span class="meta-tag">Video &amp; Mod</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
         <a href="https://www.dropbox.com/scl/fi/l3dj4cva01ktzvv3ptp71/com-mod-download-capcut-video-editor-13-7-0-13700100.apk?rlkey=rolwn9i2f53enhv6xprig478c&st=guue9dh7&dl=1"
-          class="btn" target="_blank">Descargar</a>
+          class="btn" target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="minecraft" data-category="juegos">
@@ -1013,10 +1051,11 @@
           <p>Construye, sobrevive y explora mundos infinitos.</p>
           <div class="app-meta">
             <span class="meta-tag">Top #1 Juego</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 5.0</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 5.0</span>
           </div>
         </div>
-        <a href="https://erikappstore.vercel.app/payments/minecraft.html" class="btn" target="_blank">Descargar</a>
+        <a href="https://erikappstore.vercel.app/payments/minecraft.html" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="tiktok" data-category="social">
@@ -1028,11 +1067,11 @@
           <p>Videos cortos, tendencias y creadores virales.</p>
           <div class="app-meta">
             <span class="meta-tag">Social</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.zhiliaoapp.musically?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="roblox" data-category="juegos">
@@ -1044,11 +1083,11 @@
           <p>Millones de experiencias y mundos virtuales.</p>
           <div class="app-meta">
             <span class="meta-tag">Multijugador</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.roblox.client?versionCode=1750" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.roblox.client?versionCode=1750" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="emulador damonps2" data-category="juegos utilidades">
@@ -1060,11 +1099,11 @@
           <p>Disfruta clásicos de consola a 60 FPS en móvil.</p>
           <div class="app-meta">
             <span class="meta-tag">Emulador</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.damonplay.damonps2.free?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.damonplay.damonps2.free?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="generador qr" data-category="utilidades">
@@ -1076,11 +1115,11 @@
           <p>Crea y escanea códigos QR personalizados.</p>
           <div class="app-meta">
             <span class="meta-tag">Herramienta</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
         <a href="https://d.apkpure.com/b/APK/qrcodegenerator.qrcreator.qrmaker.createqrcode?version=latest" class="btn"
-          target="_blank">Descargar</a>
+          target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="spotify" data-category="social utilidades">
@@ -1092,10 +1131,11 @@
           <p>Música, playlists y podcasts sin límites.</p>
           <div class="app-meta">
             <span class="meta-tag">Música</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.spotify.music?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.spotify.music?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="brawl stars" data-category="juegos">
@@ -1107,11 +1147,11 @@
           <p>Batallas 3v3 frenéticas y supervivencia.</p>
           <div class="app-meta">
             <span class="meta-tag">Acción</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.supercell.brawlstars?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.supercell.brawlstars?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="snapchat" data-category="social">
@@ -1123,11 +1163,11 @@
           <p>Comparte momentos y filtros AR al instante.</p>
           <div class="app-meta">
             <span class="meta-tag">Social</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.snapchat.android?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.snapchat.android?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="instagram" data-category="social">
@@ -1137,11 +1177,11 @@
           <p>Reels, historias y conexión con amigos.</p>
           <div class="app-meta">
             <span class="meta-tag">Social</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.instagram.android?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.instagram.android?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="twitch" data-category="social juegos">
@@ -1153,11 +1193,11 @@
           <p>Streams en vivo de gaming, música y esports.</p>
           <div class="app-meta">
             <span class="meta-tag">Streaming</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/tv.twitch.android.app?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/tv.twitch.android.app?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="rompecabezas tuerca y perno" data-category="juegos">
@@ -1169,11 +1209,11 @@
           <p>Desafíos lógicos y rompecabezas adictivos.</p>
           <div class="app-meta">
             <span class="meta-tag">Puzzle</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.6</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.6</span>
           </div>
         </div>
         <a href="https://d.apkpure.com/b/XAPK/com.fc.nut.screw.bolt.washer.fastener.puzzle?version=latest" class="btn"
-          target="_blank">Descargar</a>
+          target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="subway surfers" data-category="juegos">
@@ -1185,11 +1225,11 @@
           <p>Corre a toda velocidad esquivando trenes.</p>
           <div class="app-meta">
             <span class="meta-tag">Arcade</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.kiloo.subwaysurf?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.kiloo.subwaysurf?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="paper.io 2" data-category="juegos">
@@ -1201,10 +1241,11 @@
           <p>Pinta el mapa y conquista todo el territorio.</p>
           <div class="app-meta">
             <span class="meta-tag">Casual</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.6</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.6</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/io.voodoo.paper2?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/io.voodoo.paper2?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="8 ball pool" data-category="juegos">
@@ -1216,11 +1257,11 @@
           <p>El simulador de billar multijugador #1.</p>
           <div class="app-meta">
             <span class="meta-tag">Deportes</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.miniclip.eightballpool?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.miniclip.eightballpool?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="crossy road" data-category="juegos">
@@ -1232,11 +1273,11 @@
           <p>Cruza carreteras, ríos y vías sin parar.</p>
           <div class="app-meta">
             <span class="meta-tag">Arcade</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.yodo1.crossyroad?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.yodo1.crossyroad?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="2 player games the challenge" data-category="juegos">
@@ -1248,11 +1289,11 @@
           <p>Minijuegos competitivos para dos en un dispositivo.</p>
           <div class="app-meta">
             <span class="meta-tag">2 Jugadores</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
         <a href="https://d.apkpure.com/b/XAPK/com.JindoBlu.TwoPlayerGamesChallenge?version=latest" class="btn"
-          target="_blank">Descargar</a>
+          target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="discord" data-category="social">
@@ -1264,10 +1305,11 @@
           <p>Comunidades, chat de voz y streaming con amigos.</p>
           <div class="app-meta">
             <span class="meta-tag">Comunidad</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.discord?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.discord?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="free fire max" data-category="juegos">
@@ -1279,11 +1321,11 @@
           <p>Battle Royale con gráficos Ultra HD.</p>
           <div class="app-meta">
             <span class="meta-tag">Battle Royale</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.dts.freefiremax?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.dts.freefiremax?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="pizza ready" data-category="juegos">
@@ -1295,11 +1337,11 @@
           <p>Dirige tu propio imperio de pizzerías.</p>
           <div class="app-meta">
             <span class="meta-tag">Simulación</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.6</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.6</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/io.supercent.pizzaidle?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/io.supercent.pizzaidle?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="x twitter" data-category="social">
@@ -1311,11 +1353,11 @@
           <p>Noticias y conversación global en tiempo real.</p>
           <div class="app-meta">
             <span class="meta-tag">Social</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.6</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.6</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.twitter.android?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.twitter.android?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="crunchyroll" data-category="social">
@@ -1327,11 +1369,11 @@
           <p>El catálogo de anime y manga más grande del mundo.</p>
           <div class="app-meta">
             <span class="meta-tag">Anime</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.crunchyroll.crunchyroid?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.crunchyroll.crunchyroid?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="opera" data-category="utilidades">
@@ -1343,11 +1385,11 @@
           <p>Navegador rápido con bloqueador y VPN integrada.</p>
           <div class="app-meta">
             <span class="meta-tag">Navegador</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.opera.browser?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.opera.browser?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="good pizza great pizza" data-category="juegos">
@@ -1359,11 +1401,11 @@
           <p>Prepara las mejores pizzas de la ciudad.</p>
           <div class="app-meta">
             <span class="meta-tag">Cocina</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.tapblaze.pizzabusiness?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.tapblaze.pizzabusiness?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="be real" data-category="social">
@@ -1375,10 +1417,11 @@
           <p>Fotos auténticas sin filtros una vez al día.</p>
           <div class="app-meta">
             <span class="meta-tag">Social</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.6</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.6</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.bereal.ft?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.bereal.ft?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="sonic dash endless runner game" data-category="juegos">
@@ -1390,11 +1433,11 @@
           <p>Carrera infinita a velocidad supersónica con SEGA.</p>
           <div class="app-meta">
             <span class="meta-tag">SEGA</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.sega.sonicdash?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.sega.sonicdash?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="threads" data-category="social">
@@ -1406,11 +1449,11 @@
           <p>Comparte ideas y tendencias con texto.</p>
           <div class="app-meta">
             <span class="meta-tag">Social</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.instagram.barcelona?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.instagram.barcelona?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="firefox navegador web privado" data-category="utilidades">
@@ -1422,11 +1465,11 @@
           <p>Navegador web privado y seguro.</p>
           <div class="app-meta">
             <span class="meta-tag">Privacidad</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/org.mozilla.firefox?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/org.mozilla.firefox?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="disney plus +" data-category="social">
@@ -1438,11 +1481,11 @@
           <p>Películas y series de Disney, Pixar, Marvel y Star Wars.</p>
           <div class="app-meta">
             <span class="meta-tag">Streaming</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.disney.disneyplus?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.disney.disneyplus?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="chatgpt" data-category="utilidades">
@@ -1454,11 +1497,11 @@
           <p>El asistente oficial de IA de OpenAI.</p>
           <div class="app-meta">
             <span class="meta-tag">IA</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.openai.chatgpt?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.openai.chatgpt?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="glovo" data-category="utilidades">
@@ -1469,10 +1512,11 @@
           <p>Comida y envíos a domicilio en minutos.</p>
           <div class="app-meta">
             <span class="meta-tag">Delivery</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.glovo?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.glovo?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="el juego del calamar frenesi" data-category="juegos">
@@ -1484,11 +1528,11 @@
           <p>Supervivencia multijugador oficial de Netflix.</p>
           <div class="app-meta">
             <span class="meta-tag">Acción</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.netflix.NGP.ProjectKraken?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.netflix.NGP.ProjectKraken?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="whatsapp" data-category="social">
@@ -1500,10 +1544,11 @@
           <p>Mensajería y llamadas seguras en todo el mundo.</p>
           <div class="app-meta">
             <span class="meta-tag">Mensajería</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.whatsapp?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.whatsapp?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="happymod" data-category="juegos utilidades">
@@ -1514,11 +1559,11 @@
           <p>Repositorio de mods verificados para Android.</p>
           <div class="app-meta">
             <span class="meta-tag">Mods</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
         <a href="https://www.dropbox.com/scl/fi/25f4cf188vl04ghjrxg05/HappyMod-2-9-3.apk?rlkey=r1oxkb9ahsuw769x9tc612w74&st=qhec19k0&dl=1"
-          class="btn" target="_blank">Descargar</a>
+          class="btn" target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="vlc" data-category="utilidades">
@@ -1530,10 +1575,11 @@
           <p>Reproductor universal para cualquier formato de video.</p>
           <div class="app-meta">
             <span class="meta-tag">Multimedia</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/org.videolan.vlc?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/org.videolan.vlc?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="skype" data-category="social">
@@ -1545,10 +1591,11 @@
           <p>Videollamadas grupales y chat internacional.</p>
           <div class="app-meta">
             <span class="meta-tag">Comunicación</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.6</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.6</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.skype.raider?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.skype.raider?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="geometry dash lite" data-category="juegos">
@@ -1560,11 +1607,11 @@
           <p>Salta y vuela al ritmo de la música electrónica.</p>
           <div class="app-meta">
             <span class="meta-tag">Ritmo</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.robtopx.geometryjumplite?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.robtopx.geometryjumplite?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="aliexpress" data-category="utilidades">
@@ -1576,11 +1623,11 @@
           <p>Compras globales con ofertas directas.</p>
           <div class="app-meta">
             <span class="meta-tag">Compras</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.alibaba.aliexpresshd?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.alibaba.aliexpresshd?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="among us" data-category="juegos">
@@ -1591,11 +1638,11 @@
           <p>Coopera con la tripulación o sabotea como impostor.</p>
           <div class="app-meta">
             <span class="meta-tag">Multijugador</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/XAPK/com.innersloth.spacemafia?version=latest" class="btn"
-          target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/XAPK/com.innersloth.spacemafia?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="messenger" data-category="social">
@@ -1607,10 +1654,11 @@
           <p>Mensajes, stickers y videollamadas al instante.</p>
           <div class="app-meta">
             <span class="meta-tag">Social</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
-        <a href="https://d.apkpure.com/b/APK/com.facebook.orca?version=latest" class="btn" target="_blank">Descargar</a>
+        <a href="https://d.apkpure.com/b/APK/com.facebook.orca?version=latest" class="btn" target="_blank"><i
+            class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="erik os app" data-category="exclusivas utilidades">
@@ -1620,12 +1668,12 @@
           <h4>Erik OS App</h4>
           <p>El entorno operativo completo en tu dispositivo.</p>
           <div class="app-meta">
-            <span class="meta-tag">Exclusiva</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-tag">Zapp Original</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
         <a href="https://www.dropbox.com/scl/fo/dznvctuv8wu4xevo0g83n/AImYXXWXLVee4FO2lM6QCgQ?rlkey=46tyqleoeamxdpdbmjn03yr56&st=v2alumf9&dl=1"
-          class="btn" target="_blank">Descargar</a>
+          class="btn" target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="erik backup" data-category="exclusivas utilidades">
@@ -1636,7 +1684,7 @@
           <p>Copia de seguridad estilo Time Machine en móvil.</p>
           <div class="app-meta">
             <span class="meta-tag">Sistema</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.6</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.6</span>
           </div>
         </div>
         <a onclick="alert('No disponible por ahora')" class="btn btn-muted">No disponible</a>
@@ -1650,12 +1698,12 @@
           <h4>Social Gram</h4>
           <p>La red social ligera creada para la comunidad.</p>
           <div class="app-meta">
-            <span class="meta-tag">Exclusiva</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.8</span>
+            <span class="meta-tag">Zapp Original</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.8</span>
           </div>
         </div>
         <a href="https://www.dropbox.com/scl/fi/zazperd8w2bzlyzlwdq11/SocialGram_Installer.apk?rlkey=arxiegpz9bpk0z0bo2a0k2pwi&st=zgzhj3wt&dl=1"
-          class="btn" target="_blank">Descargar</a>
+          class="btn" target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="mando de sonidos" data-category="exclusivas juegos">
@@ -1665,12 +1713,12 @@
           <h4>Mando de Sonidos</h4>
           <p>Botonera de efectos de audio instantáneos.</p>
           <div class="app-meta">
-            <span class="meta-tag">Entretenimiento</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-tag">Audio Pad</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
         <a href="https://www.dropbox.com/scl/fi/w91sn2fyoo8iosmnjv3dw/Mando_ierik.apk?rlkey=1a2uf63kiuilsg2fz6kgrsoh7&st=445hlvnm&dl=1"
-          class="btn" target="_blank">Descargar</a>
+          class="btn" target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="buttons game" data-category="exclusivas juegos">
@@ -1680,12 +1728,12 @@
           <h4>Buttons Game</h4>
           <p>Pon a prueba tus reflejos con paneles interactivos.</p>
           <div class="app-meta">
-            <span class="meta-tag">Juego</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.7</span>
+            <span class="meta-tag">Arcade</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.7</span>
           </div>
         </div>
         <a href="https://www.dropbox.com/scl/fi/6g0ciyukhlctkjz4ns8zi/ControlPanel-1.apk?rlkey=5ygwazwzf582l3xwa5dce5coc&st=tzpsc2mm&dl=1"
-          class="btn" target="_blank">Descargar</a>
+          class="btn" target="_blank"><i class="fa-solid fa-bolt"></i> Instalar</a>
       </div>
 
       <div class="app-item" data-name="fake google pay" data-category="exclusivas utilidades">
@@ -1697,7 +1745,7 @@
           <p>Simulador de pagos para bromas.</p>
           <div class="app-meta">
             <span class="meta-tag">Broma</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.5</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.5</span>
           </div>
         </div>
         <a onclick="alert('No disponible por ahora')" class="btn btn-muted">No disponible</a>
@@ -1706,11 +1754,11 @@
       <div class="app-item" data-name="windows app store" data-category="exclusivas utilidades">
         <img src="https://img.icons8.com/ios_filled/512/FA5252/microsoft.png" alt="Windows App Store">
         <div class="app-info">
-          <h4>Kiwi Store para Windows</h4>
+          <h4>Zapp Store para Windows</h4>
           <p>Proyectos y simuladores exclusivos para PC.</p>
           <div class="app-meta">
             <span class="meta-tag">Windows PC</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 4.9</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 4.9</span>
           </div>
         </div>
         <a href="search/OSsim1.html" class="btn">Abrir</a>
@@ -1719,11 +1767,11 @@
       <div class="app-item" data-name="fan made comunidad" data-category="exclusivas social">
         <img src="https://cdn-icons-png.flaticon.com/512/33/33308.png" alt="Fan made">
         <div class="app-info">
-          <h4>Comunidad Kiwi (Fan Made)</h4>
+          <h4>Zapp Creators (Comunidad)</h4>
           <p>Descubre o publica apps creadas por usuarios.</p>
           <div class="app-meta">
             <span class="meta-tag">Comunidad</span>
-            <span class="meta-stars"><i class="fa-solid fa-star"></i> 5.0</span>
+            <span class="meta-stars"><i class="fa-solid fa-bolt"></i> 5.0</span>
           </div>
         </div>
         <a href="com.html" class="btn">Abrir</a>
@@ -1731,51 +1779,50 @@
     </div>
 
     <div id="noResults">
-      <i class="fa-solid fa-seedling"></i>
-      <h3>No encontramos esa app en Kiwi Store</h3>
-      <p>Prueba con otro término o explora la pestaña de Comunidad para subir tu propia app.</p>
+      <i class="fa-solid fa-bolt-lightning"></i>
+      <h3>Sin coincidencias en Zapp Store</h3>
+      <p>Prueba con otra palabra clave o visita el Hub de Creadores para solicitar o subir tu app.</p>
     </div>
 
-    <!-- Marketing Bottom Callout -->
-    <section class="kiwi-promo-card">
-      <div class="kiwi-promo-text">
-        <h3>🥝 ¿Eres desarrollador o quieres Kiwi Store en tu móvil?</h3>
-        <p>Instala la app oficial de Kiwi Store en Android o iOS, o publica tu propio proyecto en la Comunidad.</p>
+    <!-- Bottom Marketing Banner -->
+    <section class="zapp-callout">
+      <div>
+        <h3>⚡ Lleva Zapp Store en tu dispositivo o publica tu App</h3>
+        <p>Descarga el cliente nativo para Android e iOS o comparte tus proyectos con miles de usuarios.</p>
       </div>
-      <div class="kiwi-promo-actions">
-        <a href="download.html" class="btn"><i class="fa-solid fa-download"></i> App Oficial</a>
-        <a href="com.html" class="btn btn-muted" style="color:#fff;"><i class="fa-solid fa-plus"></i> Subir mi App</a>
+      <div class="zapp-callout-btns">
+        <a href="download.html" class="btn"><i class="fa-solid fa-mobile-screen-button"></i> Descargar Zapp App</a>
+        <a href="com.html" class="btn btn-muted" style="color:#fff;"><i class="fa-solid fa-upload"></i> Publicar mi App</a>
       </div>
     </section>
   </div>
 
-  <nav class="bottom-nav" aria-label="Navegación principal">
+  <nav class="bottom-nav" aria-label="Navegación inferior">
     <a href="#" class="nav-item active" onclick="scrollToTop(event, this)">
-      <i class="fa-solid fa-compass"></i>
-      <span>Explorar</span>
+      <i class="fa-solid fa-bolt"></i>
+      <span>Zapp Home</span>
     </a>
     <a href="#" class="nav-item" onclick="focusSearch(event, this)">
       <i class="fa-solid fa-magnifying-glass"></i>
       <span>Buscar</span>
     </a>
     <a href="library.html" class="nav-item">
-      <i class="fa-solid fa-layer-group"></i>
-      <span>Biblioteca</span>
+      <i class="fa-solid fa-vault"></i>
+      <span>Vault</span>
     </a>
     <a href="premium.html" class="nav-item">
-      <i class="fa-solid fa-crown"></i>
-      <span>Kiwi Pro</span>
+      <i class="fa-solid fa-rocket"></i>
+      <span>Nitro</span>
     </a>
   </nav>
 
   <script>
-    // Random Featured Apps Logic with Kiwi Store aesthetics
     document.addEventListener("DOMContentLoaded", () => {
       const allAppElements = Array.from(document.querySelectorAll('.app-item'));
       const featuredContainer = document.getElementById('featuredContainer');
       const appCounter = document.getElementById('appCounter');
       if (appCounter) {
-        appCounter.textContent = `${allAppElements.length} aplicaciones`;
+        appCounter.textContent = `${allAppElements.length} Zapps`;
       }
 
       const availableApps = allAppElements.filter(el => !el.querySelector('.btn').classList.contains('btn-muted'));
@@ -1787,39 +1834,40 @@
         if (selectedIndices.indexOf(r) === -1) selectedIndices.push(r);
       }
 
-      selectedIndices.forEach(idx => {
+      selectedIndices.forEach((idx, rankIdx) => {
         const item = pool[idx];
         const img = item.querySelector('img').src;
         const title = item.querySelector('h4').innerText;
         const desc = item.querySelector('p').innerText;
         const aClone = item.querySelector('.btn').cloneNode(true);
+        aClone.style.width = '100%';
 
         const card = document.createElement('div');
         card.className = 'featured-card';
         card.innerHTML = `
-          <div class="featured-top">
+          <div class="rank-number">#${rankIdx + 1}</div>
+          <div class="featured-card-head">
             <img src="${img}" alt="${title}">
-            <div class="featured-badge"><i class="fa-solid fa-sparkles"></i> Destacada</div>
+            <div>
+              <div class="featured-badge"><i class="fa-solid fa-bolt"></i> Top #${rankIdx + 1} Zapp</div>
+              <h3>${title}</h3>
+            </div>
           </div>
-          <h3>${title}</h3>
           <p>${desc}</p>
-          <div class="featured-footer">
-            <div class="rating-pill"><i class="fa-solid fa-star"></i> 4.9 <span>• Verificada</span></div>
-          </div>
         `;
-        card.querySelector('.featured-footer').appendChild(aClone);
+        card.appendChild(aClone);
         featuredContainer.appendChild(card);
       });
     });
 
-    // Filtering by Search + Category Pills
     const searchInput = document.getElementById('searchInput');
     const appItems = document.querySelectorAll('.app-item');
     const noResults = document.getElementById('noResults');
     const featuredSection = document.getElementById('featuredSection');
+    const heroSection = document.getElementById('heroSection');
     const allAppsTitle = document.getElementById('allAppsTitle');
     const appCounter = document.getElementById('appCounter');
-    const catPills = document.querySelectorAll('.cat-pill');
+    const zappTabs = document.querySelectorAll('.zapp-tab');
 
     let activeCategory = 'all';
 
@@ -1829,10 +1877,13 @@
 
       if (query.length > 0 || activeCategory !== 'all') {
         featuredSection.classList.add('hidden');
-        allAppsTitle.innerHTML = `<i class="fa-solid fa-filter" style="color:var(--accent);"></i> Apps Filtradas`;
+        if (query.length > 0) heroSection.classList.add('hidden');
+        else heroSection.classList.remove('hidden');
+        allAppsTitle.innerHTML = `<i class="fa-solid fa-bolt" style="color:var(--zapp-cyan);"></i> Resultados en Zapp Store`;
       } else {
         featuredSection.classList.remove('hidden');
-        allAppsTitle.innerHTML = `<i class="fa-solid fa-layer-group" style="color:var(--accent);"></i> Catálogo Completo`;
+        heroSection.classList.remove('hidden');
+        allAppsTitle.innerHTML = `<i class="fa-solid fa-cubes" style="color:var(--zapp-cyan);"></i> Todas las Aplicaciones`;
       }
 
       appItems.forEach(item => {
@@ -1853,23 +1904,22 @@
       });
 
       if (appCounter) {
-        appCounter.textContent = `${visibleCount} ${visibleCount === 1 ? 'aplicación' : 'aplicaciones'}`;
+        appCounter.textContent = `${visibleCount} ${visibleCount === 1 ? 'Zapp' : 'Zapps'}`;
       }
       noResults.style.display = visibleCount > 0 ? 'none' : 'block';
     }
 
     searchInput.addEventListener('input', filterApps);
 
-    catPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        catPills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        activeCategory = pill.getAttribute('data-filter');
+    zappTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        zappTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeCategory = tab.getAttribute('data-filter');
         filterApps();
       });
     });
 
-    // Keyboard shortcut "/" to focus search
     document.addEventListener('keydown', (e) => {
       if (e.key === '/' && document.activeElement !== searchInput) {
         e.preventDefault();
